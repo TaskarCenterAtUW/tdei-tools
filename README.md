@@ -24,15 +24,7 @@ Quest definitions ("GoInfoGame Long Form Quest JSON Definition") for use in [TDE
 
 #### [Project Group: Health Through Housing](https://github.com/TaskarCenterAtUW/TDEI-tools/tree/main/quests/prod/Health%20Through%20Housing)
 
-* **[HTH Auburn.json](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/prod/Health%20Through%20Housing/HTH%20Auburn.json)**
-
-* **[HTH Burien.json](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/prod/Health%20Through%20Housing/HTH%20Burien.json)**
-
-* **[HTH Federal Way.json](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/prod/Health%20Through%20Housing/HTH%20Federal%20Way.json)**
-
-* **[HTH Kirkland.json](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/prod/Health%20Through%20Housing/HTH%20Kirkland.json)**
-
-* **[HTH Redmond.json](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/prod/Health%20Through%20Housing/HTH%20Redmond.json)**
+* **[HTH Default.json](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/prod/Health%20Through%20Housing/HTH%20Default.json)**
 
 #### [Project Group: US DOT Scenario Testing](https://github.com/TaskarCenterAtUW/TDEI-tools/tree/main/quests/prod/US%20DOT%20Scenario%20Testing)
 
