@@ -1,0 +1,187 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Long Form Quests Schema for GoInfoGame",
+    "type": "array",
+    "definitions": {
+        "Element": {
+            "type": "object",
+            "description": "Element type. The base element that describes the type of element and the quests that are associated with it.",
+            "properties": {
+                "element_type": {
+                    "description": "Type of element that the quests are associated with.",
+                    "type": "string",
+                    "examples": [
+                        "Sidewalks",
+                        "Kerb",
+                        "Crossings"
+                    ]
+                },
+                "quest_query": {
+                    "description": "Query to get the quests for the element type.",
+                    "type": "string",
+                    "examples": [
+                        "ways with (highway=footway and footway=crossing)",
+                        "ways with (highway=footway and footway=sidewalk)",
+                        "nodes with barrier=kerb"
+                    ]
+                },
+                "quests": {
+                    "description": "List of quests for the element type.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Question"
+                    }
+                }
+            },
+            "required": [
+                "element_type",
+                "quest_query",
+                "quests"
+            ]
+        },
+        "AnswerChoice": {
+            "type": "object",
+            "description": "Answer choice for a single quest. There can be multiple answer choices",
+            "properties": {
+                "value": {
+                    "description": "Value of the answer choice",
+                    "type": "string",
+                    "examples": [
+                        "yes",
+                        "no",
+                        "unknown"
+                    ]
+                },
+                "choice_text": {
+                    "description": "Text to display for the answer choice",
+                    "type": "string",
+                    "examples": [
+                        "Yes",
+                        "No",
+                        "Unknown"
+                    ]
+                },
+                "image_url": {
+                    "description": "URL of the image to display for the answer choice. If the image is not available or if there is an error in loading the image, it will not be displayed.",
+                    "type": "string",
+                    "examples": [
+                        "https://example.com/image.jpg"
+                    ]
+                },
+                "choice_follow_up": {
+                    "description": "Used to define whether the user has to take a picture or not. If not provided, there will be no picture taken. If provided, this text will be shown to the user in the image taking screen.",
+                    "type": "string",
+                    "examples": [
+                        "Is the sidewalk on the left side of the road?",
+                        "Is the sidewalk on the right side of the road?"
+                    ]
+                }
+            },
+            "required": [
+                "value",
+                "choice_text"
+            ]
+        },
+        "Question": {
+            "type": "object",
+            "description": "Question for a single quest. There can be multiple questions for an element.",
+            "properties": {
+                "quest_id": {
+                    "description": "Unique identifier for the question",
+                    "type": "number",
+                    "examples": [
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "quest_title": {
+                    "description": "Title of the question",
+                    "type": "string",
+                    "examples": [
+                        "Is the sidewalk on the left side of the road?",
+                        "Is the sidewalk on the right side of the road?"
+                    ]
+                },
+                "quest_description": {
+                    "description": "Description of the question",
+                    "type": "string",
+                    "examples": [
+                        "Please select the option that best describes the sidewalk on the left side of the road.",
+                        "Please select the option that best describes the sidewalk on the right side of the road."
+                    ]
+                },
+                "quest_image_url": {
+                    "description": "URL of the image to display for the question. If the image is not available or if there is an error in loading the image, it will not be displayed.",
+                    "type": "string",
+                    "examples": [
+                        "https://example.com/image.jpg"
+                    ]
+                },
+                "quest_type": {
+                    "description": "Type of the question. Only two types supported at the moment. ExclusiveChoice for single choice questions and Numeric for numeric input questions.",
+                    "type": "string",
+                    "examples": [
+                        "ExclusiveChoice",
+                        "Numeric"
+                    ],
+                    "enum": [
+                        "ExclusiveChoice",
+                        "Numeric"
+                    ]
+                },
+                "quest_tag": {
+                    "description": "Tag to be added to the quest. This tag is sent as payload when the user answers the question.",
+                    "type": "string",
+                    "examples": [
+                        "driveways",
+                        "surface",
+                        "crossing:markings"
+                    ]
+                },
+                "quest_answer_choices": {
+                    "description": "Answer choices for the question. Only applicable for ExclusiveChoice type questions.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AnswerChoice"
+                    }
+                },
+                "quest_answer_validation": {
+                    "description": "Validation for the answer. Only applicable for Numeric type questions.",
+                    "type": "object",
+                    "properties": {
+                        "min": {
+                            "description": "Minimum value for the answer",
+                            "type": "number",
+                            "examples": [
+                                0,
+                                1,
+                                2
+                            ]
+                        },
+                        "max": {
+                            "description": "Maximum value for the answer",
+                            "type": "number",
+                            "examples": [
+                                0,
+                                1,
+                                2
+                            ]
+                        }
+                    }
+                }
+            },
+            "required": [
+                "quest_id",
+                "quest_title",
+                "quest_description",
+                "quest_type",
+                "quest_tag",
+                "quest_answer_choices"
+            ]
+        }
+    },
+    "items": {
+        "$ref": "#/definitions/Element"
+    }
+}
