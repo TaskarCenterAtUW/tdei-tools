@@ -57,4 +57,4 @@ License for all files in this directory: CC0
 
 ##### [Crossing Markings](https://github.com/TaskarCenterAtUW/TDEI-tools/tree/main/quests/res/graphics/crossing_markings)
 
-
+License for all files in this directory: CC0
