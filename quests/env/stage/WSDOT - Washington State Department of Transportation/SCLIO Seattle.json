@@ -1,7 +1,7 @@
 [
     {
         "element_type": "Sidewalks",
-        "quest_query": "ways with (highway ~ footway|path)",
+        "quest_query": "ways with (highway = footway OR highway = path)",
         "quests": [
             {
                 "quest_id": 1,
@@ -165,7 +165,7 @@
     },
     {
         "element_type": "Crossings",
-        "quest_query": "ways with (footway = crossing)",
+        "quest_query": "ways with (highway = footway AND footway = crossing)",
         "quests": [
             {
                 "quest_id": 9,
