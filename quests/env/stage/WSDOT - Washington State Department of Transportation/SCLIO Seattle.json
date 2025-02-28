@@ -1,6 +1,6 @@
 [
     {
-        "element_type": "Pathways",
+        "element_type": "Sidewalks",
         "quest_query": "ways with (highway ~ footway|path)",
         "quests": [
             {
