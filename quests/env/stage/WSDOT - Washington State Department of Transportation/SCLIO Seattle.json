@@ -1,7 +1,7 @@
 [
     {
         "element_type": "Pathways",
-        "quest_query": "ways with (highway ~ footway|path",
+        "quest_query": "ways with (highway ~ footway|path)",
         "quests": [
             {
                 "quest_id": 1,
