@@ -1,0 +1,120 @@
+[
+    {
+        "element_type": "Pathways",
+        "quest_query": "ways with (highway ~ footway|path",
+        "quests": [
+            {
+                "quest_id": 1,
+                "quest_title": "What is the surface material of this pathway?",
+                "quest_description": "Determine the surface material of this pathway.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:pathway_surface",
+                "quest_answer_choices": [
+                    {
+                        "value": "asphalt",
+                        "choice_text": "Asphalt"
+                    },
+                    {
+                        "value": "concrete",
+                        "choice_text": "Concrete"
+                    },
+                    {
+                        "value": "brick",
+                        "choice_text": "Brick"
+                    },
+                    {
+                        "value": "other",
+                        "choice_text": "Other"
+                    }
+                ]
+            },
+            {
+                "quest_id": 2,
+                "quest_title": "Does this pathway narrow?",
+                "quest_description": "Determine whether there are any sections where this pathway narrows.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:pathway_narrows",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No"
+                    }
+                ]
+            },
+            {
+                "quest_id": 3,
+                "quest_title": "Are there small surface cracks, disruptions, or gaps on this pathway?",
+                "quest_description": "Determine whether there are cracks, disruptions, or gaps in the pathway surface that are smaller than 3 inches in any direction.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:pathway_count_disruptions_small",
+                "quest_answer_choices": [
+                    {
+                        "value": "0",
+                        "choice_text": "No"
+                    },
+                    {
+                        "value": "1-5",
+                        "choice_text": "1-5 small cracks, disruptions, or gaps along this pathway"
+                    },
+                    {
+                        "value": "6-10",
+                        "choice_text": "6-10 small cracks, disruptions, or gaps along this pathway"
+                    },
+                    {
+                        "value": "11+",
+                        "choice_text": "11+ small cracks, disruptions, or gaps along this pathway"
+                    }
+                ]
+            },
+            {
+                "quest_id": 4,
+                "quest_title": "Are there large surface cracks, disruptions, or gaps on this pathway?",
+                "quest_description": "Determine whether there are cracks, disruptions, or gaps in the pathway surface that are larger than 3 inches in any direction.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:pathway_count_disruptions_large",
+                "quest_answer_choices": [
+                    {
+                        "value": "0",
+                        "choice_text": "No"
+                    },
+                    {
+                        "value": "1-5",
+                        "choice_text": "1-5 large cracks, disruptions, or gaps along this pathway"
+                    },
+                    {
+                        "value": "6-10",
+                        "choice_text": "6-10 large cracks, disruptions, or gaps along this pathway"
+                    },
+                    {
+                        "value": "11+",
+                        "choice_text": "11+ large cracks, disruptions, or gaps along this pathway"
+                    }
+                ]
+            },
+            {
+                "quest_id": 5,
+                "quest_title": "How many streetlight poles are along this pathway?",
+                "quest_description": "Enter the number of streetlight poles along this pathway.",
+                "quest_type": "Numeric",
+                "quest_tag": "ext:pathway_count_streetlights",
+                "quest_answer_validation": {
+                    "min": 0
+                }
+            },
+            {
+                "quest_id": 6,
+                "quest_title": "How many manholes are on this pathway?",
+                "quest_description": "Enter the number of manholes on this pathway.",
+                "quest_type": "Numeric",
+                "quest_tag": "ext:pathway_count_manholes",
+                "quest_answer_validation": {
+                    "min": 0
+                }
+            }
+        ]
+    }
+]
