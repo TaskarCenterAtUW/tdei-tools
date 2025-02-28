@@ -12,15 +12,18 @@
                 "quest_answer_choices": [
                     {
                         "value": "asphalt",
-                        "choice_text": "Asphalt"
+                        "choice_text": "Asphalt",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_wide.png"
                     },
                     {
                         "value": "concrete",
-                        "choice_text": "Concrete"
+                        "choice_text": "Concrete",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
                     },
                     {
                         "value": "brick",
-                        "choice_text": "Brick"
+                        "choice_text": "Brick",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
                     },
                     {
                         "value": "other",
@@ -30,23 +33,35 @@
             },
             {
                 "quest_id": 2,
+                "quest_title": "What is the width of this pathway?",
+                "quest_description": "Measure the width of this pathway, in inches.",
+                "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_width_big.png",
+                "quest_type": "Numeric",
+                "quest_tag": "ext:pathway_width",
+                "quest_answer_validation": {
+                    "min": 0,
+                    "max": 240
+                }
+            },
+            {
+                "quest_id": 3,
                 "quest_title": "Does this pathway narrow?",
-                "quest_description": "Determine whether there are any sections where this pathway narrows.",
+                "quest_description": "Determine whether there are any sections of this pathway that narrow in a way which impedes travel.",
                 "quest_type": "ExclusiveChoice",
                 "quest_tag": "ext:pathway_narrows",
                 "quest_answer_choices": [
                     {
                         "value": "yes",
-                        "choice_text": "Yes"
+                        "choice_text": "Yes, part of this pathway narrows."
                     },
                     {
                         "value": "no",
-                        "choice_text": "No"
+                        "choice_text": "No, this pathway does not narrow."
                     }
                 ]
             },
             {
-                "quest_id": 3,
+                "quest_id": 4,
                 "quest_title": "Are there small surface cracks, disruptions, or gaps on this pathway?",
                 "quest_description": "Determine whether there are cracks, disruptions, or gaps in the pathway surface that are smaller than 3 inches in any direction.",
                 "quest_type": "ExclusiveChoice",
@@ -58,22 +73,22 @@
                     },
                     {
                         "value": "1-5",
-                        "choice_text": "1-5 small cracks, disruptions, or gaps along this pathway"
+                        "choice_text": "Yes, there are 1-5 small cracks, disruptions, or gaps along this pathway."
                     },
                     {
                         "value": "6-10",
-                        "choice_text": "6-10 small cracks, disruptions, or gaps along this pathway"
+                        "choice_text": "Yes, there are 6-10 small cracks, disruptions, or gaps along this pathway."
                     },
                     {
                         "value": "11+",
-                        "choice_text": "11+ small cracks, disruptions, or gaps along this pathway"
+                        "choice_text": "Yes, there are 11+ small cracks, disruptions, or gaps along this pathway."
                     }
                 ]
             },
             {
-                "quest_id": 4,
+                "quest_id": 5,
                 "quest_title": "Are there large surface cracks, disruptions, or gaps on this pathway?",
-                "quest_description": "Determine whether there are cracks, disruptions, or gaps in the pathway surface that are larger than 3 inches in any direction.",
+                "quest_description": "Determine whether there are cracks, disruptions, or gaps in the pathway surface that are 3 inches or larger in any direction.",
                 "quest_type": "ExclusiveChoice",
                 "quest_tag": "ext:pathway_count_disruptions_large",
                 "quest_answer_choices": [
@@ -83,37 +98,235 @@
                     },
                     {
                         "value": "1-5",
-                        "choice_text": "1-5 large cracks, disruptions, or gaps along this pathway"
+                        "choice_text": "Yes, there are 1-5 large cracks, disruptions, or gaps along this pathway."
                     },
                     {
                         "value": "6-10",
-                        "choice_text": "6-10 large cracks, disruptions, or gaps along this pathway"
+                        "choice_text": "Yes, there are 6-10 large cracks, disruptions, or gaps along this pathway."
                     },
                     {
                         "value": "11+",
-                        "choice_text": "11+ large cracks, disruptions, or gaps along this pathway"
+                        "choice_text": "Yes, there are 11+ large cracks, disruptions, or gaps along this pathway."
                     }
                 ]
             },
             {
-                "quest_id": 5,
-                "quest_title": "How many streetlight poles are along this pathway?",
-                "quest_description": "Enter the number of streetlight poles along this pathway.",
-                "quest_type": "Numeric",
-                "quest_tag": "ext:pathway_count_streetlights",
-                "quest_answer_validation": {
-                    "min": 0
-                }
+                "quest_id": 6,
+                "quest_title": "Is there overgrown vegetation along this pathway?",
+                "quest_description": "Determine whether there is overgrown vegetation along this pathway which impedes travel.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:pathway_overgrown_vegetation",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, overgrown vegetation is present."
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there is no overgrown vegetation present."
+                    }
+                ]
             },
             {
-                "quest_id": 6,
-                "quest_title": "How many manholes are on this pathway?",
-                "quest_description": "Enter the number of manholes on this pathway.",
-                "quest_type": "Numeric",
-                "quest_tag": "ext:pathway_count_manholes",
-                "quest_answer_validation": {
-                    "min": 0
-                }
+                "quest_id": 7,
+                "quest_title": "Are there any other obstacles along this pathway?",
+                "quest_description": "Determine whether there are any other obstacles such as utility poles, fire hydrants, or bollards along this pathway which impede travel.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:pathway_obstacle",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, an obstacle is present."
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there is no obstacle present."
+                    }
+                ]
+            },
+            {
+                "quest_id": 8,
+                "quest_title": "Is there aqeuate lighting for this pathway?",
+                "quest_description": "Determine whether there is adequare lighting from streetlights for this pathway.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:pathway_lit",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, there is adequate lighting."
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there is not adequate lighting."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "element_type": "Crossings",
+        "quest_query": "ways with (footway = crossing)",
+        "quests": [
+            {
+                "quest_id": 9,
+                "quest_title": "Are there markings on the roadway for this crossing?",
+                "quest_description": "Determine whether there are high-visibility road markings present for this crossing.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:crossing_markings",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, there are markings present.",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_paired_small.png"
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there are no markings present.",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_small.png"
+                    }
+                ]
+            },
+            {
+                "quest_id": 10,
+                "quest_title": "Are there pedestrian traffic signals for this crossing?",
+                "quest_description": "Determine whether there are pedestrian traffic signals present for this crossing.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:crossing_signals",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, there are signals present."
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there are no signals present."
+                    }
+                ]
+            },
+            {
+                "quest_id": 11,
+                "quest_title": "Do the pedestrian signals have auditory output?",
+                "quest_description": "Determine whether the pedestrian traffic signals have auditory output for this crossing.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:crossing_signals_sound",
+                "quest_answer_dependency": {
+                    "question_id": 10,
+                    "required_value": "yes"
+                },
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, there are auditory signals present."
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there are no auditory signals present."
+                    }
+                ]
+            },
+            {
+                "quest_id": 12,
+                "quest_title": "Do the pedestrian signals have tactile arrows?",
+                "quest_description": "Determine whether the pedestrian traffic signals have tactile arrows pointing in the direction of travel for this crossing.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:crossing_signals_arrow",
+                "quest_answer_dependency": {
+                    "question_id": 10,
+                    "required_value": "yes"
+                },
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, there are tactile arrows present."
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there are no tactile arrows present."
+                    }
+                ]
+            },
+            {
+                "quest_id": 13,
+                "quest_title": "Is there a traffic island for this crossing?",
+                "quest_description": "Determine whether there is a pedestrian refugee traffic island with physical barriers such as raised curbs present for this crossing.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:crossing_island",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, there is a traffic island present."
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there is not a traffic island present."
+                    }
+                ]
+            },
+            {
+                "quest_id": 14,
+                "quest_title": "Is there aqeuate lighting for this crossing?",
+                "quest_description": "Determine whether there is adequare lighting from streetlights for this crossing.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:crossing_lit",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, there is adequate lighting."
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there is not adequate lighting."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "element_type": "Kerb",
+        "quest_query": "nodes with (barrier = kerb)",
+        "quests": [
+            {
+                "quest_id": 15,
+                "quest_title": "What type of curb is this?",
+                "quest_description": "Determine the type of this curb.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:curb_type",
+                "quest_answer_choices": [
+                    {
+                        "value": "lowered",
+                        "choice_text": "There is a lowered curb ramp present.",
+                        "image_url": "https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/res/graphics/curb_type/lowered_wide.png"
+                    },
+                    {
+                        "value": "flush",
+                        "choice_text": "There is a flush curb present.",
+                        "image_url": "https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/res/graphics/curb_type/flush_wide.png"
+                    },
+                    {
+                        "value": "raised",
+                        "choice_text": "There is a raised curb present.",
+                        "image_url": "https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/res/graphics/curb_type/raised_wide.png"
+                    }
+                ]
+            },
+            {
+                "quest_id": 16,
+                "quest_title": "Is there tactile paving at this curb?",
+                "quest_description": "Determine whether there is a truncated dome tactile warning surface at this curb.",
+                "quest_type": "ExclusiveChoice",
+                "quest_tag": "ext:curb_tactile_paving",
+                "quest_answer_choices": [
+                    {
+                        "value": "yes",
+                        "choice_text": "Yes, there is tactile paving present.",
+                        "image_url": "https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/res/graphics/tactile_paving/yes_big.png"
+                    },
+                    {
+                        "value": "no",
+                        "choice_text": "No, there is not tactile paving present.",
+                        "image_url": "https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/quests/res/graphics/tactile_paving/no_big.png"
+                    }
+                ]
             }
         ]
     }
