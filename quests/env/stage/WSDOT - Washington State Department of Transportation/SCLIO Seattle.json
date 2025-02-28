@@ -150,14 +150,10 @@
                 "quest_description": "Determine the number of streetlights that exist along this pathway.",
                 "quest_type": "Numeric",
                 "quest_tag": "ext:pathway_count_streetlights",
-                "quest_answer_validation": [
-                    {
-                        "min": 0
-                    },
-                    {
-                        "max": 50
-                    }
-                ]
+                "quest_answer_validation": {
+                    "min": 0,
+                    "max": 50
+                }
             }
         ]
     },
