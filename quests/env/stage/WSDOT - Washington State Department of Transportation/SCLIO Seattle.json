@@ -146,18 +146,16 @@
             },
             {
                 "quest_id": 8,
-                "quest_title": "Is there aqeuate lighting for this pathway?",
-                "quest_description": "Determine whether there is adequare lighting from streetlights for this pathway.",
-                "quest_type": "ExclusiveChoice",
-                "quest_tag": "ext:pathway_lit",
-                "quest_answer_choices": [
+                "quest_title": "How many streetlights are present along this pathway?",
+                "quest_description": "Determine the number of streetlights that exist along this pathway.",
+                "quest_type": "Numeric",
+                "quest_tag": "ext:pathway_count_streetlights",
+                "quest_answer_validation": [
                     {
-                        "value": "yes",
-                        "choice_text": "Yes, there is adequate lighting."
+                        "min": 0
                     },
                     {
-                        "value": "no",
-                        "choice_text": "No, there is not adequate lighting."
+                        "max": 50
                     }
                 ]
             }
