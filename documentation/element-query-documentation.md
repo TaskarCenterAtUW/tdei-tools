@@ -11,12 +11,12 @@ Eg. To get all ways, simply write the query
  | `!shop`						| doesn't have a tag with key `shop`																						|
  | `shop = car`					| has a tag with key `shop` whose value is `car`																			|
  | `shop != car`				| doesn't have a tag with key `shop` whose value is `car`																	|
- | `~shop|craft`				| has a tag whose key matches the regex `shop|craft`																		|
- | `!~shop|craft`				| doesn't have a tag whose key matches the regex `shop|craft`																|
- | `shop ~ car|boat`			| has a tag whose key is `shop` and whose value matches the regex `car|boat`												|
- | `shop !~ car|boat`			| doesn't have a tag whose key is `shop` and value matches the regex `car|boat`												|
- | `~shop|craft ~ car|boat`		| has a tag whose key matches `shop|craft` and value matches `car|boat` (both regexes)										|
- | `~shop|craft !~ car|boat`	| doesn't have a tag whose key matches `shop|craft` and value matches `car|boat` (both regexes)								|
+ | `~shop\|craft`				| has a tag whose key matches the regex `shop\|craft`																		|
+ | `!~shop\|craft`				| doesn't have a tag whose key matches the regex `shop\|craft`																|
+ | `shop ~ car\|boat`			| has a tag whose key is `shop` and whose value matches the regex `car\|boat`												|
+ | `shop !~ car\|boat`			| doesn't have a tag whose key is `shop` and value matches the regex `car\|boat`												|
+ | `~shop\|craft ~ car\|boat`		| has a tag whose key matches `shop\|craft` and value matches `car\|boat` (both regexes)										|
+ | `~shop\|craft !~ car\|boat`	| doesn't have a tag whose key matches `shop\|craft` and value matches `car\|boat` (both regexes)								|
  | `foo < 3.3`					| has a tag with key `foo` whose value is smaller than 2.5<br/>`<`,`<=`,`>=`,`>` work likewise								|
  | `foo < 3.3ft`				| same as above but value is smaller than 3.3 feet (~1 meter)<br/>This works for other units as well (mph, st, lbs, yds...)	|
  | `foo < 3'4"`					| same as above but value is smaller than 3 feet, 4 inches (~1 meter)														|
@@ -28,14 +28,14 @@ Eg. To get all ways, simply write the query
  | `shop or craft`				| has either a tag with key `shop` or a tag with key `craft`																|
  | `shop and (ref or name)`		| has a tag with key `shop` and either a tag with key `ref` or a tag with key `name`										|
  | `shop and !(ref or name)`	| has a tag with key `shop` but not either a tag with key `ref` or a tag with key `name`									|
- Note that regexes have to match the whole string, i.e. `~shop|craft` does not match `shop_type`.
+ Note that regexes have to match the whole string, i.e. `~shop\|craft` does not match `shop_type`.
  
  ## Equivalent expressions
  | expression					| equivalent expression										|
  | :--------------------------- | :-------------------------------------------------------- |
  | `shop and shop = boat`		| `shop = boat`												|
  | `!shop or shop != boat`		| `shop != boat`											|
- | `shop = car or shop = boat`	| `shop ~ car|boat`											|
+ | `shop = car or shop = boat`	| `shop ~ car\|boat`											|
  | `craft or shop and name`		| `craft or (shop and name)` (`and` has higher precedence)	|
  | `!(amenity and craft)`		| `!amenity or !craft`										|
  | `!(amenity or craft)`		| `!amenity and !craft`										|
