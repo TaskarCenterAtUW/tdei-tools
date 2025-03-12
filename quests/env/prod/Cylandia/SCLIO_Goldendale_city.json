@@ -491,7 +491,7 @@
   },
   {
     "element_type": "Bus Stops",
-    "quest_query": "nodes with (highway=bus_stop)",
+    "quest_query": "nodes with (ext:highway=bus_stop)",
     "quests": [
       {
         "quest_id": 23,
