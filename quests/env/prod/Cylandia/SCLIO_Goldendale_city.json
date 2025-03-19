@@ -97,7 +97,7 @@
           {
             "value": "aligned",
             "choice_text": "Aligned",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_alignment/aligned_bing.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_alignment/aligned_big.png"
           },
           {
             "value": "misaligned",
@@ -279,7 +279,7 @@
           "question_id": 13,
           "required_value": "yes"
         },
-        "quest_image": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/tactile_paving_depth_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/tactile_paving_depth_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:tactile_paving_depth",
         "quest_answer_validation": {
