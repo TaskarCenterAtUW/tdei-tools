@@ -700,12 +700,8 @@
       },
       {
         "quest_id": 31,
-        "quest_title": "Does this bus stop have a waste bin?",
-        "quest_description": "Indicate whether this bus stop has a waste basket.",
-        "quest_answer_dependency": {
-          "question_id": 23,
-          "required_value": "yes"
-        },
+        "quest_title": "Is there a waste bin here?",
+        "quest_description": "Indicate whether this location has a publicly accessible trash can present.",
         "quest_type": "ExclusiveChoice",
         "quest_tag": "ext:bus_bin",
         "quest_answer_choices": [
