@@ -1,0 +1,1190 @@
+[
+  {
+    "element_type": "Curb Ramp",
+    "quest_query": "nodes with (barrier=kerb)",
+    "quests": [
+      {
+        "quest_id": 1,
+        "quest_title": "What type of curb is this?",
+        "quest_description": "Identify the type of curb here.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:curb_type",
+        "quest_answer_choices": [
+          {
+            "value": "raised",
+            "choice_text": "Raised",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
+          },
+          {
+            "value": "lowered",
+            "choice_text": "Lowered",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
+          },
+          {
+            "value": "rolled",
+            "choice_text": "Rolled",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/rolled_wide.png"
+          },
+          {
+            "value": "flush",
+            "choice_text": "Flush",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
+          }
+        ]
+      },
+      {
+        "quest_id": 2,
+        "quest_title": "What type of lowered curb is this?",
+        "quest_description": "Identify if this is a curb ramp or blended transition.",
+        "quest_answer_dependency": {
+          "question_id": 1,
+          "required_value": "lowered"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:lowered_curb_type",
+        "quest_answer_choices": [
+          {
+            "value": "curb_ramp",
+            "choice_text": "Curb Ramp",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/curb_ramp_big.png"
+          },
+          {
+            "value": "blended_transition",
+            "choice_text": "Blended Transition",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/blended_transition_big.png"
+          }
+        ]
+      },
+      {
+        "quest_id": 3,
+        "quest_title": "What type of ramp placement is this?",
+        "quest_description": "Select this ramp's placement type.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:ramp_placement_type",
+        "quest_answer_choices": [
+          {
+            "value": "perpendicular",
+            "choice_text": "Perpendicular",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_placement/perpendicular_wide.png"
+          },
+          {
+            "value": "parallel",
+            "choice_text": "Parallel",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_placement/parallel_wide.png"
+          },
+          {
+            "value": "combination",
+            "choice_text": "Combination",
+            "image_url": ""
+          }
+        ]
+      },
+      {
+        "quest_id": 4,
+        "quest_title": "Does this curb ramp align with the crosswalk?",
+        "quest_description": "Check if this curb ramp lines up with the pedestrian crossing.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:ramp_alignment_with_crossing",
+        "quest_answer_choices": [
+          {
+            "value": "aligned",
+            "choice_text": "Aligned",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_alignment/aligned_bing.png"
+          },
+          {
+            "value": "misaligned",
+            "choice_text": "Misaligned",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_alignment/misaligned_big.png"
+          }
+        ]
+      },
+      {
+        "quest_id": 5,
+        "quest_title": "Does this curb ramp have edge protection?",
+        "quest_description": "Check if there is a vertical barrier to prevent falls.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:ramp_edge_protection",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": ""
+          },
+          {
+            "value": "no",
+            "choice_text": "No",
+            "image_url": ""
+          }
+        ]
+      },
+      {
+        "quest_id": 6,
+        "quest_title": "What is the width of this curb ramp?",
+        "quest_description": "Measure the clear width of this curb ramp, in inches.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_width_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:ramp_width",
+        "quest_answer_validation": {
+          "min": 4,
+          "max": 120
+        }
+      },
+      {
+        "quest_id": 7,
+        "quest_title": "What is the running slope of this curb ramp?",
+        "quest_description": "Measure the incline along the direction of travel, as a percentage.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_type": "Numeric",
+        "quest_tag": "ext:ramp_running_slope",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_running_slope_big.png",
+        "quest_answer_validation": {
+          "min": 1,
+          "max": 50
+        }
+      },
+      {
+        "quest_id": 8,
+        "quest_title": "What is the cross slope of this curb ramp?",
+        "quest_description": "Measure the side-to-side incline of this curb ramp, as a percentage.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_cross_slope_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:ramp_cross_slope",
+        "quest_answer_validation": {
+          "min": 1,
+          "max": 50
+        }
+      },
+      {
+        "quest_id": 9,
+        "quest_title": "What is the width of this ramp's landing?",
+        "quest_description": "Measure the width of this ramp's top landing area, in inches.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/landing/landing_width_wide.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:landing_width",
+        "quest_answer_validation": {
+          "min": 3,
+          "max": 120
+        }
+      },
+      {
+        "quest_id": 10,
+        "quest_title": "What is the depth of this ramp's landing?",
+        "quest_description": "Measure the depth of this ramp's top landing area, in inches.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/landing/landing_depth_wide.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:landing_depth",
+        "quest_answer_validation": {
+          "min": 3,
+          "max": 120
+        }
+      },
+      {
+        "quest_id": 11,
+        "quest_title": "What is the slope of this ramp's side flares?",
+        "quest_description": "Measure the slope of this ramp's side flares, as a percentage.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_side_flare_slope_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:ramp_side_flare_slope",
+        "quest_answer_validation": {
+          "min": 1,
+          "max": 50
+        }
+      },
+      {
+        "quest_id": 12,
+        "quest_title": "What is the surface material of this curb ramp?",
+        "quest_description": "Identify the material this curb ramp is made of.",
+        "quest_answer_dependency": {
+          "question_id": 2,
+          "required_value": "curb_ramp"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:ramp_surface_material",
+        "quest_answer_choices": [
+          {
+            "value": "concrete",
+            "choice_text": "Concrete",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_surface/concrete_wide.png"
+          },
+          {
+            "value": "asphalt",
+            "choice_text": "Asphalt",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_surface/asphalt_wide.png"
+          },
+          {
+            "value": "other",
+            "choice_text": "Other"
+          }
+        ]
+      },
+      {
+        "quest_id": 13,
+        "quest_title": "Are there detectable warnings or a tactile strip present?",
+        "quest_description": "Check if there is a tactile warning surface at the curb ramp.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:tactile_paving_presence",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
+          },
+          {
+            "value": "no",
+            "choice_text": "No",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
+          }
+        ]
+      },
+      {
+        "quest_id": 14,
+        "quest_title": "What is the depth of this detectable warning surface?",
+        "quest_description": "Measure the depth of this tactile warning surface, in inches.",
+        "quest_answer_dependency": {
+          "question_id": 13,
+          "required_value": "yes"
+        },
+        "quest_image": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/tactile_paving_depth_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:tactile_paving_depth",
+        "quest_answer_validation": {
+          "min": 3,
+          "max": 120
+        }
+      },
+      {
+        "quest_id": 15,
+        "quest_title": "What is the gutter slope?",
+        "quest_description": "Measure the slope of the gutter along the pedestrian access route as a percentage.",
+        "quest_image": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_gutter_slope_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:gutter_slope",
+        "quest_answer_validation": {
+          "min": 1,
+          "max": 50
+        }
+      }
+    ]
+  },
+  {
+    "element_type": "Sidewalks",
+    "quest_query": "ways with (highway=footway and footway=sidewalk)",
+    "quests": [
+      {
+        "quest_id": 16,
+        "quest_title": "What is the width of this sidewalk?",
+        "quest_description": "Please measure the clear width of this sidewalk, excluding any obstructions, in inches.",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_width_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:sidewalk_width",
+        "quest_answer_validation": {
+          "min": 3,
+          "max": 120
+        }
+      },
+      {
+        "quest_id": 17,
+        "quest_title": "What is the width of this sidewalk at its narrowest point?",
+        "quest_description": "Please measure the clear width of this sidewalk, at its narrowest point, in inches.",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_narrowest_width_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:sidewalk_narrowest_width",
+        "quest_answer_validation": {
+          "min": 3,
+          "max": 120
+        }
+      },
+      {
+        "quest_id": 18,
+        "quest_title": "What is the cross slope of this sidewalk at its steepest point?",
+        "quest_description": "Measure the side-to-side tilt of this sidewalk, as a percentage.",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_cross_slope_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:sidewalk_cross_slope",
+        "quest_answer_validation": {
+          "min": 1,
+          "max": 50
+        }
+      },
+      {
+        "quest_id": 19,
+        "quest_title": "What is the surface material of this sidewalk?",
+        "quest_description": "Select the material that best describes this sidewalk's surface.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk_surface_material",
+        "quest_answer_choices": [
+          {
+            "value": "concrete",
+            "choice_text": "Concrete",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+          },
+          {
+            "value": "asphalt",
+            "choice_text": "Asphalt",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_wide.png"
+          },
+          {
+            "value": "pavers",
+            "choice_text": "Pavers",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/pavers_wide.png"
+          },
+          {
+            "value": "brick",
+            "choice_text": "Brick",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
+          },
+          {
+            "value": "compacted_gravel",
+            "choice_text": "Compacted Gravel",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/compacted_gravel_wide.png"
+          },
+          {
+            "value": "rubberized_surface",
+            "choice_text": "Rubberized Surface",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/rubberized_wide.png"
+          }
+        ]
+      },
+      {
+        "quest_id": 20,
+        "quest_title": "What is the surface condition of this sidewalk?",
+        "quest_description": "Select the best description of the sidewalk surface in terms of firmness, stability, and slip resistance.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "sidewalk:surface_condition",
+        "quest_answer_choices": [
+          {
+            "value": "firm_stable_slip_resistant",
+            "choice_text": "Firm, Stable, and Slip-Resistant"
+          },
+          {
+            "value": "cracked",
+            "choice_text": "Cracked"
+          },
+          {
+            "value": "heaved",
+            "choice_text": "Heaved"
+          },
+          {
+            "value": "uneven",
+            "choice_text": "Uneven"
+          },
+          {
+            "value": "slippery",
+            "choice_text": "Slippery"
+          },
+          {
+            "value": "eroded",
+            "choice_text": "Eroded"
+          },
+          {
+            "value": "loose_gravel",
+            "choice_text": "Loose Gravel"
+          }
+        ]
+      },
+      {
+        "quest_id": 21,
+        "quest_title": "Are there any obstructions on the sidewalk?",
+        "quest_description": "Select any obstructions that reduce the clear width of the sidewalk.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk:obstructions",
+        "quest_answer_choices": [
+          {
+            "value": "none",
+            "choice_text": "No Obstructions"
+          },
+          {
+            "value": "utility_poles",
+            "choice_text": "Utility Poles"
+          },
+          {
+            "value": "parked_cars",
+            "choice_text": "Parked Cars"
+          },
+          {
+            "value": "bollards",
+            "choice_text": "Bollards"
+          },
+          {
+            "value": "trash_bins",
+            "choice_text": "Trash Bins"
+          },
+          {
+            "value": "mail_boxes",
+            "choice_text": "Mail Boxes"
+          }
+        ]
+      },
+      {
+        "quest_id": 22,
+        "quest_title": "Are there frequent temporary obstructions on this sidewalk?",
+        "quest_description": "Select any obstructions that reduce the clear width of the sidewalk.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk:transient_obstructions",
+        "quest_answer_choices": [
+          {
+            "value": "none",
+            "choice_text": "No Obstructions"
+          },
+          {
+            "value": "overgrown_vegetation",
+            "choice_text": "Overgrown Vegetation"
+          },
+          {
+            "value": "overhead_vegetation",
+            "choice_text": "Overhead Vegetation"
+          },
+          {
+            "value": "debris",
+            "choice_text": "Debris"
+          },
+          {
+            "value": "sandwich_boards",
+            "choice_text": "Sandwich Boards"
+          },
+          {
+            "value": "micromobility",
+            "choice_text": "Micromobility Vehicles"
+          },
+          {
+            "value": "parked_cars",
+            "choice_text": "Parked Cars"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_type": "Bus Stops",
+    "quest_query": "nodes with (ext:highway=bus_stop)",
+    "quests": [
+      {
+        "quest_id": 23,
+        "quest_title": "Is there something here to indicate the presence of a bus stop?",
+        "quest_description": "Indicate whether this bus stop has signage or infrastructure to visually identify that this location is a bus stop.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_indicator",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 24,
+        "quest_title": "Does this bus stop have a sandwich board to visually identify this stop?",
+        "quest_description": "Indicate whether this bus stop has sandwich board to visually identify that this location is a bus stop.",
+        "quest_answer_dependency": {
+          "question_id": 23,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_sandwich",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 25,
+        "quest_title": "Does this bus stop have a bus stop pole to visually identify this stop?",
+        "quest_description": "Indicate whether this bus stop has bus stop pole to visually identify that this location is a bus stop.",
+        "quest_answer_dependency": {
+          "question_id": 23,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_pole",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 26,
+        "quest_title": "Does this bus stop have a shelter?",
+        "quest_description": "Indicate whether this bus stop has a shelter to protect waiting passengers from weather conditions.",
+        "quest_answer_dependency": {
+          "question_id": 23,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_shelter",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 27,
+        "quest_title": "Does this bus stop have seating available?",
+        "quest_description": "Indicate whether this bus stop has a place for waiting passengers to sit.",
+        "quest_answer_dependency": {
+          "question_id": 23,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_bench",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 28,
+        "quest_title": "Does this bus stop have schedule information posted?",
+        "quest_description": "Indicate whether this bus stop has schedule information posted.",
+        "quest_answer_dependency": {
+          "question_id": 23,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_schedule",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 29,
+        "quest_title": "How is the schedule information posted?",
+        "quest_description": "Indicate how this bus stop displays schedule information.",
+        "quest_answer_dependency": {
+          "question_id": 28,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_schedule_display",
+        "quest_answer_choices": [
+          {
+            "value": "inside_shelter",
+            "choice_text": "Inside a shelter"
+          },
+          {
+            "value": "sandwich_board",
+            "choice_text": "On a sandwich board"
+          },
+          {
+            "value": "bus_pole",
+            "choice_text": "On the bus stop pole"
+          }
+        ]
+      },
+      {
+        "quest_id": 30,
+        "quest_title": "Is the posted schedule accurate and up to date?",
+        "quest_description": "Indicate whether this bus stop has a place for schedule information to be posted.",
+        "quest_answer_dependency": {
+          "question_id": 28,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_schedule_accurate",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 31,
+        "quest_title": "Does this bus stop have a waste bin?",
+        "quest_description": "Indicate whether this bus stop has a waste basket.",
+        "quest_answer_dependency": {
+          "question_id": 23,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_bin",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 32,
+        "quest_title": "What level of lighting is present?",
+        "quest_description": "Indicate the degree to which this bus stop is lit.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_lit",
+        "quest_answer_choices": [
+          {
+            "value": "none",
+            "choice_text": "None"
+          },
+          {
+            "value": "dim",
+            "choice_text": "Dim"
+          },
+          {
+            "value": "well_lit",
+            "choice_text": "Well Lit"
+          }
+        ]
+      },
+      {
+        "quest_id": 33,
+        "quest_title": "Is there a public restroom nearby?",
+        "quest_description": "Indicate whether there is a public restroom near this bus stop.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_restroom",
+        "quest_answer_choices": [
+          {
+            "value": "no",
+            "choice_text": "No, not within two blocks"
+          },
+          {
+            "value": "restroom_two_blocks",
+            "choice_text": "Yes, within two blocks"
+          },
+          {
+            "value": "restroom_one_block",
+            "choice_text": "Yes, within one block"
+          },
+          {
+            "value": "restroom_at",
+            "choice_text": "Yes, directly next to this stop"
+          }
+        ]
+      },
+      {
+        "quest_id": 34,
+        "quest_title": "Is there ADA-compliant parking nearby?",
+        "quest_description": "Indicate whether there is ADA-compliant parking near this bus stop.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_ada_parking",
+        "quest_answer_choices": [
+          {
+            "value": "no",
+            "choice_text": "No, not within two blocks"
+          },
+          {
+            "value": "parking_two_blocks",
+            "choice_text": "Yes, within two blocks"
+          },
+          {
+            "value": "parking_one_block",
+            "choice_text": "Yes, within one block"
+          },
+          {
+            "value": "parking_at",
+            "choice_text": "Yes, directly next to this stop"
+          }
+        ]
+      },
+      {
+        "quest_id": 35,
+        "quest_title": "How do pedestrians access this bus stop?",
+        "quest_description": "Indicate the type of walkway pedestrians use to reach this bus stop.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_walkway",
+        "quest_answer_choices": [
+          {
+            "value": "sidewalk",
+            "choice_text": "Sidewalk"
+          },
+          {
+            "value": "roadway",
+            "choice_text": "Roadway"
+          }
+        ]
+      },
+      {
+        "quest_id": 36,
+        "quest_title": "What is the surface material of this sidewalk?",
+        "quest_description": "Indicate the type of surface material for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 35,
+          "required_value": "sidewalk"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_sidewalk_material",
+        "quest_answer_choices": [
+          {
+            "value": "asphalt",
+            "choice_text": "Asphalt"
+          },
+          {
+            "value": "concrete",
+            "choice_text": "Concrete"
+          }
+        ]
+      },
+      {
+        "quest_id": 37,
+        "quest_title": "What is the surface condition of this sidewalk?",
+        "quest_description": "Indicate the surface condition for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 35,
+          "required_value": "sidewalk"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_sidewalk_condition",
+        "quest_answer_choices": [
+          {
+            "value": "firm_stable_slip_resistant",
+            "choice_text": "Firm, Stable, and Slip-Resistant",
+            "image_url": ""
+          },
+          {
+            "value": "cracked",
+            "choice_text": "Cracked",
+            "image_url": ""
+          },
+          {
+            "value": "heaved",
+            "choice_text": "Heaved",
+            "image_url": ""
+          },
+          {
+            "value": "uneven",
+            "choice_text": "Uneven",
+            "image_url": ""
+          },
+          {
+            "value": "slippery",
+            "choice_text": "Slippery",
+            "image_url": ""
+          },
+          {
+            "value": "eroded",
+            "choice_text": "Eroded",
+            "image_url": ""
+          },
+          {
+            "value": "loose_gravel",
+            "choice_text": "Loose Gravel",
+            "image_url": ""
+          }
+        ]
+      },
+      {
+        "quest_id": 38,
+        "quest_title": "Are there any obstacles present on the sidewalk leading to this bus stop?",
+        "quest_description": "Indicate the presence of any barriers to getting to this bus stop.",
+        "quest_answer_dependency": {
+          "question_id": 35,
+          "required_value": "sidewalk"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_sidewalk_obstacles",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 39,
+        "quest_title": "Is there a tree obstructing this sidewalk?",
+        "quest_description": "Indicate if trees are a barrier to travel for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 38,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_obstacle_trees",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": ""
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 40,
+        "quest_title": "Is there a tree root causing a sidewalk disruption?",
+        "quest_description": "Indicate if tree roots are a barrier to travel for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 38,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_obstacle_roots",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions/roots_big.png"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 41,
+        "quest_title": "Is there overgrown vegetation obstructing the sidewalk?",
+        "quest_description": "Indicate if overgrown vegetation is a barrier to travel for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 38,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_obstacle_overgrown",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overgrown_wide.png"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 42,
+        "quest_title": "Are there parked cars obstructing the sidewalk?",
+        "quest_description": "Indicate if parked cars are a barrier to travel for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 38,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_obstacle_cars",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_wide.png"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 43,
+        "quest_title": "Is there a utility pole obstructing the sidewalk?",
+        "quest_description": "Indicate if utility poles are a barrier to travel for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 38,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_obstacle_poles",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions/utility_wide.png"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 44,
+        "quest_title": "Are there signs or advertisements obstructing the sidewalk?",
+        "quest_description": "Indicate if signs or advertisements are a barrier to travel for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 38,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_obstacle_signs",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": ""
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 45,
+        "quest_title": "Is there street furniture obstructing the sidewalk?",
+        "quest_description": "Indicate if street furniture such as street cabinets are a barrier to travel for this sidewalk.",
+        "quest_answer_dependency": {
+          "question_id": 38,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_obstacle_furniture",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions/street_furniture_big.png"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 46,
+        "quest_title": "Are there curb cuts for the sidewalk leading to this bus stop?",
+        "quest_description": "Indicate the presence of curb cuts (curb ramps) to access this bus stop.",
+        "quest_answer_dependency": {
+          "question_id": 35,
+          "required_value": "sidewalk"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_curb_cuts",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/raised_2_wide.png"
+          }
+        ]
+      },
+      {
+        "quest_id": 47,
+        "quest_title": "What type of curb cuts lead to this bus stop?",
+        "quest_description": "Indicate the type of curb cuts that access this bus stop.",
+        "quest_answer_dependency": {
+          "question_id": 46,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_curb_cuts",
+        "quest_answer_choices": [
+          {
+            "value": "lowered",
+            "choice_text": "Lowered",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
+          },
+          {
+            "value": "flush",
+            "choice_text": "Flush",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
+          }
+        ]
+      },
+      {
+        "quest_id": 48,
+        "quest_title": "Do the curb ramps that lead to this bus stop have tactile paving?",
+        "quest_description": "Indicate the presence of tactile paving warning surfaces for curb cuts that lead to access for this bus stop.",
+        "quest_answer_dependency": {
+          "question_id": 46,
+          "required_value": "yes"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_curb_tactile",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
+          },
+          {
+            "value": "no",
+            "choice_text": "No",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
+          }
+        ]
+      },
+      {
+        "quest_id": 49,
+        "quest_title": "Are there crosswalks nearby that lead to this bus stop?",
+        "quest_description": "Indicate the presence of crosswalks that access this bus stop.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_crossings",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 50,
+        "quest_title": "Is there a paved shoulder on this roadway?",
+        "quest_description": "Indicate the presence of a traversable shoulder for this roadway.",
+        "quest_answer_dependency": {
+          "question_id": 35,
+          "required_value": "roadway"
+        },
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_roadway_shoulder",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes"
+          },
+          {
+            "value": "no",
+            "choice_text": "No"
+          }
+        ]
+      },
+      {
+        "quest_id": 51,
+        "quest_title": "What is the slope of this sidewalk or roadway at its steepest point?",
+        "quest_description": "Measure the slope of this walkway, as a percentage.",
+        "quest_image_url": "",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:bus_slope",
+        "quest_answer_validation": {
+          "min": 0,
+          "max": 45
+        }
+      },
+      {
+        "quest_id": 52,
+        "quest_title": "What is the cross slope of this sidewalk or roadway at its steepest point?",
+        "quest_description": "Measure the side-to-side tilt of this sidewalk, as a percentage.",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_cross_slope_big.png",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:bus_cross_slope",
+        "quest_answer_validation": {
+          "min": 0,
+          "max": 45
+        }
+      },
+      {
+        "quest_id": 53,
+        "quest_title": "What is the distance between where the pedestrian waits and the nearest traffic lane, in feet?",
+        "quest_description": "Measure the distance between bus stop and traffic lane in feet.",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:bus_wait_distance",
+        "quest_answer_validation": {
+          "min": 0,
+          "max": 50
+        }
+      },
+      {
+        "quest_id": 54,
+        "quest_title": "What is the speed limit on this street?",
+        "quest_description": "Record the speed limit for the street where this bus stop is located.",
+        "quest_type": "Numeric",
+        "quest_tag": "ext:bus_speed_limit",
+        "quest_answer_validation": {
+          "min": 0,
+          "max": 80
+        }
+      },
+      {
+        "quest_id": 55,
+        "quest_title": "Is this bus stop located in a flood zone?",
+        "quest_description": "Indicate whether this bus stop is periodically flooded or experiences drainage issues.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:bus_floodprone",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes",
+            "image_url": ""
+          },
+          {
+            "value": "no",
+            "choice_text": "No",
+            "image_url": ""
+          }
+        ]
+      }
+    ]
+  }
+]
