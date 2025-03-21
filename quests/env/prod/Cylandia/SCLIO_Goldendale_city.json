@@ -382,50 +382,157 @@
       },
       {
         "quest_id": 20,
-        "quest_title": "What is the surface condition of this sidewalk?",
-        "quest_description": "Select the best description of the sidewalk surface in terms of firmness, stability, and slip resistance.",
+        "quest_title": "Is this sidewalk's surface in good condition?",
+        "quest_description": "Indicate whether this sidewalk's surface is firm, stable, and slip-resistant.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "sidewalk:surface_condition",
+        "quest_tag": "ext:sidewalk_surface_condition",
         "quest_answer_choices": [
           {
-            "value": "firm_stable_slip_resistant",
-            "choice_text": "Firm, Stable, and Slip-Resistant",
+            "value": "good",
+            "choice_text": "Yes: Firm, Stable, and Slip-Resistant",
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
           },
           {
-            "value": "cracked",
-            "choice_text": "Cracked",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_wide.png"
-          },
-          {
-            "value": "heaved",
-            "choice_text": "Heaved",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/heaved_wide.png"
-          },
-          {
-            "value": "uneven",
-            "choice_text": "Uneven",
+            "value": "bad",
+            "choice_text": "No: not Firm, Stable, and Slip-Resistant",
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_wide.png"
-          },
-          {
-            "value": "slippery",
-            "choice_text": "Slippery",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/slippery_wide.png"
-          },
-          {
-            "value": "eroded",
-            "choice_text": "Eroded",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/eroded_2_wide.png"
-          },
-          {
-            "value": "loose_gravel",
-            "choice_text": "Loose Gravel",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/loose_gravel_wide.png"
           }
         ]
       },
       {
         "quest_id": 21,
+        "quest_title": "Is this sidewalk's surface cracked?",
+        "quest_description": "Indicate whether this sidewalk's surface has large cracks.",
+        "quest_answer_dependency": {
+          "question_id": 20,
+          "required_value": "bad"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_wide.png",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk_cracked",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes."
+          },
+          {
+            "value": "no",
+            "choice_text": "No."
+          }
+        ]
+      },
+      {
+        "quest_id": 22,
+        "quest_title": "Is this sidewalk's surface heaved?",
+        "quest_description": "Indicate whether this sidewalk's surface is heaved.",
+        "quest_answer_dependency": {
+          "question_id": 20,
+          "required_value": "bad"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/heaved_wide.png",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk_heaved",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes."
+          },
+          {
+            "value": "no",
+            "choice_text": "No."
+          }
+        ]
+      },
+      {
+        "quest_id": 23,
+        "quest_title": "Is this sidewalk's surface uneven?",
+        "quest_description": "Indicate whether this sidewalk's surface is uneven.",
+        "quest_answer_dependency": {
+          "question_id": 20,
+          "required_value": "bad"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_wide.png",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk_uneven",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes."
+          },
+          {
+            "value": "no",
+            "choice_text": "No."
+          }
+        ]
+      },
+      {
+        "quest_id": 24,
+        "quest_title": "Is this sidewalk's surface slippery?",
+        "quest_description": "Indicate whether this sidewalk's surface is slippery.",
+        "quest_answer_dependency": {
+          "question_id": 20,
+          "required_value": "bad"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/slippery_wide.png",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk_slippery",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes."
+          },
+          {
+            "value": "no",
+            "choice_text": "No."
+          }
+        ]
+      },
+      {
+        "quest_id": 25,
+        "quest_title": "Is this sidewalk's surface eroded?",
+        "quest_description": "Indicate whether this sidewalk's surface is eroded.",
+        "quest_answer_dependency": {
+          "question_id": 20,
+          "required_value": "bad"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/eroded_2_wide.png",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk_eroded",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes."
+          },
+          {
+            "value": "no",
+            "choice_text": "No."
+          }
+        ]
+      },
+      {
+        "quest_id": 26,
+        "quest_title": "Is this sidewalk's surface loose?",
+        "quest_description": "Indicate whether this sidewalk's surface is loose,.",
+        "quest_answer_dependency": {
+          "question_id": 20,
+          "required_value": "bad"
+        },
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/loose_gravel_wide.png",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:sidewalk_loose",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes."
+          },
+          {
+            "value": "no",
+            "choice_text": "No."
+          }
+        ]
+      },
+      {
+        "quest_id": 27,
         "quest_title": "Are there any obstructions on the sidewalk?",
         "quest_description": "Select any obstructions that reduce the clear width of the sidewalk.",
         "quest_type": "ExclusiveChoice",
@@ -464,7 +571,7 @@
         ]
       },
       {
-        "quest_id": 22,
+        "quest_id": 28,
         "quest_title": "Are there frequent temporary obstructions on this sidewalk?",
         "quest_description": "Select any obstructions that reduce the clear width of the sidewalk.",
         "quest_type": "ExclusiveChoice",
@@ -514,7 +621,7 @@
     "quest_query": "nodes with (ext:highway=bus_stop)",
     "quests": [
       {
-        "quest_id": 23,
+        "quest_id": 29,
         "quest_title": "Is there something here to indicate the presence of a bus stop?",
         "quest_description": "Indicate whether this bus stop has signage or infrastructure to visually identify that this location is a bus stop.",
         "quest_type": "ExclusiveChoice",
@@ -533,7 +640,7 @@
         ]
       },
       {
-        "quest_id": 24,
+        "quest_id": 30,
         "quest_title": "Does this bus stop have a sandwich board to visually identify this stop?",
         "quest_description": "Indicate whether this bus stop has sandwich board to visually identify that this location is a bus stop.",
         "quest_answer_dependency": {
@@ -556,7 +663,7 @@
         ]
       },
       {
-        "quest_id": 25,
+        "quest_id": 31,
         "quest_title": "Does this bus stop have a bus stop pole to visually identify this stop?",
         "quest_description": "Indicate whether this bus stop has bus stop pole to visually identify that this location is a bus stop.",
         "quest_answer_dependency": {
@@ -579,7 +686,7 @@
         ]
       },
       {
-        "quest_id": 26,
+        "quest_id": 32,
         "quest_title": "Does this bus stop have a shelter?",
         "quest_description": "Indicate whether this bus stop has a shelter to protect waiting passengers from weather conditions.",
         "quest_answer_dependency": {
@@ -602,7 +709,7 @@
         ]
       },
       {
-        "quest_id": 27,
+        "quest_id": 33,
         "quest_title": "Does this bus stop have seating available?",
         "quest_description": "Indicate whether this bus stop has a place for waiting passengers to sit.",
         "quest_answer_dependency": {
@@ -625,7 +732,7 @@
         ]
       },
       {
-        "quest_id": 28,
+        "quest_id": 34,
         "quest_title": "Does this bus stop have schedule information posted?",
         "quest_description": "Indicate whether this bus stop has schedule information posted.",
         "quest_answer_dependency": {
@@ -648,7 +755,7 @@
         ]
       },
       {
-        "quest_id": 29,
+        "quest_id": 35,
         "quest_title": "How is the schedule information posted?",
         "quest_description": "Indicate how this bus stop displays schedule information.",
         "quest_answer_dependency": {
@@ -676,7 +783,7 @@
         ]
       },
       {
-        "quest_id": 30,
+        "quest_id": 36,
         "quest_title": "Is the posted schedule accurate and up to date?",
         "quest_description": "Indicate whether this bus stop has a place for schedule information to be posted.",
         "quest_answer_dependency": {
@@ -699,7 +806,7 @@
         ]
       },
       {
-        "quest_id": 31,
+        "quest_id": 37,
         "quest_title": "Is there a waste bin here?",
         "quest_description": "Indicate whether this location has a publicly accessible trash can present.",
         "quest_type": "ExclusiveChoice",
@@ -718,7 +825,7 @@
         ]
       },
       {
-        "quest_id": 32,
+        "quest_id": 38,
         "quest_title": "What level of lighting is present?",
         "quest_description": "Indicate the degree to which this bus stop is lit.",
         "quest_type": "ExclusiveChoice",
@@ -742,7 +849,7 @@
         ]
       },
       {
-        "quest_id": 33,
+        "quest_id": 39,
         "quest_title": "Is there a public restroom nearby?",
         "quest_description": "Indicate whether there is a public restroom near this bus stop.",
         "quest_type": "ExclusiveChoice",
@@ -767,7 +874,7 @@
         ]
       },
       {
-        "quest_id": 34,
+        "quest_id": 40,
         "quest_title": "Is there ADA-compliant parking nearby?",
         "quest_description": "Indicate whether there is ADA-compliant parking near this bus stop.",
         "quest_type": "ExclusiveChoice",
@@ -792,7 +899,7 @@
         ]
       },
       {
-        "quest_id": 35,
+        "quest_id": 41,
         "quest_title": "How do pedestrians access this bus stop?",
         "quest_description": "Indicate the type of walkway pedestrians use to reach this bus stop.",
         "quest_type": "ExclusiveChoice",
@@ -811,7 +918,7 @@
         ]
       },
       {
-        "quest_id": 36,
+        "quest_id": 42,
         "quest_title": "What is the surface material of this sidewalk?",
         "quest_description": "Indicate the type of surface material for this sidewalk.",
         "quest_answer_dependency": {
@@ -834,7 +941,7 @@
         ]
       },
       {
-        "quest_id": 37,
+        "quest_id": 43,
         "quest_title": "What is the surface condition of this sidewalk?",
         "quest_description": "Indicate the surface condition for this sidewalk.",
         "quest_answer_dependency": {
@@ -882,7 +989,7 @@
         ]
       },
       {
-        "quest_id": 38,
+        "quest_id": 44,
         "quest_title": "Are there any obstacles present on the sidewalk leading to this bus stop?",
         "quest_description": "Indicate the presence of any barriers to getting to this bus stop.",
         "quest_answer_dependency": {
@@ -904,7 +1011,7 @@
         ]
       },
       {
-        "quest_id": 39,
+        "quest_id": 45,
         "quest_title": "Is there a tree obstructing this sidewalk?",
         "quest_description": "Indicate if trees are a barrier to travel for this sidewalk.",
         "quest_answer_dependency": {
@@ -926,7 +1033,7 @@
         ]
       },
       {
-        "quest_id": 40,
+        "quest_id": 46,
         "quest_title": "Is there a tree root causing a sidewalk disruption?",
         "quest_description": "Indicate if tree roots are a barrier to travel for this sidewalk.",
         "quest_answer_dependency": {
@@ -948,7 +1055,7 @@
         ]
       },
       {
-        "quest_id": 41,
+        "quest_id": 47,
         "quest_title": "Is there overgrown vegetation obstructing the sidewalk?",
         "quest_description": "Indicate if overgrown vegetation is a barrier to travel for this sidewalk.",
         "quest_answer_dependency": {
@@ -970,7 +1077,7 @@
         ]
       },
       {
-        "quest_id": 42,
+        "quest_id": 48,
         "quest_title": "Are there parked cars obstructing the sidewalk?",
         "quest_description": "Indicate if parked cars are a barrier to travel for this sidewalk.",
         "quest_answer_dependency": {
@@ -992,7 +1099,7 @@
         ]
       },
       {
-        "quest_id": 43,
+        "quest_id": 49,
         "quest_title": "Is there a utility pole obstructing the sidewalk?",
         "quest_description": "Indicate if utility poles are a barrier to travel for this sidewalk.",
         "quest_answer_dependency": {
@@ -1014,7 +1121,7 @@
         ]
       },
       {
-        "quest_id": 44,
+        "quest_id": 50,
         "quest_title": "Are there signs or advertisements obstructing the sidewalk?",
         "quest_description": "Indicate if signs or advertisements are a barrier to travel for this sidewalk.",
         "quest_answer_dependency": {
@@ -1036,7 +1143,7 @@
         ]
       },
       {
-        "quest_id": 45,
+        "quest_id": 51,
         "quest_title": "Is there street furniture obstructing the sidewalk?",
         "quest_description": "Indicate if street furniture such as street cabinets are a barrier to travel for this sidewalk.",
         "quest_answer_dependency": {
@@ -1058,7 +1165,7 @@
         ]
       },
       {
-        "quest_id": 46,
+        "quest_id": 52,
         "quest_title": "Are there curb cuts for the sidewalk leading to this bus stop?",
         "quest_description": "Indicate the presence of curb cuts (curb ramps) to access this bus stop.",
         "quest_answer_dependency": {
@@ -1081,7 +1188,7 @@
         ]
       },
       {
-        "quest_id": 47,
+        "quest_id": 53,
         "quest_title": "What type of curb cuts lead to this bus stop?",
         "quest_description": "Indicate the type of curb cuts that access this bus stop.",
         "quest_answer_dependency": {
@@ -1104,7 +1211,7 @@
         ]
       },
       {
-        "quest_id": 48,
+        "quest_id": 54,
         "quest_title": "Do the curb ramps that lead to this bus stop have tactile paving?",
         "quest_description": "Indicate the presence of tactile paving warning surfaces for curb cuts that lead to access for this bus stop.",
         "quest_answer_dependency": {
@@ -1127,7 +1234,7 @@
         ]
       },
       {
-        "quest_id": 49,
+        "quest_id": 55,
         "quest_title": "Are there crosswalks nearby that lead to this bus stop?",
         "quest_description": "Indicate the presence of crosswalks that access this bus stop.",
         "quest_type": "ExclusiveChoice",
@@ -1144,7 +1251,7 @@
         ]
       },
       {
-        "quest_id": 50,
+        "quest_id": 56,
         "quest_title": "Is there a paved shoulder on this roadway?",
         "quest_description": "Indicate the presence of a traversable shoulder for this roadway.",
         "quest_answer_dependency": {
@@ -1165,7 +1272,7 @@
         ]
       },
       {
-        "quest_id": 51,
+        "quest_id": 57,
         "quest_title": "What is the slope of this sidewalk or roadway at its steepest point?",
         "quest_description": "Measure the slope of this walkway, as a percentage.",
         "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_slope_big.png",
@@ -1177,7 +1284,7 @@
         }
       },
       {
-        "quest_id": 52,
+        "quest_id": 58,
         "quest_title": "What is the cross slope of this sidewalk or roadway at its steepest point?",
         "quest_description": "Measure the side-to-side tilt of this sidewalk, as a percentage.",
         "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_cross_slope_big.png",
@@ -1189,7 +1296,7 @@
         }
       },
       {
-        "quest_id": 53,
+        "quest_id": 59,
         "quest_title": "What is the distance between where the pedestrian waits and the nearest traffic lane, in feet?",
         "quest_description": "Measure the distance between bus stop and traffic lane in feet.",
         "quest_image_url": "",
@@ -1201,7 +1308,7 @@
         }
       },
       {
-        "quest_id": 54,
+        "quest_id": 50,
         "quest_title": "What is the speed limit on this street?",
         "quest_description": "Record the speed limit for the street where this bus stop is located.",
         "quest_image_url": "",
@@ -1213,7 +1320,7 @@
         }
       },
       {
-        "quest_id": 55,
+        "quest_id": 61,
         "quest_title": "Is this bus stop located in a flood zone?",
         "quest_description": "Indicate whether this bus stop is periodically flooded or experiences drainage issues.",
         "quest_type": "ExclusiveChoice",
