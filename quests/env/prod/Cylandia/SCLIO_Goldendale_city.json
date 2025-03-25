@@ -880,7 +880,7 @@
         "quest_title": "Is the posted schedule accurate and up to date?",
         "quest_description": "Indicate whether the schedule posted at this stop is up to date and accurate.",
         "quest_answer_dependency": {
-          "question_id": 35,
+          "question_id": 38,
           "required_value": "yes"
         },
         "quest_type": "ExclusiveChoice",
