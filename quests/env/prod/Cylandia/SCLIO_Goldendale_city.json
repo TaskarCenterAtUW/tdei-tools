@@ -852,7 +852,7 @@
         "quest_title": "How is the schedule information posted?",
         "quest_description": "Indicate how this bus stop displays schedule information.",
         "quest_answer_dependency": {
-          "question_id": 35,
+          "question_id": 38,
           "required_value": "yes"
         },
         "quest_type": "ExclusiveChoice",
