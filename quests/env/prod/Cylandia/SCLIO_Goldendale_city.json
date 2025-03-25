@@ -1,6 +1,6 @@
 [
   {
-    "element_type": "Curb Ramp",
+    "element_type": "Curbs",
     "quest_query": "nodes with (barrier=kerb)",
     "quests": [
       {
@@ -1535,7 +1535,7 @@
     ]
   },
   {
-    "element_type": "Crosswalk",
+    "element_type": "Crosswalks",
     "quest_query": "ways with (highway=footway and footway=crossing)",
     "quests": [
       {
