@@ -1,0 +1,153 @@
+[
+  {
+      "element_type": "Crossings",
+      "quest_query": "ways with (highway=footway and footway=crossing)",
+      "quests": [
+          {
+              "quest_id": 1,
+              "quest_title": "Does this crossing have road markings?",
+              "quest_description": "Indicate whether there are any painted roadway markings on this crossing.",
+              "quest_type": "ExclusiveChoice",
+              "quest_tag": "ext:crossing_markings",
+              "quest_answer_choices": [
+                  {
+                      "value": "yes",
+                      "choice_text": "Yes",
+                      "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_double_small.png"
+                  },
+                  {
+                      "value": "no",
+                      "choice_text": "No",
+                      "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_small.png"
+                  }
+              ]
+          },
+          {
+              "quest_id": 2,
+              "quest_title": "Does this crossing have traffic signals for cars?",
+              "quest_description": "Indicate whether there are traffic signals for cars at this crossing.",
+              "quest_type": "ExclusiveChoice",
+              "quest_tag": "ext:crossing_signals_vehicles",
+              "quest_answer_choices": [
+                  {
+                      "value": "yes",
+                      "choice_text": "Yes",
+                      "image_url": ""
+                  },
+                  {
+                      "value": "no",
+                      "choice_text": "No",
+                      "image_url": ""
+                  }
+              ]
+          },
+          {
+              "quest_id": 3,
+              "quest_title": "Does this crossing have stop signals for cars?",
+              "quest_description": "Determine whether there are stop signals for cars at this crossing.",
+              "quest_type": "ExclusiveChoice",
+              "quest_tag": "ext:crossing_signals_vehicles_stop",
+              "quest_answer_choices": [
+                  {
+                      "value": "yes",
+                      "choice_text": "Yes",
+                      "image_url": ""
+                  },
+                  {
+                      "value": "no",
+                      "choice_text": "No",
+                      "image_url": ""
+                  }
+              ]
+          },
+          {
+              "quest_id": 4,
+              "quest_title": "Does this crossing have signals for pedestrians?",
+              "quest_description": "Determine whether there are signals for pedestrians at this crossing.",
+              "quest_type": "ExclusiveChoice",
+              "quest_tag": "ext:crossing_signals_pedestrianss",
+              "quest_answer_choices": [
+                  {
+                      "value": "yes",
+                      "choice_text": "Yes",
+                      "image_url": ""
+                  },
+                  {
+                      "value": "no",
+                      "choice_text": "No",
+                      "image_url": ""
+                  }
+              ]
+          },
+          {
+              "quest_id": 5,
+              "quest_title": "Does this crossing have a call button?",
+              "quest_description": "Determine whether there is a call button for the pedestrian signal.",
+              "quest_answer_dependency": {
+                  "question_id": 4,
+                  "required_value": "yes"
+              },
+              "quest_type": "ExclusiveChoice",
+              "quest_tag": "ext:crossing_signals_button",
+              "quest_answer_choices": [
+                  {
+                      "value": "yes",
+                      "choice_text": "Yes",
+                      "image_url": ""
+                  },
+                  {
+                      "value": "no",
+                      "choice_text": "No",
+                      "image_url": ""
+                  }
+              ]
+          },
+          {
+              "quest_id": 6,
+              "quest_title": "Does this crossing have sound signals that indicate when it is safe to cross?",
+              "quest_description": "Determine whether there are sound or speech output that indicates the pedestrian signal is on.",
+              "quest_answer_dependency": {
+                  "question_id": 4,
+                  "required_value": "yes"
+              },
+              "quest_type": "ExclusiveChoice",
+              "quest_tag": "ext:crossing_signals_sound",
+              "quest_answer_choices": [
+                  {
+                      "value": "yes",
+                      "choice_text": "Yes",
+                      "image_url": ""
+                  },
+                  {
+                      "value": "no",
+                      "choice_text": "No",
+                      "image_url": ""
+                  }
+              ]
+          },
+          {
+              "quest_id": 7,
+              "quest_title": "Does this crossing have a vibrating plate that tells you the signal is on?",
+              "quest_description": "Determine whether there is a vibrating plate that indicates the pedestrian signal is on.",
+              "quest_answer_dependency": {
+                  "question_id": 4,
+                  "required_value": "yes"
+              },
+              "quest_type": "ExclusiveChoice",
+              "quest_tag": "ext:crossing_signals_vibration",
+              "quest_answer_choices": [
+                  {
+                      "value": "yes",
+                      "choice_text": "Yes",
+                      "image_url": ""
+                  },
+                  {
+                      "value": "no",
+                      "choice_text": "No",
+                      "image_url": ""
+                  }
+              ]
+          }
+      ]
+  }
+]
