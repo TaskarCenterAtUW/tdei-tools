@@ -810,7 +810,7 @@
           "required_value": "yes"
         },
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:bus_bench",
+        "quest_tag": "ext:bus_informal_seating",
         "quest_answer_choices": [
           {
             "value": "yes",
@@ -1031,6 +1031,11 @@
             "value": "concrete",
             "choice_text": "Concrete",
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+          },
+          {
+            "value": "brick",
+            "choice_text": "Brick",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
           }
         ]
       },
