@@ -2,22 +2,28 @@
 
 Repository for tools and resources related to the TDEI.
 
-## [Documentation](https://github.com/TaskarCenterAtUW/TDEI-tools/tree/main/documentation)
+## [Documentation](hdocumentation)
 
 Documentaiton files for long form quest definitions.
 
-* **[Element Query Documentation](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/documentation/element-query-documentation.md)**
+* **[Element Query Documentation](documentation/element-query-documentation.md)**
 
-* **[Long Form Schema](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/documentation/long-form-schema.json)**
+* **[Long Form Schema](documentation/long-form-schema.json)**
 
-* **[Example](https://github.com/TaskarCenterAtUW/TDEI-tools/blob/main/documentation/example.json)**
+* **[Example](documentation/example.json)**
 
-## [Quests](https://github.com/TaskarCenterAtUW/TDEI-tools/tree/main/quests)
+## [Quests](quests)
 
-### [Definitions](https://github.com/TaskarCenterAtUW/TDEI-tools/tree/main/quests/env)
+### [Definitions](quests/env)
 
 GoInfoGame Long Form Quest JSON Definitions for use in [TDEI Workspaces](https://workspaces.sidewalks.washington.edu/), sorted by Environment and Project Group.
 
-### [Resources/Graphics](https://github.com/TaskarCenterAtUW/TDEI-tools/tree/main/quests/res/graphics)
+### [Resources/Graphics](quests/res/graphics)
 
 Images for GoInfoGame quests.
+
+## [Utilities](utilities)
+
+Utilities related to the TDEI.
+
+* **[Workspaces Export](utilities/workspace-export.ps1)**
