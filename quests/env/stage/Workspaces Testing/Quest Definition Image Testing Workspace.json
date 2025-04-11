@@ -13,22 +13,22 @@
           {
             "value": "raised",
             "choice_text": "Raised",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
           },
           {
             "value": "lowered",
             "choice_text": "Lowered",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
           },
           {
             "value": "rolled",
             "choice_text": "Rolled",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/rolled_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/rolled_wide.png"
           },
           {
             "value": "flush",
             "choice_text": "Flush",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
           }
         ]
       },
@@ -46,12 +46,12 @@
           {
             "value": "curb_ramp",
             "choice_text": "Curb Ramp",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/curb_ramp_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/curb_ramp_big.png"
           },
           {
             "value": "blended_transition",
             "choice_text": "Blended Transition",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/blended_transition_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/blended_transition_big.png"
           }
         ]
       },
@@ -69,12 +69,12 @@
           {
             "value": "perpendicular",
             "choice_text": "Perpendicular",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_placement/perpendicular_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_placement/perpendicular_wide.png"
           },
           {
             "value": "parallel",
             "choice_text": "Parallel",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_placement/parallel_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_placement/parallel_wide.png"
           },
           {
             "value": "combination",
@@ -97,12 +97,12 @@
           {
             "value": "aligned",
             "choice_text": "Aligned",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_alignment/aligned_bing.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_alignment/aligned_bing.png"
           },
           {
             "value": "misaligned",
             "choice_text": "Misaligned",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_alignment/misaligned_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_alignment/misaligned_big.png"
           }
         ]
       },
@@ -137,7 +137,7 @@
           "question_id": 2,
           "required_value": "curb_ramp"
         },
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_width_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_width_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:ramp_width",
         "quest_answer_validation": {
@@ -155,7 +155,7 @@
         },
         "quest_type": "Numeric",
         "quest_tag": "ext:ramp_running_slope",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_running_slope_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_running_slope_big.png",
         "quest_answer_validation": {
           "min": 1,
           "max": 50
@@ -169,7 +169,7 @@
           "question_id": 2,
           "required_value": "curb_ramp"
         },
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_cross_slope_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_cross_slope_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:ramp_cross_slope",
         "quest_answer_validation": {
@@ -185,7 +185,7 @@
           "question_id": 2,
           "required_value": "curb_ramp"
         },
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/landing/landing_width_wide.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/landing/landing_width_wide.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:landing_width",
         "quest_answer_validation": {
@@ -201,7 +201,7 @@
           "question_id": 2,
           "required_value": "curb_ramp"
         },
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/landing/landing_depth_wide.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/landing/landing_depth_wide.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:landing_depth",
         "quest_answer_validation": {
@@ -217,7 +217,7 @@
           "question_id": 2,
           "required_value": "curb_ramp"
         },
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_side_flare_slope_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_side_flare_slope_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:ramp_side_flare_slope",
         "quest_answer_validation": {
@@ -239,12 +239,12 @@
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_surface/concrete_wide.png"
           },
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_surface/asphalt_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_surface/asphalt_wide.png"
           },
           {
             "value": "other",
@@ -262,12 +262,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
           }
         ]
       },
@@ -279,7 +279,7 @@
           "question_id": 13,
           "required_value": "yes"
         },
-        "quest_image": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/tactile_paving_depth_big.png",
+        "quest_image": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/tactile_paving_depth_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:tactile_paving_depth",
         "quest_answer_validation": {
@@ -291,7 +291,7 @@
         "quest_id": 15,
         "quest_title": "What is the gutter slope?",
         "quest_description": "Measure the slope of the gutter along the pedestrian access route as a percentage.",
-        "quest_image": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_gutter_slope_big.png",
+        "quest_image": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_dimensions/ramp_gutter_slope_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:gutter_slope",
         "quest_answer_validation": {
@@ -309,7 +309,7 @@
         "quest_id": 16,
         "quest_title": "What is the width of this sidewalk?",
         "quest_description": "Please measure the clear width of this sidewalk, excluding any obstructions, in inches.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_width_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_width_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:sidewalk_width",
         "quest_answer_validation": {
@@ -321,7 +321,7 @@
         "quest_id": 17,
         "quest_title": "What is the width of this sidewalk at its narrowest point?",
         "quest_description": "Please measure the clear width of this sidewalk, at its narrowest point, in inches.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_narrowest_width_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_narrowest_width_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:sidewalk_narrowest_width",
         "quest_answer_validation": {
@@ -333,7 +333,7 @@
         "quest_id": 18,
         "quest_title": "What is the cross slope of this sidewalk at its steepest point?",
         "quest_description": "Measure the side-to-side tilt of this sidewalk, as a percentage.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_cross_slope_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_cross_slope_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:sidewalk_cross_slope",
         "quest_answer_validation": {
@@ -351,32 +351,32 @@
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
           },
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_wide.png"
           },
           {
             "value": "pavers",
             "choice_text": "Pavers",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/pavers_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/pavers_wide.png"
           },
           {
             "value": "brick",
             "choice_text": "Brick",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
           },
           {
             "value": "compacted_gravel",
             "choice_text": "Compacted Gravel",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/compacted_gravel_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/compacted_gravel_wide.png"
           },
           {
             "value": "rubberized_surface",
             "choice_text": "Rubberized Surface",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/rubberized_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/rubberized_wide.png"
           }
         ]
       },
@@ -896,7 +896,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions/roots_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/roots_big.png"
           },
           {
             "value": "no",
@@ -918,7 +918,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overgrown_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overgrown_wide.png"
           },
           {
             "value": "no",
@@ -940,7 +940,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_wide.png"
           },
           {
             "value": "no",
@@ -962,7 +962,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions/utility_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/utility_wide.png"
           },
           {
             "value": "no",
@@ -1006,7 +1006,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/obstructions/street_furniture_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/street_furniture_big.png"
           },
           {
             "value": "no",
@@ -1032,7 +1032,7 @@
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/raised_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_2_wide.png"
           }
         ]
       },
@@ -1050,12 +1050,12 @@
           {
             "value": "lowered",
             "choice_text": "Lowered",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
           },
           {
             "value": "flush",
             "choice_text": "Flush",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
           }
         ]
       },
@@ -1073,12 +1073,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
           }
         ]
       },
@@ -1136,7 +1136,7 @@
         "quest_id": 52,
         "quest_title": "What is the cross slope of this sidewalk or roadway at its steepest point?",
         "quest_description": "Measure the side-to-side tilt of this sidewalk, as a percentage.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_cross_slope_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_cross_slope_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:bus_cross_slope",
         "quest_answer_validation": {
