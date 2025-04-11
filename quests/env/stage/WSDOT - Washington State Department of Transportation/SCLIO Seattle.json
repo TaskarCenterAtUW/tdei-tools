@@ -289,17 +289,17 @@
           {
             "value": "lowered",
             "choice_text": "There is a lowered curb ramp present.",
-            "image_url": "https://github.com/TaskarCenterAtUW/tdei-tools/blob/main/quests/res/graphics/curb_type/lowered_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
           },
           {
             "value": "flush",
             "choice_text": "There is a flush curb present.",
-            "image_url": "https://github.com/TaskarCenterAtUW/tdei-tools/blob/main/quests/res/graphics/curb_type/flush_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
           },
           {
             "value": "raised",
             "choice_text": "There is a raised curb present.",
-            "image_url": "https://github.com/TaskarCenterAtUW/tdei-tools/blob/main/quests/res/graphics/curb_type/raised_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
           }
         ]
       },
@@ -313,12 +313,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, there is tactile paving present.",
-            "image_url": "https://github.com/TaskarCenterAtUW/tdei-tools/blob/main/quests/res/graphics/tactile_paving/yes_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
           },
           {
             "value": "no",
             "choice_text": "No, there is not tactile paving present.",
-            "image_url": "https://github.com/TaskarCenterAtUW/tdei-tools/blob/main/quests/res/graphics/tactile_paving/no_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
           }
         ]
       }
