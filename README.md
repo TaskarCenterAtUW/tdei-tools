@@ -27,3 +27,5 @@ Images for GoInfoGame quests.
 Utilities related to the TDEI.
 
 * **[Workspaces Export](utilities/workspace-export.ps1)**
+
+* **[Workspaces Export](utilities/update-exif.ps1)**
