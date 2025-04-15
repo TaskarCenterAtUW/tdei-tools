@@ -774,7 +774,7 @@
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": ""
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/bus_stop/bus_none_big.png"
           }
         ]
       },
@@ -792,12 +792,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": ""
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/bus_stop/bus_bench_big.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": ""
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/bus_stop/bus_none_big.png"
           }
         ]
       },
@@ -815,12 +815,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": ""
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/bus_stop/bus_informal_seating_big.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": ""
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/bus_stop/bus_none_big.png"
           }
         ]
       },
@@ -838,12 +838,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": ""
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/bus_stop/bus_schedule_pole_big.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": ""
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/bus_stop/bus_none_big.png"
           }
         ]
       },
@@ -871,7 +871,7 @@
           {
             "value": "bus_pole",
             "choice_text": "On the bus stop pole",
-            "image_url": ""
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/bus_stop/bus_schedule_pole_big.png"
           }
         ]
       },
