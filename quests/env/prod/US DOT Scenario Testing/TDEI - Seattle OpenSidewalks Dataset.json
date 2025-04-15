@@ -13,12 +13,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -32,12 +32,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -51,12 +51,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -70,12 +70,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -89,12 +89,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -112,12 +112,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -135,12 +135,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -158,12 +158,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             }

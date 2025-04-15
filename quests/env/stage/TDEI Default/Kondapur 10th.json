@@ -13,17 +13,17 @@
                     {
                         "value": "asphalt",
                         "choice_text": "Asphalt",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "concrete",
                         "choice_text": "Concrete",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "brick",
                         "choice_text": "Brick",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -31,14 +31,14 @@
                 "quest_id": 2,
                 "quest_title": "Are there small surface cracks or disruptions?",
                 "quest_description": "Identify if there are any cracks or disruptions in the sidewalk surface that are smaller than 3 inch vertical or horizontal displacement, or smaller than 3 inch gaps",
-                "quest_image_url": "http://some_url.com/image.jpg",
+                "quest_image_url": "",
                 "quest_type": "ExclusiveChoice",
                 "quest_tag": "small_surface_cracks",
                 "quest_answer_choices": [
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "choice_text": "1-5 small cracks or disruptions along this sidewalk",
@@ -61,7 +61,7 @@
                 "quest_id": 3,
                 "quest_title": "Are there large surface cracks, large disruptions, tree uproots, or large gaps in the sidewalk?",
                 "quest_description": "Identify if there are any large surface disruptions (greater than 3 inches in any direction) in the sidewalk surface",
-                "quest_image_url": "http://some_url.com/image.jpg",
+                "quest_image_url": "",
                 "quest_type": "ExclusiveChoice",
                 "quest_tag": "large_surface_cracks",
                 "quest_answer_choices": [
@@ -72,19 +72,19 @@
                     {
                         "choice_text": "1-5 large disruptions or gaps along this sidewalk",
                         "value": "<5",
-                        "image_url": "http://some_url.com/image.jpg",
+                        "image_url": "",
                         "choice_follow_up": "Please take a picture of the largest disruption in this sidewalk"
                     },
                     {
                         "choice_text": "6-10 large disruptions or gaps along this sidewalk",
                         "value": "<10",
-                        "image_url": "http://some_url.com/image.jpg",
+                        "image_url": "",
                         "choice_follow_up": "Please take a picture of the largest disruption in this sidewalk"
                     },
                     {
                         "choice_text": "more than 10 large disruptions or gaps along this sidewalk",
                         "value": ">10",
-                        "image_url": "http://some_url.com/image.jpg",
+                        "image_url": "",
                         "choice_follow_up": "Please take a picture of the largest disruption in this sidewalk"
                     }
                 ]
@@ -93,19 +93,19 @@
                 "quest_id": 4,
                 "quest_title": "Is the sidewalk complete along the entire block?",
                 "quest_description": "Check if the sidewalk extends continuously along the entire block",
-                "quest_image_url": "http://some_url.com/image.jpg",
+                "quest_image_url": "",
                 "quest_type": "ExclusiveChoice",
                 "quest_tag": "sidewalk_complete",
                 "quest_answer_choices": [
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg",
+                        "image_url": "",
                         "choice_follow_up": "Please take a picture of the gap or missing sidewalk"
                     }
                 ]
@@ -114,20 +114,20 @@
                 "quest_id": 5,
                 "quest_title": "Does the sidewalk narrow?",
                 "quest_description": "Identify if there are any sections where the sidewalk narrows",
-                "quest_image_url": "http://some_url.com/image.jpg",
+                "quest_image_url": "",
                 "quest_type": "ExclusiveChoice",
                 "quest_tag": "sidewalk_narrows",
                 "quest_answer_choices": [
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg",
+                        "image_url": "",
                         "choice_follow_up": "Please take a picture of the narrowest place on this sidewalk"
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -135,7 +135,7 @@
                 "quest_id": 6,
                 "quest_title": "How many driveways intersect the sidewalk?",
                 "quest_description": "Enter the number of driveways that intersect the sidewalk",
-                "quest_image_url": "http://some_url.com/image.jpg",
+                "quest_image_url": "",
                 "quest_type": "Numeric",
                 "quest_tag": "driveways",
                 "quest_answer_choices": [
@@ -148,7 +148,7 @@
                 "quest_id": 7,
                 "quest_title": "How many light poles are along the sidewalk?",
                 "quest_description": "Enter the number of light poles along the sidewalk",
-                "quest_image_url": "http://some_url.com/image.jpg",
+                "quest_image_url": "",
                 "quest_type": "Numeric",
                 "quest_tag": "light_poles",
                 "quest_answer_choices": [
@@ -161,7 +161,7 @@
                 "quest_id": 8,
                 "quest_title": "How many manholes are on the sidewalk?",
                 "quest_description": "Enter the number of manholes on the sidewalk",
-                "quest_image_url": "http://some_url.com/image.jpg",
+                "quest_image_url": "",
                 "quest_type": "Numeric",
                 "quest_tag": "manholes",
                 "quest_answer_choices": [
@@ -174,7 +174,7 @@
                 "quest_id": 9,
                 "quest_title": "Is there a crossing in the middle of this block?",
                 "quest_description": "Check if there is a pedestrian crossing in the middle of the block",
-                "quest_image_url": "http://some_url.com/image.jpg",
+                "quest_image_url": "",
                 "quest_type": "ExclusiveChoice",
                 "quest_tag": "midblock_crossing",
                 "quest_answer_choices": [
@@ -204,12 +204,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -223,12 +223,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -242,12 +242,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -261,17 +261,17 @@
                     {
                         "value": "0",
                         "choice_text": "No Curb ramps here",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "1",
                         "choice_text": "1",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "2",
                         "choice_text": "2",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -285,12 +285,12 @@
                     {
                         "value": "one_side",
                         "choice_text": "One side of the street",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "middle_intersection",
                         "choice_text": "Middle of the intersection",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -308,12 +308,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -334,12 +334,12 @@
                     {
                         "value": "raised",
                         "choice_text": "Raised",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "flush",
                         "choice_text": "Flush",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -357,12 +357,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             }
@@ -382,12 +382,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -401,12 +401,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -420,12 +420,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -439,12 +439,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             },
@@ -458,12 +458,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -481,12 +481,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -504,12 +504,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ],
                 "quest_answer_dependency": {
@@ -527,12 +527,12 @@
                     {
                         "value": "yes",
                         "choice_text": "Yes",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     },
                     {
                         "value": "no",
                         "choice_text": "No",
-                        "image_url": "http://some_url.com/image.jpg"
+                        "image_url": ""
                     }
                 ]
             }
