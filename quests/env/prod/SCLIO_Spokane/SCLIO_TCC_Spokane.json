@@ -1,0 +1,1293 @@
+[
+	{
+    	"element_type": "Sidewalk",
+    	"quest_query": "ways with (highway=footway and footway=sidewalk)",
+    	"Quests": [
+        	{
+            	"quest_id": 1,
+            	"quest_title": "Are there obstructions present along this sidewalk?",
+            	"quest_description": "Determine whether there are obstructions such as overgrown plants, poles, signs, or vehicles blocking this sidewalk.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_obstruction",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, this sidewalk is obstructed."
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, this sidewalk is not obstructed."
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 2,
+            	"quest_title": "Is this sidewalk wide enough to comfortably navigate?",
+            	"quest_description": "Determine whether this sidewalk is wide enough to navigate comfortably by two people walking side by side.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_adequate_width",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, this sidewalk is wide enough."
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, this sidewalk is too narrow."
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 3,
+            	"quest_title": "Is this sidewalk separated from the street?",
+            	"quest_description": "Determine whether this sidewalk is separated from the street, such as by a grass verge, trees, or parked cars.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_separation",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, this sidewalk is separated from the street."
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, this sidewalk is not separated from the street."
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 4,
+            	"quest_title": "How is this sidewalk separated from the street?",
+            	"quest_answer_dependency": {
+                    	"question_id": 3,
+                    	"required_value": "yes"
+            	},
+            	"quest_description": "Determine whether this sidewalk is separated from the street, such as by a grass verge, trees, or parked cars.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_separation",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "landscaping",
+                    	"choice_text": "Landscaping"
+                	},
+                	{
+                    	"value": "cars",
+                    	"choice_text": "Parked cars"
+                	},
+                    {
+                    	"value": "both",
+                    	"choice_text": "Both"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 5,
+            	"quest_title": "Is this sidewalk continuous along this entire block?",
+            	"quest_description": "Determine whether this side of the block has a continuous sidewalk along its entire length.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_blockface_coverage",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, this sidewalk continues along this entire block."
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, this sidewalk has gaps along this side of the block."
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 6,
+            	"quest_title": "Is this sidewalk in need of repair?",
+            	"quest_description": "Determine whether this sidewalk is in need of repair due to having large cracks, broken sections, or tripping hazards.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_needs_repair",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, this sidewalk needs repairing.",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_wide.png"
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, this sidewalk does not need repairing.",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 7,
+            	"quest_title": "This sidewalk has canopies, awnings, or trees that provide adequate shade.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_adequately_shaded",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 8,
+            	"quest_title": "This sidewalk has enough trees or other forms of landscaping that add to its visual appeal.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_adequate_landscaping",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 9,
+            	"quest_title": "This sidewalk does not have adjacent vacant lots or rundown buildings.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_adequate_development",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 10,
+            	"quest_title": "This sidewalk has enough benches or other seating options available.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_adequate_seating",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 11,
+            	"quest_title": "This sidewalk has adequate lighting during the day.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_lighting_day",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 12,
+            	"quest_title": "This sidewalk has adequate lighting at night.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_lighting_night",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 12,
+            	"quest_title": "This sidewalk has adequate lighting at night.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:sidewalk_lighting_night",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	}
+    	]
+	},
+	{
+    	"element_type": "Crossing",
+    	"quest_query": "ways with (highway=footway and footway=crossing)",
+    	"Quests": [
+        	{
+            	"quest_id": 13,
+            	"quest_title": "How many traffic lanes are crossed here?",
+            	"quest_description": "Count the number of traffic lanes that this crossing intersects with.",
+            	"quest_type": "Numeric",
+            	"quest_tag": "ext:crossing_lane_count",
+                "quest_answer_validation": {
+                    "min": 1,
+                    "max": 12
+                  }
+        	},
+        	{
+            	"quest_id": 14,
+            	"quest_title": "Does the length of this crossing allow for safe navigation?",
+            	"quest_description": "Determine whether this crossing is short enough to cross safely.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:crossing_too_long",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, this roadway can be crossed safely."
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, this roadway is too wide to cross safely."
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 15,
+            	"quest_title": "Do you have enough time to cross this street safely?",
+            	"quest_description": "Determine whether the traffic signals give enough time to cross this street safely.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:crossing_adequate_time",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, there is enough time to cross."
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, there is not enough time to cross."
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 16,
+            	"quest_title": "Does this crossing have road markings?",
+            	"quest_description": "Determine whether there are adequate roadway surface markings for this crossing.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:crossing_adequate_markings",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, this crossing has visible road markings.",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_condition/condition_good_wide.png"
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, this crossing does not have visible road markings.",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_2_small.png"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 17,
+            	"quest_title": "Does this crossing have a button for pedestrians to activate traffic signals?",
+            	"quest_description": "Determine whether a button which pedestrians can press to request to activate traffic signals is present.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:crossing_button_operated",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, there is a button present."
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, there is not a button present."
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 18,
+            	"quest_title": "Does this crossing have curb ramps at both ends?",
+            	"quest_description": "Determine whether the curbs at both ends of this crossing have curb ramps.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:crossing_curb_ramps",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, there are curb ramps at both ends.",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, one end (or both) is missing a curb ramp.",
+                        "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 19,
+            	"quest_title": "Drivers usually come to a stop at the stop line before this crossing.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:drivers_are_stopping",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 20,
+            	"quest_title": "Drivers usually appear to follow the speed limit.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:drivers_follow_speedlimit",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 21,
+            	"quest_title": "Drivers usually yield to pedestrians at this crossing.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:drivers_do_yield",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 22,
+            	"quest_title": "Drivers here are often distracted by being on the phone, texting, or paying attention to passengers.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:drivers_distracted",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 23,
+            	"quest_title": "Drivers here seem hostile, make unexpected turns, or aren’t looking out for pedestrians.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:drivers_are_hostile",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 24,
+            	"quest_title": "This street has traffic speeds appropriate for pedestrian safety.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:traffic_speed",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 25,
+            	"quest_title": "This street has traffic levels appropriate for pedestrian safety.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:traffic_level",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	}
+    	]
+	},
+	{
+    	"element_type": "Intersection",
+    	"quest_query": "nodes with (highway=traffic_signals or highway=stop)",
+    	"Quests": [
+        	{
+            	"quest_id": 26,
+            	"quest_title": "Is there a safe, marked crosswalk at this intersection or one within a reasonable distance?",
+            	"quest_description": "Determine whether crossing the street is safe to do at or nearby this intersection.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_safe_crossing_nearby",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "yes",
+                    	"choice_text": "Yes, there is a crosswalk here or nearby that is safe."
+                	},
+                	{
+                    	"value": "no",
+                    	"choice_text": "No, there is no safe crossing nearby."
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 27,
+            	"quest_title": "I feel safe walking alone at this intersection after dark.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_safe_at_night",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 28,
+            	"quest_title": "Street lighting is adequate at this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_adequate_lighting",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 29,
+            	"quest_title": "I often see people walking at this intersection in the evening, which makes me feel safer.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:evening_pedestrian_activity",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 30,
+            	"quest_title": "There are places at this intersection where I feel unsafe walking after dark.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_unsafe_at_night",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 31,
+            	"quest_title": "There is frequent graffiti or vandalism at this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_vandalism_presence",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 32,
+            	"quest_title": "The presence of graffiti makes me feel less safe at this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_graffiti_feels_unsafe",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 33,
+            	"quest_title": "This intersection is free from vandalism.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_well_maintained",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 34,
+            	"quest_title": "This intersection is generally clean and well-maintained.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_cleanliness",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 35,
+            	"quest_title": "Trash or litter is a common problem at this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_trash_litter",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 36,
+            	"quest_title": "Local businesses and community members contribute to keeping this intersection clean.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_clean_contribution",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 37,
+            	"quest_title": "I know and trust the people around this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_trust",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 38,
+            	"quest_title": "People at this intersection look out for each other’s safety.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_safety_community",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 39,
+            	"quest_title": "If I needed help, I could rely on someone at this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_help_reliability",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 40,
+            	"quest_title": "This intersection has a strong sense of community.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_community_strength",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 41,
+            	"quest_title": "I would feel comfortable allowing children to play outside at this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_child_safety",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 42,
+            	"quest_title": "There is frequent presence of law enforcement or community patrols at this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_law_enforcement_presence",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 43,
+            	"quest_title": "Current presence of law enforcement or community patrols at this intersection contributes to my sense of comfort at this intersection.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_law_enforcement_impacts_safety",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 44,
+            	"quest_title": "This intersection has adequate emergency services and response times.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:intersection_emergency_services",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 45,
+            	"quest_title": "Drivers usually appear to follow the speed limit.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:drivers_not_speeding",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 46,
+            	"quest_title": "Drivers here are often distracted by being on the phone, texting, or paying attention to passengers.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:drivers_are_distracted",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 47,
+            	"quest_title": "This street has traffic speeds appropriate for pedestrian safety.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:traffic_adequate_speed",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	},
+        	{
+            	"quest_id": 48,
+            	"quest_title": "This street has traffic amount levels appropriate for pedestrian safety.",
+            	"quest_description": "Please rate the degree with which you agree or disagree with the statement above.",
+            	"quest_type": "ExclusiveChoice",
+            	"quest_tag": "ext:traffic_adequate_amount",
+            	"quest_answer_choices": [
+                	{
+                    	"value": "1",
+                    	"choice_text": "Strongly Disagree"
+                	},
+                	{
+                    	"value": "2",
+                    	"choice_text": "Disagree"
+                	},
+                	{
+                    	"value": "3",
+                    	"choice_text": "Neutral"
+                	},
+                	{
+                    	"value": "4",
+                    	"choice_text": "Agree"
+                	},
+                	{
+                    	"value": "5",
+                    	"choice_text": "Strongly Agree"
+                	}
+            	]
+        	}
+    	]
+	}
+]
