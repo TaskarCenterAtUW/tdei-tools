@@ -171,12 +171,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, there are markings present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_paired_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_paired_square.png"
           },
           {
             "value": "no",
             "choice_text": "No, there are no markings present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_square.png"
           }
         ]
       },

@@ -1557,7 +1557,7 @@
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_2_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_2_square.png"
           }
         ]
       },
@@ -1575,47 +1575,47 @@
           {
             "value": "lines",
             "choice_text": "Lines",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/lines_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/lines_square.png"
           },
           {
             "value": "lines_paired",
             "choice_text": "Lines Paired",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/lines_paired_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/lines_paired_square.png"
           },
           {
             "value": "zebra",
             "choice_text": "Zebra",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_square.png"
           },
           {
             "value": "zebra_paired",
             "choice_text": "Zebra Paired",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_paired_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_paired_square.png"
           },
           {
             "value": "ladder",
             "choice_text": "Ladder",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/ladder_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/ladder_square.png"
           },
           {
             "value": "ladder_paired",
             "choice_text": "Ladder Paired",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/ladder_paired_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/ladder_paired_square.png"
           },
           {
             "value": "ladder_skewed",
             "choice_text": "Ladder Skewed",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/ladder_skewed_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/ladder_skewed_square.png"
           },
           {
             "value": "dashes",
             "choice_text": "Dashes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/dashes_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/dashes_square.png"
           },
           {
             "value": "surface",
             "choice_text": "Surface",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/surface_small.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/surface_square.png"
           }
         ]
       },
