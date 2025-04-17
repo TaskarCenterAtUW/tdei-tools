@@ -1,8 +1,8 @@
 [
   {
-    "element_type": "Sidewalk",
+    "element_type": "Sidewalks",
     "quest_query": "ways with (highway=footway and footway=sidewalk)",
-    "Quests": [
+    "quests": [
       {
         "quest_id": 1,
         "quest_title": "Are there obstructions present along this sidewalk?",
@@ -292,9 +292,9 @@
     ]
   },
   {
-    "element_type": "Crossing",
+    "element_type": "Crossings",
     "quest_query": "ways with (highway=footway and footway=crossing)",
-    "Quests": [
+    "quests": [
       {
         "quest_id": 13,
         "quest_title": "How many traffic lanes are crossed here?",
@@ -601,9 +601,9 @@
     ]
   },
   {
-    "element_type": "Intersection",
+    "element_type": "Intersections",
     "quest_query": "nodes with (highway=traffic_signals or highway=stop)",
-    "Quests": [
+    "quests": [
       {
         "quest_id": 26,
         "quest_title": "Is there a safe, marked crosswalk at this intersection or one within a reasonable distance?",
