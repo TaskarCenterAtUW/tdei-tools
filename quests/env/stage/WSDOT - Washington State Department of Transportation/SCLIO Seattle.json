@@ -35,7 +35,7 @@
         "quest_id": 2,
         "quest_title": "What is the width of this pathway?",
         "quest_description": "Measure the width of this pathway, in inches.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_width_big.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_width_square.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:pathway_width",
         "quest_answer_validation": {
@@ -313,12 +313,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, there is tactile paving present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_square.png"
           },
           {
             "value": "no",
             "choice_text": "No, there is not tactile paving present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_square.png"
           }
         ]
       }
