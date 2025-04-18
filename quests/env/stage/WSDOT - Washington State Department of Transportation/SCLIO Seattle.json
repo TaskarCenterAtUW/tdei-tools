@@ -13,17 +13,17 @@
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk_surface/asphalt_landscape.png"
           },
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "brick",
             "choice_text": "Brick",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk_surface/brick_landscape.png"
           },
           {
             "value": "other",
@@ -35,7 +35,7 @@
         "quest_id": 2,
         "quest_title": "What is the width of this pathway?",
         "quest_description": "Measure the width of this pathway, in inches.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_width_square.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk_dimensions/sidewalk_width_square.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:pathway_width",
         "quest_answer_validation": {
@@ -171,12 +171,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, there are markings present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_paired_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing_markings/zebra_paired_square.png"
           },
           {
             "value": "no",
             "choice_text": "No, there are no markings present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing_markings/no_square.png"
           }
         ]
       },
@@ -289,17 +289,17 @@
           {
             "value": "lowered",
             "choice_text": "There is a lowered curb ramp present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/curb_type/lowered_landscape.png"
           },
           {
             "value": "flush",
             "choice_text": "There is a flush curb present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/curb_type/flush_landscape.png"
           },
           {
             "value": "raised",
             "choice_text": "There is a raised curb present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/curb_type/raised_landscape.png"
           }
         ]
       },
@@ -313,12 +313,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, there is tactile paving present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/tactile_paving/yes_square.png"
           },
           {
             "value": "no",
             "choice_text": "No, there is not tactile paving present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/tactile_paving/no_square.png"
           }
         ]
       }
