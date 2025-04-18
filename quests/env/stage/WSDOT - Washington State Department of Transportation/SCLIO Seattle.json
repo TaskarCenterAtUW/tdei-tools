@@ -13,17 +13,17 @@
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_landscape.png"
           },
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "brick",
             "choice_text": "Brick",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_landscape.png"
           },
           {
             "value": "other",
@@ -289,17 +289,17 @@
           {
             "value": "lowered",
             "choice_text": "There is a lowered curb ramp present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_landscape.png"
           },
           {
             "value": "flush",
             "choice_text": "There is a flush curb present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_landscape.png"
           },
           {
             "value": "raised",
             "choice_text": "There is a raised curb present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_landscape.png"
           }
         ]
       },

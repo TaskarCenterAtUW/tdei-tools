@@ -13,22 +13,22 @@
           {
             "value": "raised",
             "choice_text": "Raised",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_landscape.png"
           },
           {
             "value": "lowered",
             "choice_text": "Lowered",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_landscape.png"
           },
           {
             "value": "rolled",
             "choice_text": "Rolled",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/rolled_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/rolled_landscape.png"
           },
           {
             "value": "flush",
             "choice_text": "Flush",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_landscape.png"
           }
         ]
       },
@@ -69,12 +69,12 @@
           {
             "value": "perpendicular",
             "choice_text": "Perpendicular",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_placement/perpendicular_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_placement/perpendicular_landscape.png"
           },
           {
             "value": "parallel",
             "choice_text": "Parallel",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_placement/parallel_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_placement/parallel_landscape.png"
           },
           {
             "value": "combination",
@@ -120,12 +120,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_edge/edge_yes_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_edge/edge_yes_landscape.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_edge/edge_no_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_edge/edge_no_landscape.png"
           }
         ]
       },
@@ -185,7 +185,7 @@
           "question_id": 2,
           "required_value": "curb_ramp"
         },
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/landing/landing_width_wide.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/landing/landing_width_landscape.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:landing_width",
         "quest_answer_validation": {
@@ -201,7 +201,7 @@
           "question_id": 2,
           "required_value": "curb_ramp"
         },
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/landing/landing_depth_wide.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/landing/landing_depth_landscape.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:landing_depth",
         "quest_answer_validation": {
@@ -239,12 +239,12 @@
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_surface/concrete_landscape.png"
           },
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_surface/asphalt_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/ramp_surface/asphalt_landscape.png"
           },
           {
             "value": "other",
@@ -351,17 +351,17 @@
           {
             "value": "raised",
             "choice_text": "Raised",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_landscape.png"
           },
           {
             "value": "rolled",
             "choice_text": "Rolled",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/rolled_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/rolled_landscape.png"
           },
           {
             "value": "flush",
             "choice_text": "Flush",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_2_landscape.png"
           }
         ]
       },
@@ -375,32 +375,32 @@
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_landscape.png"
           },
           {
             "value": "pavers",
             "choice_text": "Pavers",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/pavers_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/pavers_landscape.png"
           },
           {
             "value": "brick",
             "choice_text": "Brick",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_landscape.png"
           },
           {
             "value": "compacted_gravel",
             "choice_text": "Compacted Gravel",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/compacted_gravel_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/compacted_gravel_landscape.png"
           },
           {
             "value": "rubberized_surface",
             "choice_text": "Rubberized Surface",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/rubberized_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/rubberized_landscape.png"
           }
         ]
       },
@@ -414,12 +414,12 @@
           {
             "value": "good",
             "choice_text": "Yes: Firm, Stable, and Slip-Resistant",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "bad",
             "choice_text": "No: not Firm, Stable, and Slip-Resistant",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_landscape.png"
           }
         ]
       },
@@ -437,7 +437,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_landscape.png"
           },
           {
             "value": "no",
@@ -459,7 +459,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/heaved_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/heaved_landscape.png"
           },
           {
             "value": "no",
@@ -481,7 +481,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_landscape.png"
           },
           {
             "value": "no",
@@ -503,7 +503,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/slippery_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/slippery_landscape.png"
           },
           {
             "value": "no",
@@ -525,7 +525,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/eroded_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/eroded_2_landscape.png"
           },
           {
             "value": "no",
@@ -547,7 +547,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/loose_gravel_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/loose_gravel_landscape.png"
           },
           {
             "value": "no",
@@ -565,32 +565,32 @@
           {
             "value": "none",
             "choice_text": "No Obstructions",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "utility_poles",
             "choice_text": "Utility Poles",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/utility_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/utility_landscape.png"
           },
           {
             "value": "parked_cars",
             "choice_text": "Parked Cars",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_landscape.png"
           },
           {
             "value": "bollards",
             "choice_text": "Bollards",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/bollard_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/bollard_landscape.png"
           },
           {
             "value": "trash_bins",
             "choice_text": "Trash Bins",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/trash_bins_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/trash_bins_landscape.png"
           },
           {
             "value": "mail_boxes",
             "choice_text": "Mail Boxes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/mailbox_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/mailbox_landscape.png"
           }
         ]
       },
@@ -604,27 +604,27 @@
           {
             "value": "none",
             "choice_text": "No Obstructions",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "overgrown_vegetation",
             "choice_text": "Overgrown Vegetation",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overgrown_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overgrown_landscape.png"
           },
           {
             "value": "overhead_vegetation",
             "choice_text": "Overhead Vegetation",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overhead_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overhead_landscape.png"
           },
           {
             "value": "debris",
             "choice_text": "Debris",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/debris_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/debris_landscape.png"
           },
           {
             "value": "sandwich_boards",
             "choice_text": "Sandwich Boards",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/sandwich_board_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/sandwich_board_landscape.png"
           },
           {
             "value": "micromobility",
@@ -634,7 +634,7 @@
           {
             "value": "parked_cars",
             "choice_text": "Parked Cars",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_landscape.png"
           }
         ]
       }
@@ -1001,7 +1001,7 @@
           {
             "value": "sidewalk",
             "choice_text": "Sidewalk",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "roadway",
@@ -1025,17 +1025,17 @@
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_landscape.png"
           },
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "brick",
             "choice_text": "Brick",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_landscape.png"
           }
         ]
       },
@@ -1049,12 +1049,12 @@
           {
             "value": "good",
             "choice_text": "Yes: Firm, Stable, and Slip-Resistant",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "bad",
             "choice_text": "No: not Firm, Stable, and Slip-Resistant",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_landscape.png"
           }
         ]
       },
@@ -1072,7 +1072,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_landscape.png"
           },
           {
             "value": "no",
@@ -1094,7 +1094,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/heaved_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/heaved_landscape.png"
           },
           {
             "value": "no",
@@ -1116,7 +1116,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_landscape.png"
           },
           {
             "value": "no",
@@ -1138,7 +1138,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/slippery_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/slippery_landscape.png"
           },
           {
             "value": "no",
@@ -1160,7 +1160,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/eroded_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/eroded_2_landscape.png"
           },
           {
             "value": "no",
@@ -1182,7 +1182,7 @@
           {
             "value": "yes",
             "choice_text": "Yes.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/loose_gravel_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/loose_gravel_landscape.png"
           },
           {
             "value": "no",
@@ -1200,7 +1200,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/mailbox_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/mailbox_landscape.png"
           },
           {
             "value": "no",
@@ -1266,7 +1266,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overgrown_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/overgrown_landscape.png"
           },
           {
             "value": "no",
@@ -1288,7 +1288,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/parked_cars_landscape.png"
           },
           {
             "value": "no",
@@ -1310,7 +1310,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/utility_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions/utility_landscape.png"
           },
           {
             "value": "no",
@@ -1332,7 +1332,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/sandwich_board_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/sandwich_board_landscape.png"
           },
           {
             "value": "no",
@@ -1376,12 +1376,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/curb_ramp_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/curb_ramp_2_landscape.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/raised_2_landscape.png"
           }
         ]
       },
@@ -1399,12 +1399,12 @@
           {
             "value": "lowered",
             "choice_text": "Lowered",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_landscape.png"
           },
           {
             "value": "flush",
             "choice_text": "Flush",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/curb_type/flush_landscape.png"
           }
         ]
       },
@@ -1529,7 +1529,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/flood_prone_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/flood_prone_2_landscape.png"
           },
           {
             "value": "no",
@@ -1633,12 +1633,12 @@
           {
             "value": "good",
             "choice_text": "Good",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_condition/condition_good_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_condition/condition_good_landscape.png"
           },
           {
             "value": "worn",
             "choice_text": "Worn",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_condition/condition_worn_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/crossing_condition/condition_worn_landscape.png"
           }
         ]
       },
@@ -1652,37 +1652,37 @@
           {
             "value": "firm_stable_slip_resistant",
             "choice_text": "Firm, Stable, and Slip-Resistant",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_landscape.png"
           },
           {
             "value": "cracked",
             "choice_text": "Cracked",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/cracked_2_landscape.png"
           },
           {
             "value": "heaved",
             "choice_text": "Heaved",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/heaved_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/heaved_landscape.png"
           },
           {
             "value": "uneven",
             "choice_text": "Uneven",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/uneven_landscape.png"
           },
           {
             "value": "slippery",
             "choice_text": "Slippery",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/slippery_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/slippery_landscape.png"
           },
           {
             "value": "eroded",
             "choice_text": "Eroded",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/eroded_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/eroded_2_landscape.png"
           },
           {
             "value": "loose_gravel",
             "choice_text": "Loose Gravel",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/loose_gravel_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/sidewalk_condition/loose_gravel_landscape.png"
           }
         ]
       },
@@ -1696,7 +1696,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/flood_prone_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/quests/res/graphics/obstructions_temporary/flood_prone_2_landscape.png"
           },
           {
             "value": "no",
