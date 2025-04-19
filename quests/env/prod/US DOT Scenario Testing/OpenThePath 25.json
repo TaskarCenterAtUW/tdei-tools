@@ -13,12 +13,12 @@
                   {
                       "value": "yes",
                       "choice_text": "Yes",
-                      "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing_markings/zebra_double_square.png"
+                      "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/zebra_double_square.png"
                   },
                   {
                       "value": "no",
                       "choice_text": "No",
-                      "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing_markings/no_square.png"
+                      "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/no_square.png"
                   }
               ]
           },
