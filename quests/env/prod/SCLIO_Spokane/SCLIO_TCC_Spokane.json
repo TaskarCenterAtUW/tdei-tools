@@ -106,12 +106,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, this sidewalk needs repairing.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalks/condition/cracked_2_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/condition/cracked_2_wide.png"
           },
           {
             "value": "no",
             "choice_text": "No, this sidewalk does not need repairing.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalks/surface/concrete_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/concrete_wide.png"
           }
         ]
       },
@@ -386,12 +386,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, there are curb ramps at both ends.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/curb/type/lowered_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/curb/lowered_wide.png"
           },
           {
             "value": "no",
             "choice_text": "No, one end (or both) is missing a curb ramp.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/curb/type/raised_wide.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/curb/raised_wide.png"
           }
         ]
       },
