@@ -1,0 +1,44 @@
+[
+  {
+    "element_type": "Curb Ramp",
+    "quest_query": "nodes with (barrier=kerb)",
+    "quests": [
+      {
+        "quest_id": 1,
+        "quest_title": "Title 1",
+        "quest_description": "Description 1",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:quest_tag_1",
+        "quest_answer_choices": [
+          {
+            "value": "value_1",
+            "choice_text": "Choice 1",
+            "choice_follow_up": "Choice 1 Picture Prompt"
+          },
+          {
+            "value": "value_2",
+            "choice_text": "Choice 2"
+          }
+        ]
+      },
+      {
+        "quest_id": 2,
+        "quest_title": "Title 2",
+        "quest_description": "Description 2",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:quest_tag_2",
+        "quest_answer_choices": [
+          {
+            "value": "value_3",
+            "choice_text": "Choice 3",
+            "choice_follow_up": "Choice 3 Picture Prompt"
+          },
+          {
+            "value": "value_4",
+            "choice_text": "Choice 4"
+          }
+        ]
+      }
+    ]
+  }
+]
