@@ -18,7 +18,7 @@ Documentaiton files for long form quest definitions.
 
 GoInfoGame Long Form Quest JSON Definitions for use in [TDEI Workspaces](https://workspaces.sidewalks.washington.edu/), sorted by Environment and Project Group.
 
-### [Resources/Graphics](quests/res/graphics)
+### [Images](images)
 
 Images for GoInfoGame quests.
 
