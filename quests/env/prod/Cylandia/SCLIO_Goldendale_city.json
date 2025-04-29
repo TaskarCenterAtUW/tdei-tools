@@ -700,7 +700,7 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_none_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/signed/yes_square.png"
           },
           {
             "value": "no",
@@ -723,12 +723,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_shelter_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/shelter/yes_square.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_none_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/shelter/no_square.png"
           }
         ]
       },
@@ -746,12 +746,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_bench_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bench/yes_square.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_none_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bench/no_square.png"
           }
         ]
       },
@@ -774,7 +774,7 @@
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_none_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bench/no_square.png"
           }
         ]
       },
@@ -792,12 +792,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_bench_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bench/yes_square.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_none_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bench/no_square.png"
           }
         ]
       },
@@ -815,12 +815,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_informal_seating_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bench/type/informal_square.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_none_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bench/no_square.png"
           }
         ]
       },
@@ -838,12 +838,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_schedule_pole_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/map/yes_square.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_none_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/map/no_square.png"
           }
         ]
       },
@@ -871,7 +871,7 @@
           {
             "value": "bus_pole",
             "choice_text": "On the bus stop pole",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_schedule_pole_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/map/yes_square.png"
           }
         ]
       },
@@ -908,12 +908,12 @@
           {
             "value": "yes",
             "choice_text": "Yes",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_garbage_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bin/yes_square.png"
           },
           {
             "value": "no",
             "choice_text": "No",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_none_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bin/no_square.png"
           }
         ]
       },
@@ -932,12 +932,12 @@
           {
             "value": "dim",
             "choice_text": "Dim",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_light_dim_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/lit/dim_square.png"
           },
           {
             "value": "well_lit",
             "choice_text": "Well Lit",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/bus_well_lit_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/lit/yes_square.png"
           }
         ]
       },
