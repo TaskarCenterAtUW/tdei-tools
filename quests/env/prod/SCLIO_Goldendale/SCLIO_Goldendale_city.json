@@ -69,12 +69,12 @@
           {
             "value": "perpendicular",
             "choice_text": "Perpendicular",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/ramp/placement/perpendicular_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/ramp/placement/perpendicular_landscape.png"
           },
           {
             "value": "parallel",
             "choice_text": "Parallel",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/ramp/placement/parallel_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/ramp/placement/parallel_landscape.png"
           },
           {
             "value": "combination",
@@ -97,12 +97,12 @@
           {
             "value": "aligned",
             "choice_text": "Aligned",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/ramp/alignment/aligned_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/ramp/alignment/aligned_square.png"
           },
           {
             "value": "misaligned",
             "choice_text": "Misaligned",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/ramp/alignment/misaligned_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/ramp/alignment/misaligned_square.png"
           }
         ]
       },
@@ -239,12 +239,12 @@
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/ramp/surface/concrete_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/ramp/surface/concrete_landscape.png"
           },
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/ramp/surface/asphalt_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/ramp/surface/asphalt_landscape.png"
           },
           {
             "value": "other",
@@ -1440,7 +1440,8 @@
         "quest_answer_choices": [
           {
             "value": "yes",
-            "choice_text": "Yes"
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/bus_stop/nearby_crossing/yes_2_square.png"
           },
           {
             "value": "no",
@@ -1475,7 +1476,7 @@
         "quest_id": 67,
         "quest_title": "What is the slope of this sidewalk or roadway at its steepest point?",
         "quest_description": "Measure the slope of this walkway, as a percentage.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/slope_square.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/dimension/slope_square.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:bus_slope",
         "quest_answer_validation": {
@@ -1487,7 +1488,7 @@
         "quest_id": 68,
         "quest_title": "What is the cross slope of this sidewalk or roadway at its steepest point?",
         "quest_description": "Measure the side-to-side tilt of this sidewalk, as a percentage.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/cross_slope_square.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/dimension/cross_slope_square.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:bus_cross_slope",
         "quest_answer_validation": {
@@ -1552,7 +1553,8 @@
         "quest_answer_choices": [
           {
             "value": "yes",
-            "choice_text": "Yes"
+            "choice_text": "Yes",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/zebra_square.png"
           },
           {
             "value": "no",
