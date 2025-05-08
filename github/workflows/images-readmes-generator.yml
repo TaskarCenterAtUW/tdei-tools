@@ -1,0 +1,101 @@
+name: Generate Image READMEs
+
+on:
+  workflow_dispatch: # Allows manual triggering
+  push:
+    paths:
+      - 'images/**' # Triggers on changes within the images directory
+
+jobs:
+  generate_readmes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to commit changes back to the repository
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Checkout the head of the branch that triggered the workflow,
+          # or the branch selected for manual dispatch
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Install ExifTool
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libimage-exiftool-perl
+
+      - name: Generate README files
+        shell: pwsh
+        run: |
+          $imagesRoot = "images"
+          # Use GITHUB_HEAD_REF if available (for PRs), otherwise GITHUB_REF_NAME (for pushes to branches)
+          $branchOrRefName = if ($env:GITHUB_HEAD_REF) { $env:GITHUB_HEAD_REF } else { $env:GITHUB_REF_NAME }
+          $repoFullName = $env:GITHUB_REPOSITORY # Format: OWNER/REPO
+          $githubWorkspace = $env:GITHUB_WORKSPACE
+
+          Write-Host "Starting README generation for images."
+          Write-Host "Repository: $repoFullName, Branch/Ref: $branchOrRefName, Workspace: $githubWorkspace"
+
+          # Find all subdirectories within the imagesRoot
+          $subDirectories = Get-ChildItem -Path $imagesRoot -Directory -Recurse
+          if ($subDirectories.Count -eq 0) {
+            Write-Host "No subdirectories found in '$imagesRoot'."
+          }
+
+          foreach ($dirInfo in $subDirectories) {
+              $currentDirFullPath = $dirInfo.FullName
+              # Get directory path relative to the repository root for display
+              $currentDirRelativePath = $currentDirFullPath.Replace($githubWorkspace, '').TrimStart('\/')
+              
+              Write-Host "Processing directory: $currentDirRelativePath"
+
+              $imageFiles = Get-ChildItem -Path $currentDirFullPath -File -Include *.png, *.jpg, *.jpeg, *.gif, *.webp
+              
+              if ($imageFiles.Count -eq 0) {
+                  Write-Host "No image files found in '$currentDirRelativePath'. Skipping README generation for this directory."
+                  continue
+              }
+
+              $readmePath = Join-Path -Path $currentDirFullPath -ChildPath "README.md"
+              $markdownContent = "# Images in $($dirInfo.Name)`n`n" # Use the immediate directory name for the title
+              $markdownContent += "| Filename | Direct Link | License |`n"
+              $markdownContent += "|----------|-------------|---------|`n"
+
+              foreach ($imageFile in $imageFiles) {
+                  $imageName = $imageFile.Name
+                  # Construct path relative to GITHUB_WORKSPACE for raw URL, ensuring Unix-style separators
+                  $repoRelativeImagePath = ($imageFile.FullName.Replace($githubWorkspace, '')).TrimStart('\/').Replace('\', '/')
+                  
+                  $rawUrl = "https://raw.githubusercontent.com/$repoFullName/$branchOrRefName/$repoRelativeImagePath"
+                  
+                  # Attempt to get copyright information from EXIF data
+                  $copyright = (exiftool -s3 -Copyright $imageFile.FullName).Trim()
+                  if (-not $copyright) {
+                      $copyright = (exiftool -s3 -IFD0:Copyright $imageFile.FullName).Trim() # Common for JPEGs/TIFFs
+                  }
+                  if (-not $copyright) {
+                      $copyright = (exiftool -s3 -PNG:Copyright $imageFile.FullName).Trim() # Specific to PNGs
+                  }
+                  if (-not $copyright) {
+                      $copyright = (exiftool -s3 -XMP:Rights $imageFile.FullName).Trim() # XMP metadata
+                  }
+                  if (-not $copyright) {
+                      $copyright = "N/A"
+                  }
+
+                  $markdownContent += "| $imageName | [$rawUrl]($rawUrl) | $copyright |`n"
+              }
+              
+              Write-Host "Writing README to '$readmePath'"
+              Set-Content -Path $readmePath -Value $markdownContent -Encoding UTF8
+          }
+          Write-Host "Finished generating README files."
+
+      - name: Commit and push README files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-generate image READMEs"
+          file_pattern: "images/**/README.md" # Pattern to find generated/updated READMEs
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
