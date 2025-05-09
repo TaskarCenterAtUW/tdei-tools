@@ -1,7 +1,7 @@
 [
   {
     "element_type": "Sidewalks",
-    "quest_query": "ways with (highway = footway or highway = path)",
+    "quest_query": "ways with ((highway=footway and footway!=crossing) or highway=path)",
     "quests": [
       {
         "quest_id": 1,
@@ -68,10 +68,6 @@
         "quest_tag": "ext:pathway_count_disruptions_small",
         "quest_answer_choices": [
           {
-            "value": "0",
-            "choice_text": "No"
-          },
-          {
             "value": "1-5",
             "choice_text": "Yes, there are 1-5 small cracks, disruptions, or gaps along this pathway."
           },
@@ -82,6 +78,10 @@
           {
             "value": "11+",
             "choice_text": "Yes, there are 11+ small cracks, disruptions, or gaps along this pathway."
+          },
+          {
+            "value": "0",
+            "choice_text": "No"
           }
         ]
       },
@@ -93,10 +93,6 @@
         "quest_tag": "ext:pathway_count_disruptions_large",
         "quest_answer_choices": [
           {
-            "value": "0",
-            "choice_text": "No"
-          },
-          {
             "value": "1-5",
             "choice_text": "Yes, there are 1-5 large cracks, disruptions, or gaps along this pathway."
           },
@@ -107,6 +103,10 @@
           {
             "value": "11+",
             "choice_text": "Yes, there are 11+ large cracks, disruptions, or gaps along this pathway."
+          },
+          {
+            "value": "0",
+            "choice_text": "No"
           }
         ]
       },
@@ -119,7 +119,8 @@
         "quest_answer_choices": [
           {
             "value": "yes",
-            "choice_text": "Yes, overgrown vegetation is present."
+            "choice_text": "Yes, overgrown vegetation is present.",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/obstruction/temporary/overgrown_landscape.png"
           },
           {
             "value": "no",
@@ -136,7 +137,8 @@
         "quest_answer_choices": [
           {
             "value": "yes",
-            "choice_text": "Yes, an obstacle is present."
+            "choice_text": "Yes, an obstacle is present.",
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/obstruction/utility_landscape.png"
           },
           {
             "value": "no",
@@ -159,7 +161,7 @@
   },
   {
     "element_type": "Crossings",
-    "quest_query": "ways with (highway = footway and footway = crossing)",
+    "quest_query": "ways with (footway=crossing)",
     "quests": [
       {
         "quest_id": 9,
@@ -277,7 +279,7 @@
   },
   {
     "element_type": "Kerb",
-    "quest_query": "nodes with (barrier = kerb)",
+    "quest_query": "nodes with (barrier=kerb)",
     "quests": [
       {
         "quest_id": 15,
