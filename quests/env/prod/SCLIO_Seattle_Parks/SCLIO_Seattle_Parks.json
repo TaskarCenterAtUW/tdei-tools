@@ -278,7 +278,7 @@
     ]
   },
   {
-    "element_type": "Kerb",
+    "element_type": "Curbs",
     "quest_query": "nodes with (barrier=kerb)",
     "quests": [
       {

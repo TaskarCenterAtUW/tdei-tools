@@ -303,7 +303,7 @@
   },
   {
     "element_type": "Sidewalks",
-    "quest_query": "ways with (highway=footway and footway=sidewalk)",
+    "quest_query": "ways with (footway=sidewalk)",
     "quests": [
       {
         "quest_id": 16,
@@ -627,14 +627,14 @@
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/obstruction/temporary/sandwich_board_landscape.png"
           },
           {
-            "value": "micromobility",
-            "choice_text": "Micromobility Vehicles",
-            "image_url": ""
-          },
-          {
             "value": "parked_cars",
             "choice_text": "Parked Cars",
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/obstruction/temporary/parked_cars_landscape.png"
+          },
+          {
+            "value": "micromobility",
+            "choice_text": "Micromobility Vehicles",
+            "image_url": ""
           }
         ]
       }
@@ -949,10 +949,6 @@
         "quest_tag": "ext:bus_restroom",
         "quest_answer_choices": [
           {
-            "value": "no",
-            "choice_text": "No, not within two blocks"
-          },
-          {
             "value": "restroom_two_blocks",
             "choice_text": "Yes, within two blocks"
           },
@@ -963,6 +959,10 @@
           {
             "value": "restroom_at",
             "choice_text": "Yes, directly next to this stop"
+          },
+          {
+            "value": "no",
+            "choice_text": "No, not within two blocks"
           }
         ]
       },
@@ -974,10 +974,6 @@
         "quest_tag": "ext:bus_ada_parking",
         "quest_answer_choices": [
           {
-            "value": "no",
-            "choice_text": "No, not within two blocks"
-          },
-          {
             "value": "parking_two_blocks",
             "choice_text": "Yes, within two blocks"
           },
@@ -988,6 +984,10 @@
           {
             "value": "parking_at",
             "choice_text": "Yes, directly next to this stop"
+          },
+          {
+            "value": "no",
+            "choice_text": "No, not within two blocks"
           }
         ]
       },
@@ -1541,8 +1541,8 @@
     ]
   },
   {
-    "element_type": "Crosswalks",
-    "quest_query": "ways with (highway=footway and footway=crossing)",
+    "element_type": "Crossings",
+    "quest_query": "ways with (footway=crossing)",
     "quests": [
       {
         "quest_id": 72,
@@ -1581,7 +1581,7 @@
           },
           {
             "value": "lines_paired",
-            "choice_text": "Lines Paired",
+            "choice_text": "Lines (Paired)",
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/lines_paired_square.png"
           },
           {
@@ -1591,7 +1591,7 @@
           },
           {
             "value": "zebra_paired",
-            "choice_text": "Zebra Paired",
+            "choice_text": "Zebra (Paired)",
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/zebra_paired_square.png"
           },
           {
@@ -1601,12 +1601,12 @@
           },
           {
             "value": "ladder_paired",
-            "choice_text": "Ladder Paired",
+            "choice_text": "Ladder (Paired)",
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/ladder_paired_square.png"
           },
           {
             "value": "ladder_skewed",
-            "choice_text": "Ladder Skewed",
+            "choice_text": "Ladder (Skewed)",
             "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/ladder_skewed_square.png"
           },
           {
