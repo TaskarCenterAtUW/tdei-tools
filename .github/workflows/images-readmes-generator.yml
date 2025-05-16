@@ -1,16 +1,21 @@
-name: Generate Image READMEs
+name: Images READMEs Generator
 
 on:
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch:
   push:
+    branches:
+      - "images-readmes-generation"
     paths:
       - 'images/**' # Triggers on changes within the images directory
+  pull_request:
+    branches:
+      - "main" 
 
 jobs:
   generate_readmes:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required to commit changes back to the repository
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
