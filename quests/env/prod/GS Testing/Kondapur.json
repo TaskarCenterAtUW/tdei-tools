@@ -1,0 +1,32 @@
+[
+  {
+    "element_type": "Sidewalks",
+    "quest_query": "ways with (highway=footway and footway=sidewalk)",
+    "quests": [
+      {
+        "quest_id": 1,
+        "quest_title": "What type of surface is the sidewalk?",
+        "quest_description": "Choose the type of surface of the sidewalk",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "surface",
+        "quest_answer_choices": [
+          {
+            "value": "asphalt",
+            "choice_text": "Asphalt",
+            "image_url": "http://some_url.com/image.jpg"
+          },
+          {
+            "value": "concrete",
+            "choice_text": "Concrete",
+            "image_url": "http://some_url.com/image.jpg"
+          },
+          {
+            "value": "brick",
+            "choice_text": "Brick",
+            "image_url": "http://some_url.com/image.jpg"
+          }
+        ]
+      }
+    ]
+  }
+]
