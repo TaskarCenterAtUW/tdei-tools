@@ -6,10 +6,10 @@ on:
     branches:
       - "images-readmes-generation"
     paths:
-      - 'images/**'
+      - "images/**"
   pull_request:
     branches:
-      - "main" 
+      - "main"
 
 jobs:
   generate_readmes:
@@ -59,8 +59,8 @@ jobs:
               
               Write-Host "Processing directory: $currentDirRelativePath"
 
-              # Get only image files in the current directory (not subdirectories)
-              $imageFiles = Get-ChildItem -Path $currentDirFullPath -File -Include *.png
+              # Get only image files in the current directory (including subdirectories)
+              $imageFiles = Get-ChildItem -Path $currentDirFullPath -File -Include *.png -Recurse
               Write-Host "Found $($imageFiles.Count) image(s) in '$currentDirRelativePath'"
               if ($imageFiles.Count -eq 0) {
                   Write-Host "No image files found in '$currentDirRelativePath'. Skipping README generation for this directory."
