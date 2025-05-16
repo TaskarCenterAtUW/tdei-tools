@@ -24,6 +24,7 @@ jobs:
 
       - name: Install ExifTool
         run: |
+          # Skip updating manpages/docs to save time
           sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc > /dev/null << 'EOF'
           path-exclude /usr/share/doc/*
           path-exclude /usr/share/man/*
@@ -41,6 +42,7 @@ jobs:
           $processedDirectories = 0
           $createdReadmes = 0
           $skippedDirectories = 0
+          $skippedImages = 0
 
           Write-Host "Deleting all existing README.md files in '$imagesRoot' and subdirectories..."
           Get-ChildItem -Path $imagesRoot -Filter "README.md" -File -Recurse | ForEach-Object {
@@ -89,6 +91,12 @@ jobs:
               $markdownContent += "|---------|----------|-------------|---------|`n"
 
               foreach ($imageFile in $imageFiles) {
+                  if ($imageFile.Name -ilike "*_original.png") {
+                      Write-Host "Skipping '_original.png' image."
+                      $skippedImages++
+                      continue
+                  }
+
                   $imageName = $imageFile.Name
                   $imageName = $imageName -replace '(_original|_square|_landscape|_portrait)\.png$', ''
 
@@ -119,6 +127,7 @@ jobs:
           Write-Host "Directories deleted: $deletedDirectories"
           Write-Host "Directories processed: $processedDirectories"
           Write-Host "Directories skipped: $skippedDirectories"
+          Write-Host "Images skipped: $skippedImages"
           Write-Host "READMEs created: $createdReadmes"
           Write-Host "Finished generating README files."
 
