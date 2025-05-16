@@ -1,6 +1,6 @@
 [
   {
-    "element_type": "Curbs",
+    "element_type": "Kerb",
     "quest_query": "nodes with (barrier=kerb)",
     "quests": [
       {
