@@ -101,6 +101,9 @@ jobs:
           }
           Write-Host "Finished generating README files."
 
+      - name: Debug generated files
+        run: ls -R images
+
       - name: Commit and push README files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
