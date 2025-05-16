@@ -1,7 +1,7 @@
 [
   {
     "element_type": "Sidewalks",
-    "quest_query": "ways with ((highway=footway and footway!=crossing) or highway=path)",
+    "quest_query": "ways with (highway = footway or highway = path)",
     "quests": [
       {
         "quest_id": 1,
@@ -13,17 +13,17 @@
           {
             "value": "asphalt",
             "choice_text": "Asphalt",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/asphalt_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/asphalt_wide.png"
           },
           {
             "value": "concrete",
             "choice_text": "Concrete",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/concrete_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/concrete_wide.png"
           },
           {
             "value": "brick",
             "choice_text": "Brick",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/brick_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_surface/brick_wide.png"
           },
           {
             "value": "other",
@@ -35,7 +35,7 @@
         "quest_id": 2,
         "quest_title": "What is the width of this pathway?",
         "quest_description": "Measure the width of this pathway, in inches.",
-        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/dimension/width_square.png",
+        "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/sidewalk_dimensions/sidewalk_width_big.png",
         "quest_type": "Numeric",
         "quest_tag": "ext:pathway_width",
         "quest_answer_validation": {
@@ -68,6 +68,10 @@
         "quest_tag": "ext:pathway_count_disruptions_small",
         "quest_answer_choices": [
           {
+            "value": "0",
+            "choice_text": "No"
+          },
+          {
             "value": "1-5",
             "choice_text": "Yes, there are 1-5 small cracks, disruptions, or gaps along this pathway."
           },
@@ -78,10 +82,6 @@
           {
             "value": "11+",
             "choice_text": "Yes, there are 11+ small cracks, disruptions, or gaps along this pathway."
-          },
-          {
-            "value": "0",
-            "choice_text": "No"
           }
         ]
       },
@@ -93,6 +93,10 @@
         "quest_tag": "ext:pathway_count_disruptions_large",
         "quest_answer_choices": [
           {
+            "value": "0",
+            "choice_text": "No"
+          },
+          {
             "value": "1-5",
             "choice_text": "Yes, there are 1-5 large cracks, disruptions, or gaps along this pathway."
           },
@@ -103,10 +107,6 @@
           {
             "value": "11+",
             "choice_text": "Yes, there are 11+ large cracks, disruptions, or gaps along this pathway."
-          },
-          {
-            "value": "0",
-            "choice_text": "No"
           }
         ]
       },
@@ -119,8 +119,7 @@
         "quest_answer_choices": [
           {
             "value": "yes",
-            "choice_text": "Yes, overgrown vegetation is present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/obstruction/temporary/overgrown_landscape.png"
+            "choice_text": "Yes, overgrown vegetation is present."
           },
           {
             "value": "no",
@@ -137,8 +136,7 @@
         "quest_answer_choices": [
           {
             "value": "yes",
-            "choice_text": "Yes, an obstacle is present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/obstruction/utility_landscape.png"
+            "choice_text": "Yes, an obstacle is present."
           },
           {
             "value": "no",
@@ -161,7 +159,7 @@
   },
   {
     "element_type": "Crossings",
-    "quest_query": "ways with (footway=crossing)",
+    "quest_query": "ways with (highway = footway and footway = crossing)",
     "quests": [
       {
         "quest_id": 9,
@@ -173,12 +171,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, there are markings present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/zebra_paired_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/crossing_markings/zebra_paired_small.png"
           },
           {
             "value": "no",
             "choice_text": "No, there are no markings present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/no_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/crossing_markings/no_small.png"
           }
         ]
       },
@@ -260,8 +258,8 @@
       },
       {
         "quest_id": 14,
-        "quest_title": "Is there adequate lighting for this crossing?",
-        "quest_description": "Determine whether there is adequate lighting from streetlights for this crossing.",
+        "quest_title": "Is there aqeuate lighting for this crossing?",
+        "quest_description": "Determine whether there is adequare lighting from streetlights for this crossing.",
         "quest_type": "ExclusiveChoice",
         "quest_tag": "ext:crossing_lit",
         "quest_answer_choices": [
@@ -279,7 +277,7 @@
   },
   {
     "element_type": "Kerb",
-    "quest_query": "nodes with (barrier=kerb)",
+    "quest_query": "nodes with (barrier = kerb)",
     "quests": [
       {
         "quest_id": 15,
@@ -291,17 +289,17 @@
           {
             "value": "lowered",
             "choice_text": "There is a lowered curb ramp present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/lowered_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/lowered_wide.png"
           },
           {
             "value": "flush",
             "choice_text": "There is a flush curb present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/flush_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/flush_wide.png"
           },
           {
             "value": "raised",
             "choice_text": "There is a raised curb present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/raised_landscape.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/curb_type/raised_wide.png"
           }
         ]
       },
@@ -315,12 +313,12 @@
           {
             "value": "yes",
             "choice_text": "Yes, there is tactile paving present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/tactile_paving/yes_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/yes_big.png"
           },
           {
             "value": "no",
             "choice_text": "No, there is not tactile paving present.",
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/tactile_paving/no_square.png"
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/TDEI-tools/refs/heads/main/quests/res/graphics/tactile_paving/no_big.png"
           }
         ]
       }

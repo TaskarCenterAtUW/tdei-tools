@@ -6,11 +6,11 @@ Repository for tools and resources related to the TDEI.
 
 Documentaiton files for long form quest definitions.
 
-* **[Element Query Documentation](documentation/element-query-documentation.md)**
+- **[Element Query Documentation](documentation/element-query-documentation.md)**
 
-* **[Long Form Schema](documentation/long-form-schema.json)**
+- **[Long Form Schema](documentation/long-form-schema.json)**
 
-* **[Example](documentation/example.json)**
+- **[Example](documentation/example.json)**
 
 ## [Quests](quests)
 
@@ -26,6 +26,8 @@ Images for GoInfoGame quests.
 
 Utilities related to the TDEI.
 
-* **[Workspaces Export Script](utilities/workspace-export.ps1)**
+- **[GoInfoGame Images Exif Data Update Script (Recursive)](utilities/update-exif-recursive.ps1)**
 
-* **[GoInfoGame Images Exif Data Update Script](utilities/update-exif.ps1)**
+- **[GoInfoGame Images Exif Data Update Script](utilities/update-exif.ps1)**
+
+- **[Workspaces Export Script](utilities/workspace-export.ps1)**

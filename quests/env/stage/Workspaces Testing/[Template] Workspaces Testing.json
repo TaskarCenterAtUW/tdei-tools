@@ -1,0 +1,86 @@
+[
+  {
+    "element_type": "Kerb",
+    "quest_query": "nodes with (barrier=kerb)",
+    "quests": [
+      {
+        "quest_id": 1,
+        "quest_title": "Title 1",
+        "quest_description": "Description 1",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:quest_tag_1",
+        "quest_answer_choices": [
+          {
+            "value": "value_1",
+            "choice_text": "Choice 1",
+            "choice_follow_up": "Choice 1 Picture Prompt"
+          },
+          {
+            "value": "value_2",
+            "choice_text": "Choice 2"
+          }
+        ]
+      },
+      {
+        "quest_id": 2,
+        "quest_title": "Title 2",
+        "quest_description": "Description 2",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:quest_tag_2",
+        "quest_answer_choices": [
+          {
+            "value": "value_3",
+            "choice_text": "Choice 3",
+            "choice_follow_up": "Choice 3 Picture Prompt"
+          },
+          {
+            "value": "value_4",
+            "choice_text": "Choice 4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "element_type": "Sidewalks",
+    "element_query": "ways with (highway=footway and footway=sidewalk)",
+    "quests": [
+      {
+        "quest_id": 3,
+        "quest_title": "Title 3",
+        "quest_description": "Description 3",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:quest_tag_3",
+        "quest_answer_choices": [
+          {
+            "value": "value_5",
+            "choice_text": "Choice 5",
+            "choice_follow_up": "Choice 5 Picture Prompt"
+          },
+          {
+            "value": "value_6",
+            "choice_text": "Choice 6"
+          }
+        ]
+      },
+      {
+        "quest_id": 2,
+        "quest_title": "Title 4",
+        "quest_description": "Description 4",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:quest_tag_4",
+        "quest_answer_choices": [
+          {
+            "value": "value_7",
+            "choice_text": "Choice 7",
+            "choice_follow_up": "Choice 7 Picture Prompt"
+          },
+          {
+            "value": "value_8",
+            "choice_text": "Choice 8"
+          }
+        ]
+      }
+    ]
+  }
+]
