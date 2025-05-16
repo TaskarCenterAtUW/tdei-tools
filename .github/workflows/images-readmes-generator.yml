@@ -61,7 +61,6 @@ jobs:
 
               # Get only image files in the current directory (not subdirectories)
               $imageFiles = Get-ChildItem -Path $currentDirFullPath -File -Include *.png
-              Write-Host "$imageFiles images found"
               if ($imageFiles.Count -eq 0) {
                   Write-Host "No image files found in '$currentDirRelativePath'. Skipping README generation for this directory."
                   $skippedDirectories++
