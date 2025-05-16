@@ -37,11 +37,16 @@ jobs:
         shell: pwsh
         run: |
           $imagesRoot = "images"
+          $deletedDirectories = 0
+          $processedDirectories = 0
+          $createdReadmes = 0
+          $skippedDirectories = 0
 
           Write-Host "Deleting all existing README.md files in '$imagesRoot' and subdirectories..."
           Get-ChildItem -Path $imagesRoot -Filter "README.md" -File -Recurse | ForEach-Object {
               Write-Host "Deleting: $($_.FullName)"
               Remove-Item $_.FullName -Force
+              $deletedDirectories++
           }
               
           # Use GITHUB_HEAD_REF if available (for PRs), otherwise GITHUB_REF_NAME (for pushes to branches)
@@ -54,10 +59,6 @@ jobs:
 
           # Get all subdirectories recursively
           $subDirectories = Get-ChildItem -Path $imagesRoot -Directory -Recurse
-
-          $processedDirectories = 0
-          $createdReadmes = 0
-          $skippedDirectories = 0
 
           foreach ($dirInfo in $subDirectories) {
               if ($dirInfo.Name -ieq "templates") {
@@ -115,10 +116,10 @@ jobs:
           }
 
           Write-Host "Summary:"
+          Write-Host "Directories deleted: $deletedDirectories"
           Write-Host "Directories processed: $processedDirectories"
-          Write-Host "READMEs created: $createdReadmes"
           Write-Host "Directories skipped: $skippedDirectories"
-
+          Write-Host "READMEs created: $createdReadmes"
           Write-Host "Finished generating README files."
 
       - name: Commit and push README files
