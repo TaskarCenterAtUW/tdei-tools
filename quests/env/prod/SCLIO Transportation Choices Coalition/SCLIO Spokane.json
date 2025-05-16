@@ -1,7 +1,7 @@
 [
   {
     "element_type": "Sidewalks",
-    "quest_query": "ways with (highway=footway and footway=sidewalk)",
+    "quest_query": "ways with (footway=sidewalk)",
     "quests": [
       {
         "quest_id": 1,
@@ -293,7 +293,7 @@
   },
   {
     "element_type": "Crossings",
-    "quest_query": "ways with (highway=footway and footway=crossing)",
+    "quest_query": "ways with (footway=crossing)",
     "quests": [
       {
         "quest_id": 13,
@@ -602,7 +602,7 @@
   },
   {
     "element_type": "Intersections",
-    "quest_query": "nodes with (highway=traffic_signals or highway=stop)",
+    "quest_query": "nodes with (ext:intersection=yes)",
     "quests": [
       {
         "quest_id": 26,
