@@ -49,7 +49,7 @@ jobs:
               
               Write-Host "Processing directory: $currentDirRelativePath"
 
-              $imageFiles = Get-ChildItem -Path $currentDirFullPath -File -Include *.png, *.jpg, *.jpeg, *.gif, *.webp
+              $imageFiles = Get-ChildItem -Path $currentDirFullPath -File -Include *.png
               
               if ($imageFiles.Count -eq 0) {
                   Write-Host "No image files found in '$currentDirRelativePath'. Skipping README generation for this directory."
