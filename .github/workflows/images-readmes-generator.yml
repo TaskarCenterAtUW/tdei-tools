@@ -53,6 +53,11 @@ jobs:
           $skippedDirectories = 0
 
           foreach ($dirInfo in $subDirectories) {
+              if ($dirInfo.Name -ieq "templates") {
+                  Write-Host "Skipping 'templates' directory."
+                  $skippedDirectories++
+                  continue
+              }
               $processedDirectories++
               $currentDirFullPath = $dirInfo.FullName
               $currentDirRelativePath = $currentDirFullPath.Replace($githubWorkspace, '').TrimStart('\/')
