@@ -70,12 +70,9 @@ jobs:
 
               $createdReadmes++
               $readmePath = Join-Path -Path $currentDirFullPath -ChildPath "README.md"
-              $markdownContent = @"
-# Images in $($dirInfo.Name)
-
-| Preview | Filename | Direct Link | License |
-|---------|----------|-------------|---------|
-"@
+              $markdownContent = "# Images in $($dirInfo.Name)`n`n"
+              $markdownContent += "| Preview | Filename | Direct Link | License |`n"
+              $markdownContent += "|---------|----------|-------------|---------|`n"
 
               foreach ($imageFile in $imageFiles) {
                   $imageName = $imageFile.Name
