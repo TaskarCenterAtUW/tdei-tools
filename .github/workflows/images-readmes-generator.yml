@@ -37,6 +37,13 @@ jobs:
         shell: pwsh
         run: |
           $imagesRoot = "images"
+
+          Write-Host "Deleting all existing README.md files in '$imagesRoot' and subdirectories..."
+          Get-ChildItem -Path $imagesRoot -Filter "README.md" -File -Recurse | ForEach-Object {
+              Write-Host "Deleting: $($_.FullName)"
+              Remove-Item $_.FullName -Force
+          }
+              
           # Use GITHUB_HEAD_REF if available (for PRs), otherwise GITHUB_REF_NAME (for pushes to branches)
           $branchOrRefName = if ($env:GITHUB_HEAD_REF) { $env:GITHUB_HEAD_REF } else { $env:GITHUB_REF_NAME }
           $repoFullName = $env:GITHUB_REPOSITORY
