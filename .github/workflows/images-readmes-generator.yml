@@ -45,6 +45,7 @@ jobs:
           Write-Host "Starting Images READMEs Generator"
           Write-Host "Repository: $repoFullName, Branch/Ref: $branchOrRefName, Workspace: $githubWorkspace"
 
+          # Get all subdirectories recursively
           $subDirectories = Get-ChildItem -Path $imagesRoot -Directory -Recurse
 
           $processedDirectories = 0
@@ -54,13 +55,13 @@ jobs:
           foreach ($dirInfo in $subDirectories) {
               $processedDirectories++
               $currentDirFullPath = $dirInfo.FullName
-              # Get directory path relative to the repository root for display
               $currentDirRelativePath = $currentDirFullPath.Replace($githubWorkspace, '').TrimStart('\/')
               
               Write-Host "Processing directory: $currentDirRelativePath"
 
-              # Get only image files in the current directory (including subdirectories)
-              $imageFiles = Get-ChildItem -Path $currentDirFullPath -File -Include *.png -Recurse
+              # Only get images directly in this directory
+              $imageFiles = Get-ChildItem -Path (Join-Path $currentDirFullPath '*.png') -File
+
               Write-Host "Found $($imageFiles.Count) image(s) in '$currentDirRelativePath'"
               if ($imageFiles.Count -eq 0) {
                   Write-Host "No image files found in '$currentDirRelativePath'. Skipping README generation for this directory."
