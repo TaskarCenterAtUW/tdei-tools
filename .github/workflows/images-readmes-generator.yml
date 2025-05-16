@@ -38,11 +38,11 @@ jobs:
         shell: pwsh
         run: |
           $imagesRoot = "images"
-          $deletedDirectories = 0
+          $deletedReadmes = 0
           $processedDirectories = 0
-          $createdReadmes = 0
           $skippedDirectories = 0
           $skippedImages = 0
+          $createdReadmes = 0
 
           Write-Host "Deleting all existing README.md files in '$imagesRoot' and subdirectories..."
           Get-ChildItem -Path $imagesRoot -Filter "README.md" -File -Recurse | ForEach-Object {
@@ -132,7 +132,7 @@ jobs:
           }
 
           Write-Host "Summary:"
-          Write-Host "Directories deleted: $deletedDirectories"
+          Write-Host "Readmes deleted: $deletedReadmes"
           Write-Host "Directories processed: $processedDirectories"
           Write-Host "Directories skipped: $skippedDirectories"
           Write-Host "Images skipped: $skippedImages"
