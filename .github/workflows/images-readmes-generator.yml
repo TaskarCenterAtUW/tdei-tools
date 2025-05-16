@@ -98,7 +98,15 @@ jobs:
                   }
 
                   $imageName = $imageFile.Name
-                  $imageName = $imageName -replace '(_original|_square|_landscape|_portrait)\.png$', ''
+                  $displayName = $imageName
+
+                  if ($imageName -match '^(.*)_portrait\.png$') {
+                      $displayName = "$($Matches[1]) (Portrait)"
+                  } elseif ($imageName -match '^(.*)_landscape\.png$') {
+                      $displayName = "$($Matches[1]) (Landscape)"
+                  } elseif ($imageName -match '^(.*)_square\.png$') {
+                      $displayName = "$($Matches[1]) (Square)"
+                  }
 
                   # Construct path relative to GITHUB_WORKSPACE for raw URL, ensuring Unix-style separators
                   $repoRelativeImagePath = ($imageFile.FullName.Replace($githubWorkspace, '')).TrimStart('\/').Replace('\', '/')
@@ -115,7 +123,7 @@ jobs:
                       $copyright = $exifOutput.Trim()
                   }
 
-                  $markdownContent += "| ![$imageName]($rawUrl) | $imageName | [$rawUrl]($rawUrl) | $copyright |`n"
+                  $markdownContent += "| ![$displayName]($rawUrl) | $displayName | [$rawUrl]($rawUrl) | $copyright |`n"
               }
 
               # Write the README only if there are images
