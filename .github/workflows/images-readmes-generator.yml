@@ -1,0 +1,149 @@
+name: Images READMEs Generator
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "images-readmes-generation"
+    paths:
+      - "images/**"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  generate_readmes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Install ExifTool
+        run: |
+          # Skip updating manpages/docs to save time
+          sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc > /dev/null << 'EOF'
+          path-exclude /usr/share/doc/*
+          path-exclude /usr/share/man/*
+          path-exclude /usr/share/info/*
+          EOF
+
+          sudo apt-get update
+          sudo apt-get install -y libimage-exiftool-perl
+
+      - name: Generate README.md files
+        shell: pwsh
+        run: |
+          $imagesRoot = "images"
+          $deletedReadmes = 0
+          $processedDirectories = 0
+          $skippedDirectories = 0
+          $skippedImages = 0
+          $createdReadmes = 0
+
+          Write-Host "Deleting all existing README.md files in '$imagesRoot' and subdirectories..."
+          Get-ChildItem -Path $imagesRoot -Filter "README.md" -File -Recurse | ForEach-Object {
+              Write-Host "Deleting: $($_.FullName)"
+              Remove-Item $_.FullName -Force
+              $deletedReadmes++
+          }
+              
+          # Use GITHUB_HEAD_REF if available (for PRs), otherwise GITHUB_REF_NAME (for pushes to branches)
+          $branchOrRefName = if ($env:GITHUB_HEAD_REF) { $env:GITHUB_HEAD_REF } else { $env:GITHUB_REF_NAME }
+          $repoFullName = $env:GITHUB_REPOSITORY
+          $githubWorkspace = $env:GITHUB_WORKSPACE
+
+          Write-Host "Starting Images READMEs Generator"
+          Write-Host "Repository: $repoFullName, Branch/Ref: $branchOrRefName, Workspace: $githubWorkspace"
+
+          # Get all subdirectories recursively
+          $subDirectories = Get-ChildItem -Path $imagesRoot -Directory -Recurse
+
+          foreach ($dirInfo in $subDirectories) {
+              if ($dirInfo.Name -ieq "templates") {
+                  Write-Host "Skipping 'templates' directory."
+                  $skippedDirectories++
+                  continue
+              }
+              $processedDirectories++
+              $currentDirFullPath = $dirInfo.FullName
+              $currentDirRelativePath = $currentDirFullPath.Replace($githubWorkspace, '').TrimStart('\/')
+              
+              Write-Host "Processing directory: $currentDirRelativePath"
+
+              # Only get images directly in this directory
+              $imageFiles = Get-ChildItem -Path (Join-Path $currentDirFullPath '*.png') -File
+
+              Write-Host "Found $($imageFiles.Count) image(s) in '$currentDirRelativePath'"
+              if ($imageFiles.Count -eq 0) {
+                  Write-Host "No image files found in '$currentDirRelativePath'. Skipping README generation for this directory."
+                  $skippedDirectories++
+                  continue
+              }
+
+              $createdReadmes++
+              $readmePath = Join-Path -Path $currentDirFullPath -ChildPath "README.md"
+              $markdownContent = "# Images in $($dirInfo.Name)`n`n"
+              $markdownContent += "| Preview | Filename | Direct Link | License |`n"
+              $markdownContent += "|---------|----------|-------------|---------|`n"
+
+              foreach ($imageFile in $imageFiles) {
+                  if ($imageFile.Name -ilike "*_original.png") {
+                      Write-Host "Skipping '_original.png' image."
+                      $skippedImages++
+                      continue
+                  }
+
+                  $imageName = $imageFile.Name
+                  $displayName = $imageName
+
+                  if ($imageName -match '^(.*)_portrait\.png$') {
+                      $displayName = "$($Matches[1]) (Portrait)"
+                  } elseif ($imageName -match '^(.*)_landscape\.png$') {
+                      $displayName = "$($Matches[1]) (Landscape)"
+                  } elseif ($imageName -match '^(.*)_square\.png$') {
+                      $displayName = "$($Matches[1]) (Square)"
+                  }
+
+                  # Construct path relative to GITHUB_WORKSPACE for raw URL, ensuring Unix-style separators
+                  $repoRelativeImagePath = ($imageFile.FullName.Replace($githubWorkspace, '')).TrimStart('\/').Replace('\', '/')
+                  
+                  $baseRawUrl = "https://raw.githubusercontent.com/$repoFullName/$branchOrRefName"
+                  $rawUrl = "$baseRawUrl/$repoRelativeImagePath"
+                  
+                  # Attempt to get copyright information from EXIF data
+                  $exifOutput = exiftool -s3 -PNG:Copyright $imageFile.FullName 2>&1
+                  if ($LASTEXITCODE -ne 0) {
+                      Write-Host "Error retrieving EXIF data for file '$($imageFile.FullName)': $exifOutput"
+                      $copyright = "unknown"
+                  } else {
+                      $copyright = $exifOutput.Trim()
+                  }
+
+                  $markdownContent += "| ![$displayName]($rawUrl) | $displayName | [$rawUrl]($rawUrl) | $copyright |`n"
+              }
+
+              # Write the README only if there are images
+              Write-Host "Writing README to '$readmePath'"
+              Set-Content -Path $readmePath -Value $markdownContent -Encoding UTF8
+          }
+
+          Write-Host "Summary:"
+          Write-Host "Readmes deleted: $deletedReadmes"
+          Write-Host "Directories processed: $processedDirectories"
+          Write-Host "Directories skipped: $skippedDirectories"
+          Write-Host "Images skipped: $skippedImages"
+          Write-Host "READMEs created: $createdReadmes"
+          Write-Host "Finished generating README files."
+
+      - name: Commit and push README files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-generate image READMEs"
+          file_pattern: "images/**/README.md"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
