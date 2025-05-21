@@ -1,29 +1,39 @@
 # Name: Workspaces Export Script
-# Version: 1.0
+# Version: 1.1
 # Description: This script directly exports a database using the Workspaces API and saves it to a file.
 # Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-04-07
+# Date: 2025-05-21
 # License: CC-BY-ND 4.0 International
 
 # This script is designed to be run in a PowerShell environment.
 
 # Ask for and validate inputs
-$workspaceEnv = Read-Host -Prompt "Enter the Workspace Environment, in the format 'dev', 'stage', or 'prod'."
+Write-Host "Workspaces Export Script v1.1"
+Write-Host "Step 1 - Enter the Environment of the dataset you wish to export, in the format 'dev', 'stage', or 'prod'"
+Write-Host "Example - If your Workspace URL is 'https://workspaces-stage.sidewalks.washington.edu/workspace/351/settings' enter 'stage'"
+$workspaceEnv = Read-Host
 
 if ($workspaceEnv -notin @('dev', 'stage', 'prod')) {
-  Write-Host "Invalid Workspace Environment. Please enter 'dev', 'stage', or 'prod'." -ForegroundColor Red
+  Write-Host "Invalid Environment. Please enter 'dev', 'stage', or 'prod'." -ForegroundColor Red
   exit
 }
 
-$secureApiKey = Read-Host -Prompt "Enter your Workspaces API key, in the format 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'" -AsSecureString
-$workspaceId = Read-Host -Prompt "Enter the Workspace ID, in the format 'n'"
+Write-Host "Step 2 - Enter your API key from the corresponding TDEI Portal, in the format 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'"
+Write-Host "This is labeled 'My API Key' on https://portal-dev.tdei.us/, https://portal-stage.tdei.us/, or https://portal.tdei.us/"
+$secureApiKey = Read-Host -AsSecureString
+
+Write-Host "Step 3 - Enter the Workspace number, in the format '123'"
+Write-Host "Example - If your Workspace URL is 'https://workspaces-stage.sidewalks.washington.edu/workspace/351/settings' enter '351'"
+$workspaceId = Read-Host
 
 if (-not $workspaceId -or $workspaceId -notmatch '^\d+$') {
   Write-Host "Invalid Workspace ID. Please enter the numeric Workspace ID." -ForegroundColor Red
   exit
 }
 
-$outputFileName = Read-Host -Prompt "Enter the name of the output file, in the format 'filename.osm'"
+Write-Host "Step 4 - Enter the name of the output file, in the format 'filename.osm'"
+Write-Host "It is recommended to include the Workspace number in the file name, such as 'export-prod-45-20250521.osm'"
+$outputFileName = Read-Host
 
 if (-not $outputFileName -or $outputFileName -notmatch '\.osm$') {
   Write-Host "Invalid output file name. Please enter a name ending with '.osm'." -ForegroundColor Red
