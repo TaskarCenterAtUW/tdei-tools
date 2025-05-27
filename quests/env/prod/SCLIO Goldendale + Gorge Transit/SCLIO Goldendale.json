@@ -1394,7 +1394,7 @@
           "required_value": "yes"
         },
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:bus_curb_cuts",
+        "quest_tag": "ext:bus_curb_cut_type",
         "quest_answer_choices": [
           {
             "value": "lowered",

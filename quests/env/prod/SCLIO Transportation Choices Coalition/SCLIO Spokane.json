@@ -63,7 +63,7 @@
         },
         "quest_description": "Determine whether this sidewalk is separated from the street, such as by a grass verge, trees, or parked cars.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_separation",
+        "quest_tag": "ext:sidewalk_separation_type",
         "quest_answer_choices": [
           {
             "value": "landscaping",
