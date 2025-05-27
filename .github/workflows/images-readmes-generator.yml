@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "images-readmes-generation"
+      - "main"
     paths:
       - "images/**"
   pull_request:
