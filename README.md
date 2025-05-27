@@ -12,15 +12,13 @@ Documentaiton files for long form quest definitions.
 
 - **[Example](documentation/example.json)**
 
+## [Images](images)
+
+Images of pedestrian infrastructure and related features, intended to be used in GoInfoGame long form quest definitions. Uncropped original non-annotated images included, mostly licensed CC0 (refer to table in each directory to verify) and free to use for any purposes.
+
 ## [Quests](quests)
 
-### [Definitions](quests/env)
-
 GoInfoGame Long Form Quest JSON Definitions for use in [TDEI Workspaces](https://workspaces.sidewalks.washington.edu/), sorted by Environment and Project Group.
-
-### [Images](images)
-
-Images for GoInfoGame quests.
 
 ## [Utilities](utilities)
 
