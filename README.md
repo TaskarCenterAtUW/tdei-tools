@@ -24,8 +24,10 @@ GoInfoGame Long Form Quest JSON Definitions for use in [TDEI Workspaces](https:/
 
 Utilities related to the TDEI.
 
+- **[GoInfoGame Images Exif Data Update Script](utilities/update-exif.ps1)**
+
 - **[GoInfoGame Images Exif Data Update Script (Recursive)](utilities/update-exif-recursive.ps1)**
 
-- **[GoInfoGame Images Exif Data Update Script](utilities/update-exif.ps1)**
+- **[Quest ID Update Script](utilities/update-quest-ids.ps1)**
 
 - **[Workspaces Export Script](utilities/workspace-export.ps1)**
