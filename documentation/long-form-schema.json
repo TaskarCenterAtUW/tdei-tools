@@ -1,7 +1,30 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Long Form Quests Schema for GoInfoGame",
-    "type": "array",
+    "version": "2.0.0",
+    "type": "object",
+    "properties": {
+        "version": {
+            "description": "Version of the long form JSON data. If not present defaults to 1.0.0.",
+            "default": "1.0.0",
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "examples": [
+                "1.0.0",
+                "2.1.3"
+            ]
+        },
+        "elements": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Element"
+            }
+        }
+    },
+    "required": [
+        "version",
+        "elements"
+    ],
     "definitions": {
         "Element": {
             "type": "object",
@@ -25,6 +48,11 @@
                         "nodes with barrier=kerb"
                     ]
                 },
+                "element_type_icon": {
+                    "description": "Icon to be displayed for the element type. The icon name should be a string (not a URL) of the selected image fron the given website. The icon will be fetched from the GoInfoGame icon set that is locally available.",
+                    "type": "string",
+                    "examples": ["access_point", "baby", "barrier_on_road"]
+                },
                 "quests": {
                     "description": "List of quests for the element type.",
                     "type": "array",
@@ -36,7 +64,8 @@
             "required": [
                 "element_type",
                 "quest_query",
-                "quests"
+                "quests",
+                "element_type_icon"
             ]
         },
         "AnswerChoice": {
@@ -169,6 +198,47 @@
                             ]
                         }
                     }
+                },
+                "quest_answer_dependency": {
+                    "description": "",
+                    "type": "object",
+                    "properties": {
+                        "question_id": {
+                            "description": "The Quest ID of the question that this questions visibility is dependent on.",
+                            "type": "number",
+                            "examples": [
+                                1,
+                                2,
+                                3
+                            ]
+                        },
+                        "required_value": {
+                            "description": "The value of the dependent question that will make this question visible.",
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "examples": [
+                                "yes",
+                                "0",
+                                [
+                                    "1",
+                                    "2"
+                                ],
+                                [
+                                    "yes",
+                                    "no"
+                                ]
+                            ]
+                        }
+                    }
                 }
             },
             "required": [
@@ -180,8 +250,5 @@
                 "quest_answer_choices"
             ]
         }
-    },
-    "items": {
-        "$ref": "#/definitions/Element"
     }
 }
