@@ -43,7 +43,7 @@
   },
   {
     "element_type": "Sidewalks",
-    "element_query": "ways with (highway=footway and footway=sidewalk)",
+    "quest_query": "ways with (highway=footway and footway=sidewalk)",
     "quests": [
       {
         "quest_id": 3,
