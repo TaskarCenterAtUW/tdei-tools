@@ -1,16 +1,18 @@
 # TDEI Tools
 
-Repository for tools and resources related to the TDEI.
+Repository for tools and resources related to the Transportation Data Exchange Initiative (TDEI).
 
-## [Documentation](hdocumentation)
+## [Docs](docs)
 
-Documentaiton files for long form quest definitions.
+Documentation files, schema definitions, and examples.
 
-- **[Element Query Documentation](documentation/element-query-documentation.md)**
+### [Imagery Layers](docs/imagery-layer)
 
-- **[Long Form Schema](documentation/long-form-schema.json)**
+[Schema](docs/imagery-layer/schema.json) and [example](docs/imagery-layer/example.json) for imagery layers for use in GoInfoGame.
 
-- **[Example](documentation/example.json)**
+### [Quest Definitios](docs/quest-definition)
+
+[Schema](docs/quest-definition/schema.json) and [example](docs/quest-definition/example.json) for Long Form Quest Definitions for use in GoInfoGame.
 
 ## [Images](images)
 
@@ -25,9 +27,6 @@ GoInfoGame Long Form Quest JSON Definitions for use in [TDEI Workspaces](https:/
 Utilities related to the TDEI.
 
 - **[GoInfoGame Images Exif Data Update Script](utilities/update-exif.ps1)**
-
 - **[GoInfoGame Images Exif Data Update Script (Recursive)](utilities/update-exif-recursive.ps1)**
-
 - **[Quest ID Update Script](utilities/update-quest-ids.ps1)**
-
 - **[Workspaces Export Script](utilities/workspace-export.ps1)**
