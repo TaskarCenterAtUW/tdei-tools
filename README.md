@@ -12,7 +12,7 @@ Documentation files, schema definitions, and examples.
 
 ### [Quest Definitios](docs/quest-definition)
 
-[Schema](docs/quest-definition/schema.json) and [example](docs/quest-definition/example.json) for Long Form Quest Definitions for use in GoInfoGame.
+[Schema](docs/quest-definition/schema.json), [example](docs/quest-definition/example.json), and [element query documentation](docs/quest-definition/element-query-documentation.md) for Long Form Quest Definitions for use in GoInfoGame.
 
 ## [Images](images)
 
