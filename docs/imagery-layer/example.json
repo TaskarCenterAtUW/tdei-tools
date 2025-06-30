@@ -2,10 +2,10 @@
   {
     "attribution": {
       "required": true,
-      "text": "Openstreetmap Standard",
+      "text": "© OpenStreetMap contributors",
       "url": "https://www.openstreetmap.org/copyright"
     },
-    "description": "Openstreet map standard vector tiles",
+    "description": "OpenStreetMap Standard",
     "extent": {
       "max_zoom": 19,
       "polygon": [
@@ -35,7 +35,7 @@
     },
     "icon": "https://www.openstreetmap.org/assets/osm_logo-4b074077c29e100f40ee64f5177886e36b570d4cc3ab10c7b263003d09642e3f.svg",
     "id": "osm-standard",
-    "name": "Openstreet map Standard",
+    "name": "OpenStreetMap Standard",
     "type": "xyz",
     "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
   }
