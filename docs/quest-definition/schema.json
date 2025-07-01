@@ -49,7 +49,7 @@
           ]
         },
         "element_type_icon": {
-          "description": "Icon to be displayed for the element type. The icon name should be a string (not a URL) of the selected image fron the given website. The icon will be fetched from the GoInfoGame icon set that is locally available.",
+          "description": "Icon to be displayed for the element type. The icon name should be a string (not a URL) of the selected image from the given website. The icon will be fetched from the GoInfoGame icon set that is locally available.",
           "type": "string",
           "examples": [
             "access_point",
