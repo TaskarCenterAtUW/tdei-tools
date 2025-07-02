@@ -3,7 +3,7 @@
   "elements": [
     {
       "element_type": "Intersections",
-      "element_type_icon": "",
+      "element_type_icon": "blind_pedestrian_crossing",
       "quest_query": "nodes with (ext:intersection=yes)",
       "quests": [
         {
