@@ -2,14 +2,14 @@ name: Images READMEs Generator
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - "main"
-    paths:
-      - "images/**"
   pull_request:
     branches:
-      - "main"
+      - "*"
+  push:
+    branches:
+      - "*"
+    paths:
+      - "images/**"
 
 jobs:
   generate_readmes:
@@ -23,7 +23,8 @@ jobs:
           ref: ${{ github.head_ref || github.ref }}
 
       - name: Install ExifTool
-        run: |
+        run:
+          |
           # Skip updating manpages/docs to save time
           sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc > /dev/null << 'EOF'
           path-exclude /usr/share/doc/*
@@ -36,7 +37,8 @@ jobs:
 
       - name: Generate README.md files
         shell: pwsh
-        run: |
+        run:
+          |
           $imagesRoot = "images"
           $deletedReadmes = 0
           $processedDirectories = 0
