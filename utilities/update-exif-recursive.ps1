@@ -7,8 +7,8 @@
 
 # This script is designed to be run in a PowerShell environment.
 
-Write-Host "GoInfoGame Images Exif Data Update Script" -ForegroundColor Blue
-Write-Host "This script removes all metadata from PNG files in a specified directory and adds CC0 copyright tags to each image." -ForegroundColor Cyan
+Write-Host "GoInfoGame Images Exif Data Update Script (Recursive)" -ForegroundColor Blue
+Write-Host "This script removes all metadata from PNG files in a specified directory and all of its subdirectories and adds CC0 copyright tags to each image." -ForegroundColor Cyan
 
 # Ask for directory choice input
 $directory = Read-Host -Prompt "Enter the full path to the directory containing the PNG files"
@@ -35,7 +35,7 @@ if ($pngFiles.Count -eq 0) {
 }
 
 # Prompt for overwrite confirmation
-$overwrite = Read-Host -Prompt "CAUTION: This will permanently remove all existing exif metadata from all PNGs in this folder and its subfolders. Proceed? (y/n)"
+$overwrite = Read-Host -Prompt "CAUTION: This will permanently remove all existing exif metadata from all PNGs in this folder AND ALL OF ITS SUBDIRECTORIES. Proceed? (y/n)"
 if ($overwrite -ne 'y') {
     Write-Host "Operation canceled." -ForegroundColor Yellow
     exit 0
