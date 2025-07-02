@@ -1,0 +1,83 @@
+[
+  {
+    "element_type": "Intersections",
+    "quest_query": "nodes with (ext:intersection=yes)",
+    "quests": [
+      {
+        "quest_id": 1,
+        "quest_title": "How would you rate the visibility of pedestrians to drivers at this intersection?",
+        "quest_description": "Determine how visible pedestrians would be to drivers at this intersection.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:intersection_visibility",
+        "quest_answer_choices": [
+          {
+            "value": "1",
+            "choice_text": "Excellent"
+          },
+          {
+            "value": "2",
+            "choice_text": "Good"
+          },
+          {
+            "value": "3",
+            "choice_text": "Fair"
+          },
+          {
+            "value": "4",
+            "choice_text": "Poor"
+          },
+          {
+            "value": "5",
+            "choice_text": "Very Poor"
+          }
+        ]
+      },
+      {
+        "quest_id": 2,
+        "quest_title": "Are the sidewalks at or near this intersection well-maintained and free of obstacles?",
+        "quest_description": "Determine whether sidewalks are well-maintained at or nearby this intersection.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:intersection_maintained",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes, sidewalks are maintained."
+          },
+          {
+            "value": "no",
+            "choice_text": "No, sidewalks require maintenance."
+          }
+        ]
+      },
+      {
+        "quest_id": 3,
+        "quest_title": "In your own words, describe anything that makes this intersection feel safe or unsafe to you.",
+        "quest_description": "Determine whether sidewalks are well-maintained at or nearby this intersection.",
+        "quest_type": "",
+        "quest_tag": "ext:intersection_safety",
+        "quest_answer_validation": [
+          {}
+        ]
+      },
+      {
+        "quest_id": 4,
+        "quest_title": "Do you feel this intersection is accessible and safe for people with disabilities or mobility aids?",
+        "quest_description": "Determine whether this intersection is safe for people with disabilities or mobility aids.",
+        "quest_type": "ExclusiveChoice",
+        "quest_tag": "ext:intersection_accessible",
+        "quest_answer_choices": [
+          {
+            "value": "yes",
+            "choice_text": "Yes, sidewalks are maintained.",
+            "choice_follow_up": "Yes Picture Prompt"
+          },
+          {
+            "value": "no",
+            "choice_text": "No, sidewalks require maintenance.",
+            "choice_follow_up": "No Picture Prompt"
+          }
+        ]
+      }
+    ]
+  }
+]
