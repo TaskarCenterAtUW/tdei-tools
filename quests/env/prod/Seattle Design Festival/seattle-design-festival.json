@@ -6,17 +6,17 @@
       {
         "quest_id": 1,
         "quest_title": "How would you rate the visibility of pedestrians to drivers at this intersection?",
-        "quest_description": "Determine how visible pedestrians would be to drivers at this intersection.",
+        "quest_description": "Determine how visible pedestrians are to drivers at this intersection.",
         "quest_type": "ExclusiveChoice",
         "quest_tag": "ext:intersection_visibility",
         "quest_answer_choices": [
           {
             "value": "1",
-            "choice_text": "Excellent"
+            "choice_text": "Very Poor"
           },
           {
             "value": "2",
-            "choice_text": "Good"
+            "choice_text": "Poor"
           },
           {
             "value": "3",
@@ -24,11 +24,11 @@
           },
           {
             "value": "4",
-            "choice_text": "Poor"
+            "choice_text": "Good"
           },
           {
             "value": "5",
-            "choice_text": "Very Poor"
+            "choice_text": "Excellent"
           }
         ]
       },
