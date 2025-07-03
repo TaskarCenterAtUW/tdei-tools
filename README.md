@@ -16,7 +16,9 @@ Documentation files, schema definitions, and examples.
 
 ## [Images](images)
 
-Images of pedestrian infrastructure and related features, intended to be used in GoInfoGame long form quest definitions. Uncropped original non-annotated images included, mostly licensed CC0 (refer to table in each directory to verify) and free to use for any purposes.
+Images of pedestrian infrastructure and related features, intended to be used in GoInfoGame long form quest definitions. Uncropped original non-annotated images are included, and all of the images in the `/images/` directory and its subdirectories are CC0-licensed and free to use by anyone for any purpose.
+
+Note that the intent of this resource is to facilitate the functioning of the GoInfoGame app. If you have images that you think would be useful to add - please upload them to [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)!
 
 ## [Quests](quests)
 
