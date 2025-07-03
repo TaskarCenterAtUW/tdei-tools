@@ -79,6 +79,24 @@
           "quest_description": "Determine whether sidewalks are well-maintained at or nearby this intersection.",
           "quest_type": "Numeric",
           "quest_tag": "ext:intersection_safety"
+        },
+        {
+          "quest_id": 5,
+          "quest_title": "Take a picture of the intersection.",
+          "quest_description": "Take a picture of or near the intersection, with a focus on issues of pedestrian visibility, infrastructure maintenance needs, accessibility, or safety.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection_picture",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Ok!",
+              "choice_follow_up": "Please take a picture of or near the intersection, with a focus on issues of pedestrian visibility, infrastructure maintenance needs, accessibility, or safety."
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
         }
       ]
     }
