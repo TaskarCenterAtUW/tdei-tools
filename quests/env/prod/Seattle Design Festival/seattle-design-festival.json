@@ -76,7 +76,7 @@
         {
           "quest_id": 4,
           "quest_title": "In your own words, describe anything that makes this intersection feel safe or unsafe to you.",
-          "quest_description": "Describe what makes this intersection feel safe or unsafe?",
+          "quest_description": "Describe what makes this intersection feel safe or unsafe.",
           "quest_type": "Numeric",
           "quest_tag": "ext:intersection_safety_description"
         },
