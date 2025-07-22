@@ -2,10 +2,12 @@ name: Images READMEs Generator
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
       - "*"
-  push:
+    paths:
+      - "images/**"
+  pull_request:
     branches:
       - "*"
     paths:
