@@ -10,9 +10,11 @@ Documentation files, schema definitions, and examples.
 
 [Schema](docs/imagery-layer/schema.json) and [example](docs/imagery-layer/example.json) for imagery layers for use in GoInfoGame.
 
-### [Quest Definitios](docs/quest-definition)
+### [Quest Definitions](docs/quest-definition)
 
-[Schema](docs/quest-definition/schema.json), [example](docs/quest-definition/example.json), and [element query documentation](docs/quest-definition/element-query-documentation.md) for Long Form Quest Definitions for use in GoInfoGame.
+Long Form Quest Definitions [Schema](docs/quest-definition/schema.json) and [example](docs/quest-definition/example.json).
+
+Additional documentation and guides can be found on the [TCAT Wiki](https://taskarcenteratuw.github.io/tcat-wiki/tdei/producers/workspaces/aviv-scoutroute/long-form/).
 
 ## [Images](images)
 
