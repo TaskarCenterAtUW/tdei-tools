@@ -2,10 +2,12 @@ name: Quest Definition Validator
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
       - "*"
-  push:
+    paths:
+      - "quests/**"
+  pull_request:
     branches:
       - "*"
     paths:
@@ -18,7 +20,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Validate all JSON files in quests directory
-        run: |
+        run:
+          |
           set -e
           find quests -type f -name '*.json' | while read file; do
             echo "Validating $file"
