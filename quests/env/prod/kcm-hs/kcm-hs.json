@@ -117,7 +117,7 @@
             "quest_title": "Road is too wide to cross easily",
             "quest_description": "Please rate how much you agree with the following statements about this crossing.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "crossing_road_too_wide",
+            "quest_tag": "ext:crossing_road_too_wide",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -131,7 +131,7 @@
             "quest_title": "I have to walk too far to find a safe, marked crosswalk.",
             "quest_description": "Please rate how much you agree with the following statements about this crossing.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "crossing_too_far_to_safe_crosswalk",
+            "quest_tag": "ext:crossing_too_far_to_safe_crosswalk",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -145,7 +145,7 @@
             "quest_title": "There is no crosswalk or it is poorly marked.",
             "quest_description": "Please rate if you agree with the following statements about this crossing.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "crossing_no_or_poor_crosswalk",
+            "quest_tag": "ext:crossing_no_or_poor_crosswalk",
             "quest_answer_choices": [
               { "value": "yes", "choice_text": "Yes" },
               { "value": "no", "choice_text": "No" }
@@ -156,7 +156,7 @@
             "quest_title": "The intersection is missing one or more curb ramps for carts, wheelchairs, strollers, walkers.",
             "quest_description": "Please rate if you agree with the following statements about this crossing.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "crossing_no_curb_ramp",
+            "quest_tag": "ext:crossing_no_curb_ramp",
             "quest_answer_choices": [
               { "value": "yes", "choice_text": "Yes" },
               { "value": "no", "choice_text": "No" }
@@ -167,7 +167,7 @@
             "quest_title": "There is not enough shade from canopies, awnings, or trees.",
             "quest_description": "Please rate how much you agree with the following statements about this crossing.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "crossing_no_shade",
+            "quest_tag": "ext:crossing_no_shade",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -181,7 +181,7 @@
             "quest_title": "Overall, how do you feel about this crossing?",
             "quest_description": "Rate the overall experience of walking on this crossing.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "crossing_overall",
+            "quest_tag": "ext:crossing_overall",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -195,7 +195,7 @@
             "quest_title": "Other comments about this crossing:",
             "quest_description": "Describe any other crossing issue not listed above.",
             "quest_type": "FreeText",
-            "quest_tag": "crossing_other_comments"
+            "quest_tag": "ext:crossing_other_comments"
           }
         ]
       },
@@ -209,7 +209,7 @@
             "quest_title": "Drivers do not stop at stop signs or stop behind the crosswalk ",
             "quest_description": "Please rate how much you agree with the following statements about this intersection.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "intersection_noncompliance_stop",
+            "quest_tag": "ext:intersection_noncompliance_stop",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -223,7 +223,7 @@
             "quest_title": "Drivers appear to be speeding",
             "quest_description": "Please rate how much you agree with the following statements about this intersection.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "intersection_speeding",
+            "quest_tag": "ext:intersection_speeding",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -237,7 +237,7 @@
             "quest_title": "Drivers do not yield to people walking",
             "quest_description": "Please rate how much you agree with the following statements about this intersection.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "intersection_not_yielding",
+            "quest_tag": "ext:intersection_not_yielding",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -251,7 +251,7 @@
             "quest_title": "Overall, how do you feel about this intersection",
             "quest_description": "Rate the overall experience of walking on this intersection.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "intersection_overall",
+            "quest_tag": "ext:intersection_overall",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -265,7 +265,7 @@
             "quest_title": "Other comments about this intersection:",
             "quest_description": "Describe any other intersection issue not listed above.",
             "quest_type": "FreeText",
-            "quest_tag": "intersection_other_comments"
+            "quest_tag": "ext:intersection_other_comments"
           }
         ]
       },
@@ -279,7 +279,7 @@
             "quest_title": "There is a bench to sit and wait for the bus",
             "quest_description": "Please rate if you agree with the following statements about this bus stop.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "bus_stop_bench",
+            "quest_tag": "ext:bus_stop_bench",
             "quest_answer_choices": [
               { "value": "yes", "choice_text": "Yes" },
               { "value": "no", "choice_text": "No" }
@@ -290,7 +290,7 @@
             "quest_title": "There are bus shelters or awnings to protect from the sun or rain",
             "quest_description": "Please rate if you agree with the following statements about this bus stop.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "bus_stop_shelter_or_awning",
+            "quest_tag": "ext:bus_stop_shelter_or_awning",
             "quest_answer_choices": [
               { "value": "yes", "choice_text": "Yes" },
               { "value": "no", "choice_text": "No" }
@@ -301,7 +301,7 @@
             "quest_title": "There is lighting",
             "quest_description": "Please rate if you agree with the following statements about this bus stop.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "bus_stop_lighting",
+            "quest_tag": "ext:bus_stop_lighting",
             "quest_answer_choices": [
               { "value": "yes", "choice_text": "Yes" },
               { "value": "no", "choice_text": "No" }
@@ -312,7 +312,7 @@
             "quest_title": "There is trash on the ground near the bus stop",
             "quest_description": "Please rate if you agree with the following statements about this bus stop.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "bus_stop_trash_present",
+            "quest_tag": "ext:bus_stop_trash_present",
             "quest_answer_choices": [
               { "value": "yes", "choice_text": "Yes" },
               { "value": "no", "choice_text": "No" }
@@ -323,7 +323,7 @@
             "quest_title": "Overall, how would you feel waiting at this bus stop?",
             "quest_description": "Rate the overall experience of waiting at this bus stop.",
             "quest_type": "ExclusiveChoice",
-            "quest_tag": "bus_stop_overall",
+            "quest_tag": "ext:bus_stop_overall",
             "quest_answer_choices": [
               { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
@@ -337,7 +337,7 @@
             "quest_title": "Other comments about this bus stop:",
             "quest_description": "Describe any other bus stop issue not listed above.",
             "quest_type": "FreeText",
-            "quest_tag": "bus_stop_other_comments"
+            "quest_tag": "ext:bus_stop_other_comments"
           }
         ]
       }
