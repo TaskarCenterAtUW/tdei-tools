@@ -1,476 +1,341 @@
-[
-    {
-      "element_type": "Sidewalks",
-      "quest_query": "ways with (footway=sidewalk)",
-      "quests": [
-        {
-        "quest_id": 101,
-        "quest_title": "Sidewalks are blocked by overgrown landscaping, poles, signs, plants, vehicles",
-        "quest_description": "The sidewalk is not fully usable because of physical obstacles.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_blocked",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
+{
+    "version": "2.0.0",
+    "elements": [
+      {
+        "element_type": "Sidewalks",
+        "quest_query": "ways with (footway=sidewalk)",
+        "quests": [
+          {
+            "quest_id": 101,
+            "quest_title": "Sidewalks are blocked by overgrown landscaping, poles, signs, plants, vehicles",
+            "quest_description": "The sidewalk is not fully usable because of physical obstacles.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "ext:sidewalk_blocked",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 102,
+            "quest_title": "Sidewalk is not wide enough (two people cannot easily walk together side by side)",
+            "quest_description": "This sidewalk feels too narrow for side-by-side walking.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "ext:sidewalk_narrow",
+            "quest_answer_choices": [
+              { "value": "yes", "choice_text": "Yes" },
+              { "value": "no", "choice_text": "No" }
+            ]
+          },
+          {
+            "quest_id": 103,
+            "quest_title": "Sidewalk has nothing separating it from the street (grass, trees, parked cars)",
+            "quest_description": "There is no buffer zone or protection between sidewalk and traffic.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "ext:sidewalk_no_buffer",
+            "quest_answer_choices": [
+              { "value": "yes", "choice_text": "Yes" },
+              { "value": "no", "choice_text": "No" }
+            ]
+          },
+          {
+            "quest_id": 104,
+            "quest_title": "Sidewalks are broken, cracked, or have trip hazards",
+            "quest_description": "This sidewalk has physical damage that might make walking difficult or unsafe.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "ext:sidewalk_damaged",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 105,
+            "quest_title": "Car speeds are too fast",
+            "quest_description": "Traffic near this sidewalk feels fast and uncomfortable for walking.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "ext:sidewalk_speeding_cars",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 106,
+            "quest_title": "There are few or no street trees or other landscaping",
+            "quest_description": "There is little to no greenery or shade along this sidewalk.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "ext:sidewalk_no_landscaping",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 107,
+            "quest_title": "Overall, how do you feel about walking on this block?",
+            "quest_description": "Rate the overall experience of walking on this sidewalk.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "ext:sidewalk_overall",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 108,
+            "quest_title": "Other sidewalk concern",
+            "quest_description": "Describe any other sidewalk issue not listed above.",
+            "quest_type": "FreeText",
+            "quest_tag": "ext:sidewalk_other"
+          }
         ]
       },
       {
-        "quest_id": 102,
-        "quest_title": "Sidewalk is not wide enough (two people cannot easily walk together side by side)",
-        "quest_description": "This sidewalk feels too narrow for side-by-side walking.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_narrow",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
+        "element_type": "Crossings/Intersections",
+        "quest_query": "nodes or ways with (highway=crossing or highway=traffic_signals)",
+        "quests": [
+          {
+            "quest_id": 201,
+            "quest_title": "Road is too wide to cross easily",
+            "quest_description": "Please rate how much you agree with the following statements about this crossing.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "crossing_road_too_wide",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 202,
+            "quest_title": "I have to walk too far to find a safe, marked crosswalk.",
+            "quest_description": "Please rate how much you agree with the following statements about this crossing.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "crossing_too_far_to_safe_crosswalk",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 203,
+            "quest_title": "There is no crosswalk or it is poorly marked.",
+            "quest_description": "Please rate if you agree with the following statements about this crossing.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "crossing_no_or_poor_crosswalk",
+            "quest_answer_choices": [
+              { "value": "yes", "choice_text": "Yes" },
+              { "value": "no", "choice_text": "No" }
+            ]
+          },
+          {
+            "quest_id": 204,
+            "quest_title": "The intersection is missing one or more curb ramps for carts, wheelchairs, strollers, walkers.",
+            "quest_description": "Please rate if you agree with the following statements about this crossing.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "crossing_no_curb_ramp",
+            "quest_answer_choices": [
+              { "value": "yes", "choice_text": "Yes" },
+              { "value": "no", "choice_text": "No" }
+            ]
+          },
+          {
+            "quest_id": 205,
+            "quest_title": "There is not enough shade from canopies, awnings, or trees.",
+            "quest_description": "Please rate how much you agree with the following statements about this crossing.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "crossing_no_shade",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 206,
+            "quest_title": "Overall, how do you feel about this crossing?",
+            "quest_description": "Rate the overall experience of walking on this crossing.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "crossing_overall",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 207,
+            "quest_title": "Other comments about this crossing:",
+            "quest_description": "Describe any other crossing issue not listed above.",
+            "quest_type": "FreeText",
+            "quest_tag": "crossing_other_comments"
+          }
         ]
       },
       {
-        "quest_id": 103,
-        "quest_title": "Sidewalk has nothing separating it from the street (grass, trees, parked cars)",
-        "quest_description": "There is no buffer zone or protection between sidewalk and traffic.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_no_buffer",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
+        "element_type": "Intersections",
+        "quest_query": "nodes with highway=traffic_signals or highway=stop",
+        "quests": [
+          {
+            "quest_id": 301,
+            "quest_title": "Drivers do not stop at stop signs or stop behind the crosswalk ",
+            "quest_description": "Please rate how much you agree with the following statements about this intersection.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "intersection_noncompliance_stop",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 302,
+            "quest_title": "Drivers appear to be speeding",
+            "quest_description": "Please rate how much you agree with the following statements about this intersection.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "intersection_speeding",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 303,
+            "quest_title": "Drivers do not yield to people walking",
+            "quest_description": "Please rate how much you agree with the following statements about this intersection.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "intersection_not_yielding",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 304,
+            "quest_title": "Overall, how do you feel about this intersection",
+            "quest_description": "Rate the overall experience of walking on this intersection.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "intersection_overall",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 305,
+            "quest_title": "Other comments about this intersection:",
+            "quest_description": "Describe any other intersection issue not listed above.",
+            "quest_type": "FreeText",
+            "quest_tag": "intersection_other_comments"
+          }
         ]
       },
       {
-        "quest_id": 104,
-        "quest_title": "Sidewalk is not continuous",
-        "quest_description": "The sidewalk ends suddenly, has gaps, or is interrupted.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_not_continuous",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
+        "element_type": "Bus Stops",
+        "quest_query": "nodes with highway=bus_stop",
+        "quests": [
+          {
+            "quest_id": 401,
+            "quest_title": "There is a bench to sit and wait for the bus",
+            "quest_description": "Please rate if you agree with the following statements about this bus stop.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "bus_stop_bench",
+            "quest_answer_choices": [
+              { "value": "yes", "choice_text": "Yes" },
+              { "value": "no", "choice_text": "No" }
+            ]
+          },
+          {
+            "quest_id": 402,
+            "quest_title": "There are bus shelters or awnings to protect from the sun or rain",
+            "quest_description": "Please rate if you agree with the following statements about this bus stop.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "bus_stop_shelter_or_awning",
+            "quest_answer_choices": [
+              { "value": "yes", "choice_text": "Yes" },
+              { "value": "no", "choice_text": "No" }
+            ]
+          },
+          {
+            "quest_id": 403,
+            "quest_title": "There is lighting",
+            "quest_description": "Please rate if you agree with the following statements about this bus stop.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "bus_stop_lighting",
+            "quest_answer_choices": [
+              { "value": "yes", "choice_text": "Yes" },
+              { "value": "no", "choice_text": "No" }
+            ]
+          },
+          {
+            "quest_id": 404,
+            "quest_title": "There is trash on the ground near the bus stop",
+            "quest_description": "Please rate if you agree with the following statements about this bus stop.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "bus_stop_trash_present",
+            "quest_answer_choices": [
+              { "value": "yes", "choice_text": "Yes" },
+              { "value": "no", "choice_text": "No" }
+            ]
+          },
+          {
+            "quest_id": 405,
+            "quest_title": "Overall, how would you feel waiting at this bus stop?",
+            "quest_description": "Rate the overall experience of waiting at this bus stop.",
+            "quest_type": "ExclusiveChoice",
+            "quest_tag": "bus_stop_overall",
+            "quest_answer_choices": [
+              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "disagree", "choice_text": "Disagree" },
+              { "value": "neutral", "choice_text": "Neutral" },
+              { "value": "agree", "choice_text": "Agree" },
+              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+            ]
+          },
+          {
+            "quest_id": 406,
+            "quest_title": "Other comments about this bus stop:",
+            "quest_description": "Describe any other bus stop issue not listed above.",
+            "quest_type": "FreeText",
+            "quest_tag": "bus_stop_other_comments"
+          }
         ]
-      },
-      {
-        "quest_id": 105,
-        "quest_title": "Sidewalks are broken, cracked, or have trip hazards",
-        "quest_description": "This sidewalk has physical damage that might make walking difficult or unsafe.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_damaged",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-        ]
-      },
-      {
-        "quest_id": 106,
-        "quest_title": "Car speeds are too fast",
-        "quest_description": "Traffic near this sidewalk feels fast and uncomfortable for walking.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_speeding_cars",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-        ]
-      },
-      {
-        "quest_id": 107,
-        "quest_title": "There’s too much traffic",
-        "quest_description": "The volume of nearby vehicle traffic feels overwhelming or unsafe.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_heavy_traffic",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-        ]
-      },
-      {
-        "quest_id": 108,
-        "quest_title": "Street lights are few or not present",
-        "quest_description": "There is insufficient lighting on or near this sidewalk for safety or visibility.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_poor_lighting",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-        ]
-      },
-      {
-        "quest_id": 109,
-        "quest_title": "This area feels unsafe because of nearby people’s behavior",
-        "quest_description": "This area feels unsafe",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_threatening_people",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-        ]
-      },
-      {
-        "quest_id": 110,
-        "quest_title": "Unleashed dogs or other loose intimidating animals are present",
-        "quest_description": "There are loose animals (like dogs) that make the area feel unsafe.",
-        "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:sidewalk_loose_animals",
-        "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-        ]
-      },
-      {
-        "quest_id": 111,
-        "quest_title": "Other sidewalk concern",
-        "quest_description": "Describe any other sidewalk issue not listed above.",
-        "quest_type": "FreeText",
-        "quest_tag": "ext:sidewalk_other"
       }
     ]
-  },
-    {
-      "element_type": "Crossings/Intersections",
-      "quest_query": "nodes or ways with (highway=crossing or highway=traffic_signals)",
-      "quests": [
-          {
-          "quest_id": 201,
-          "quest_title": "Road is too wide to cross easily",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_road_too_wide",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-        ]
-      },
-          {
-          "quest_id": 202,
-          "quest_title": "Traffic signals do not give enough time to cross the street",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_signal_time_inadequate",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-      ]
-      },
-          {
-          "quest_id": 203,
-          "quest_title": "I have to walk too far to find a safe, marked crosswalk.",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_too_far_to_safe_crosswalk",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 204,
-          "quest_title": "There is no crosswalk or it is poorly marked.",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_no_or_poor_crosswalk",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 205,
-          "quest_title": "The crossing does not have a pedestrian-activated button.",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_no_ped_button",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 206,
-          "quest_title": "The intersection does not have a curb ramp for carts, wheelchairs, strollers, or walkers.",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_no_curb_ramp",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 207,
-          "quest_title": "There is not enough shade from canopies, awnings, or trees.",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_no_shade",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 208,
-          "quest_title": "There are few or no street trees or other landscaping.",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_lacks_landscaping",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 209,
-          "quest_title": "There are vacant lots or rundown buildings nearby.",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_vacant_or_rundown",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 210,
-          "quest_title": "The street needs benches and places to rest.",
-          "quest_description": "Please rate how much you agree with the following statements about this crossing.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing_needs_benches",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-          {
-          "quest_id": 211,
-          "quest_title": "Other comments about this crossing:",
-          "quest_description": "Describe any other crossing issue not listed above.",
-          "quest_type": "FreeText",
-          "quest_tag": "crossing_other_comments"
-          }
-      ]
-    },
-    {
-      "element_type": "Intersections",
-      "quest_query": "nodes with highway=traffic_signals or highway=stop",
-      "quests": [
-        
-        {
-          "quest_id": 301,
-          "quest_title": "Drivers do not stop at stop signs or stop behind the crosswalk ",
-          "quest_description": "Please rate how much you agree with the following statements about this intersection.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "intersection_noncompliance_stop",
-          "quest_answer_choices": [
-          { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-          { "value": "disagree", "choice_text": "Disagree" },
-          { "value": "neutral", "choice_text": "Neutral" },
-          { "value": "agree", "choice_text": "Agree" },
-          { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 302,
-          "quest_title": "Drivers appear to be speeding",
-          "quest_description": "Please rate how much you agree with the following statements about this intersection.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "intersection_speeding",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 303,
-          "quest_title": "Drivers do not yield to people walking",
-          "quest_description": "Please rate how much you agree with the following statements about this intersection.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "intersection_not_yielding",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 304,
-          "quest_title": "Drivers are distracted (on the phone, texting, paying attention to passengers rather than road)",
-          "quest_description": "Please rate how much you agree with the following statements about this intersection.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "intersection_distracted",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 305,
-          "quest_title": "Drivers aren’t looking out for people walking, make unexpected turns, or seem hostile",
-          "quest_description": "Please rate how much you agree with the following statements about this intersection.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "intersection_unpredictable_or_hostile",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 306,
-          "quest_title": "Other comments about this intersection:",
-          "quest_description": "Describe any other intersection issue not listed above.",
-          "quest_type": "FreeText",
-          "quest_tag": "intersection_other_comments"
-      }
-  
-      ]
-    },
-  {
-      "element_type": "Bus Stops",
-      "quest_query": "nodes with highway=bus_stop",
-      "quests": [
-        {
-          "quest_id": 401,
-          "quest_title": "There is a bench to sit and wait for the bus",
-          "quest_description": "Please rate how much you agree with the following statements about this bus stop.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "bus_stop_bench",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 402,
-          "quest_title": "There are bus shelters or awnings to protect from the sun or rain",
-          "quest_description": "Please rate how much you agree with the following statements about this bus stop.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "bus_stop_shelter_or_awning",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 403,
-          "quest_title": "There are people waiting who make me feel unsafe",
-          "quest_description": "Please rate how much you agree with the following statements about this bus stop.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "bus_stop_people_feel_unsafe",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 404,
-          "quest_title": "There is lighting",
-          "quest_description": "Please rate how much you agree with the following statements about this bus stop.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "bus_stop_lighting",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 405,
-          "quest_title": "There is trash on the ground near the bus stop",
-          "quest_description": "Please rate how much you agree with the following statements about this bus stop.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "bus_stop_trash_present",
-          "quest_answer_choices": [
-            { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
-            { "value": "disagree", "choice_text": "Disagree" },
-            { "value": "neutral", "choice_text": "Neutral" },
-            { "value": "agree", "choice_text": "Agree" },
-            { "value": "strongly_agree", "choice_text": "Strongly agree" }
-          ]
-        },
-        {
-          "quest_id": 406,
-          "quest_title": "Other comments about this bus stop:",
-          "quest_description": "Describe any other bus stop issue not listed above.",
-          "quest_type": "FreeText",
-          "quest_tag": "bus_stop_other_comments"
-        }
-      ]
-    }
-  ]
+}
