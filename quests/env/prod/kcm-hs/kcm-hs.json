@@ -108,7 +108,7 @@
       },
       {
         "element_type": "Crossings/Intersections",
-        "quest_query": "nodes or ways with (highway=crossing or highway=traffic_signals)",
+        "quest_query": "nodes with (highway=crossing or highway=traffic_signals)",
         "quests": [
           {
             "quest_id": 201,
