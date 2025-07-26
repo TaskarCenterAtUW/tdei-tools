@@ -8,8 +8,8 @@
       "quests": [
         {
           "quest_id": 101,
-          "quest_title": "Sidewalks are blocked by overgrown landscaping, poles, signs, plants, vehicles",
-          "quest_description": "The sidewalk is not fully usable because of physical obstacles.",
+          "quest_title": "This sidewalk is blocked by overgrown landscaping, poles, signs, plants, or vehicles.",
+          "quest_description": "This sidewalk is not fully usable because of physical obstacles.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:sidewalk_blocked",
           "quest_answer_choices": [
@@ -22,7 +22,7 @@
         },
         {
           "quest_id": 102,
-          "quest_title": "Sidewalk is not wide enough (two people cannot easily walk together side by side)",
+          "quest_title": "This sidewalk is not wide enough for two people to easily walk together side by side.",
           "quest_description": "This sidewalk feels too narrow for side-by-side walking.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:sidewalk_narrow",
@@ -33,8 +33,8 @@
         },
         {
           "quest_id": 103,
-          "quest_title": "Sidewalk has nothing separating it from the street (grass, trees, parked cars)",
-          "quest_description": "There is no buffer zone or protection between sidewalk and traffic.",
+          "quest_title": "This sidewalk has nothing separating it from the street such as grass, trees, or parked cars.",
+          "quest_description": "There is no buffer zone or protection between this sidewalk and road traffic.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:sidewalk_no_buffer",
           "quest_answer_choices": [
@@ -44,8 +44,8 @@
         },
         {
           "quest_id": 104,
-          "quest_title": "Sidewalks are broken, cracked, or have trip hazards",
-          "quest_description": "This sidewalk has physical damage that might make walking difficult or unsafe.",
+          "quest_title": "This sidewalk is broken, cracked, or has trip hazards.",
+          "quest_description": "This sidewalk has physical damage that might make traversal difficult or unsafe.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:sidewalk_damaged",
           "quest_answer_choices": [
@@ -58,8 +58,8 @@
         },
         {
           "quest_id": 105,
-          "quest_title": "Car speeds are too fast",
-          "quest_description": "Traffic near this sidewalk feels fast and uncomfortable for walking.",
+          "quest_title": "Cars travel too fast next to this sidewalk.",
+          "quest_description": "Traffic near this sidewalk feels too fast and makes walking uncomfortable.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:sidewalk_speeding_cars",
           "quest_answer_choices": [
@@ -72,7 +72,7 @@
         },
         {
           "quest_id": 106,
-          "quest_title": "There are few or no street trees or other landscaping",
+          "quest_title": "There are few or no street trees or other landscaping along this sidewalk.",
           "quest_description": "There is little to no greenery or shade along this sidewalk.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:sidewalk_no_landscaping",
@@ -100,10 +100,10 @@
         },
         {
           "quest_id": 108,
-          "quest_title": "Other sidewalk concern",
-          "quest_description": "Describe any other sidewalk issue not listed above.",
+          "quest_title": "Other sidewalk comment",
+          "quest_description": "Describe any other issue with this sidewalk that is not listed above.",
           "quest_type": "FreeText",
-          "quest_tag": "ext:sidewalk_other"
+          "quest_tag": "ext:sidewalk_comment"
         }
       ]
     },
@@ -114,7 +114,7 @@
       "quests": [
         {
           "quest_id": 201,
-          "quest_title": "Road is too wide to cross easily",
+          "quest_title": "This road is too wide to cross easily.",
           "quest_description": "Please rate how much you agree with the following statements about this crossing.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:crossing_road_too_wide",
@@ -153,7 +153,7 @@
         },
         {
           "quest_id": 204,
-          "quest_title": "The intersection is missing one or more curb ramps for carts, wheelchairs, strollers, walkers.",
+          "quest_title": "This crossing is missing one or more curb ramps for use by wheelchairs, carts, strollers, or walkers.",
           "quest_description": "Please rate if you agree with the following statements about this crossing.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:crossing_no_curb_ramp",
@@ -164,7 +164,7 @@
         },
         {
           "quest_id": 205,
-          "quest_title": "There is not enough shade from canopies, awnings, or trees.",
+          "quest_title": "There is not enough shade near this crossing from canopies, awnings, or trees.",
           "quest_description": "Please rate how much you agree with the following statements about this crossing.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:crossing_no_shade",
@@ -192,8 +192,8 @@
         },
         {
           "quest_id": 207,
-          "quest_title": "Other comments about this crossing:",
-          "quest_description": "Describe any other crossing issue not listed above.",
+          "quest_title": "Other comments about this crossing",
+          "quest_description": "Describe any other issue with this crossing that is not listed above.",
           "quest_type": "FreeText",
           "quest_tag": "ext:crossing_other_comments"
         }
@@ -206,7 +206,7 @@
       "quests": [
         {
           "quest_id": 301,
-          "quest_title": "Drivers do not stop at stop signs or stop behind the crosswalk ",
+          "quest_title": "Drivers at this intersection do not stop at stop signs, or stop inside the crosswalk.",
           "quest_description": "Please rate how much you agree with the following statements about this intersection.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:intersection_noncompliance_stop",
@@ -220,7 +220,7 @@
         },
         {
           "quest_id": 302,
-          "quest_title": "Drivers appear to be speeding",
+          "quest_title": "Drivers at this intersection often appear to be speeding.",
           "quest_description": "Please rate how much you agree with the following statements about this intersection.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:intersection_speeding",
@@ -234,7 +234,7 @@
         },
         {
           "quest_id": 303,
-          "quest_title": "Drivers do not yield to people walking",
+          "quest_title": "Drivers at this intersection do not yield to pedestrians.",
           "quest_description": "Please rate how much you agree with the following statements about this intersection.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:intersection_not_yielding",
@@ -262,8 +262,8 @@
         },
         {
           "quest_id": 305,
-          "quest_title": "Other comments about this intersection:",
-          "quest_description": "Describe any other intersection issue not listed above.",
+          "quest_title": "Other comments about this intersection",
+          "quest_description": "Describe any other issue with this intersection that is not listed above.",
           "quest_type": "FreeText",
           "quest_tag": "ext:intersection_other_comments"
         }
@@ -276,7 +276,7 @@
       "quests": [
         {
           "quest_id": 401,
-          "quest_title": "There is a bench to sit and wait for the bus",
+          "quest_title": "There is a bench to sit on at this bus stop.",
           "quest_description": "Please rate if you agree with the following statements about this bus stop.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:bus_stop_bench",
@@ -287,7 +287,7 @@
         },
         {
           "quest_id": 402,
-          "quest_title": "There are bus shelters or awnings to protect from the sun or rain",
+          "quest_title": "There is a shelter or awning at this bus stop to protect from the sun or rain.",
           "quest_description": "Please rate if you agree with the following statements about this bus stop.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:bus_stop_shelter_or_awning",
@@ -298,7 +298,7 @@
         },
         {
           "quest_id": 403,
-          "quest_title": "There is lighting",
+          "quest_title": "There is adequate lighting at this bus stop.",
           "quest_description": "Please rate if you agree with the following statements about this bus stop.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:bus_stop_lighting",
@@ -309,7 +309,7 @@
         },
         {
           "quest_id": 404,
-          "quest_title": "There is trash on the ground near the bus stop",
+          "quest_title": "There is trash on the ground near this bus stop.",
           "quest_description": "Please rate if you agree with the following statements about this bus stop.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:bus_stop_trash_present",
