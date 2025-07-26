@@ -13,11 +13,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:sidewalk_blocked",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -49,11 +49,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:sidewalk_damaged",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -63,11 +63,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:sidewalk_speeding_cars",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -77,11 +77,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:sidewalk_no_landscaping",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -91,11 +91,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:sidewalk_overall",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -119,11 +119,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:crossing_road_too_wide",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -133,11 +133,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:crossing_too_far_to_safe_crosswalk",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -169,11 +169,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:crossing_no_shade",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -183,11 +183,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:crossing_overall",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -211,11 +211,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:intersection_noncompliance_stop",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -225,11 +225,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:intersection_speeding",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -239,11 +239,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:intersection_not_yielding",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -253,11 +253,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:intersection_overall",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
@@ -325,11 +325,11 @@
             "quest_type": "ExclusiveChoice",
             "quest_tag": "ext:bus_stop_overall",
             "quest_answer_choices": [
-              { "value": "strongly_disagree", "choice_text": "Strongly disagree" },
+              { "value": "strongly_disagree", "choice_text": "Strongly Disagree" },
               { "value": "disagree", "choice_text": "Disagree" },
               { "value": "neutral", "choice_text": "Neutral" },
               { "value": "agree", "choice_text": "Agree" },
-              { "value": "strongly_agree", "choice_text": "Strongly agree" }
+              { "value": "strongly_agree", "choice_text": "Strongly Agree" }
             ]
           },
           {
