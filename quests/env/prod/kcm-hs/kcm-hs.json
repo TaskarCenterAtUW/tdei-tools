@@ -439,6 +439,7 @@
         {
           "quest_id": 304,
           "quest_title": "Overall, how do you feel about this intersection? (1 = Very negative, 5 = Very positive)",
+          "quest_description": "Rate the overall experience of traversing this intersections.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:intersection_overall",
           "quest_answer_choices": [
