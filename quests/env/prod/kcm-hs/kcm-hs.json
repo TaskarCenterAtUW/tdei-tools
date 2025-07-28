@@ -190,7 +190,7 @@
     {
       "element_type": "Crossings/Intersections",
       "element_type_icon": "pedestrian_crossing",
-      "quest_query": "nodes with (highway=crossing or highway=traffic_signals)",
+      "quest_query": "ways with (footway=crossing)",
       "quests": [
         {
           "quest_id": 201,
