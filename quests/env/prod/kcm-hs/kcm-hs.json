@@ -347,7 +347,7 @@
     {
       "element_type": "Intersections",
       "element_type_icon": "traffic_lights",
-      "quest_query": "nodes with (highway=traffic_signals or highway=stop)",
+      "quest_query": "nodes with (ext:intersection=yes)",
       "quests": [
         {
           "quest_id": 301,
