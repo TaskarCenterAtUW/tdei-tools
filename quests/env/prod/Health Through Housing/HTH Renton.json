@@ -43,12 +43,12 @@
           "quest_tag": "ext:sidewalk_narrow",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
               "value": "no",
               "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes"
             }
           ]
         },
@@ -60,12 +60,12 @@
           "quest_tag": "ext:sidewalk_no_buffer",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
               "value": "no",
               "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes"
             }
           ]
         },
@@ -258,12 +258,12 @@
           "quest_tag": "ext:crossing_no_or_poor_crosswalk",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
               "value": "no",
               "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes"
             }
           ]
         },
@@ -275,12 +275,12 @@
           "quest_tag": "ext:crossing_no_curb_ramp",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
               "value": "no",
               "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes"
             }
           ]
         },
@@ -383,7 +383,7 @@
           "quest_title": "Drivers at this intersection often appear to be speeding.",
           "quest_description": "Cars approach or pass through this intersection at speeds that feel unsafe for pedestrians.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:intersection_speeding",
+          "quest_tag": "ext:intersection_noncompliance_speed",
           "quest_answer_choices": [
             {
               "value": "strongly_disagree",
@@ -412,7 +412,7 @@
           "quest_title": "Drivers at this intersection do not yield to pedestrians.",
           "quest_description": "PPedestrians are not given the right of way, even when they are legally crossing the street.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:intersection_not_yielding",
+          "quest_tag": "ext:intersection_noncompliance_yield",
           "quest_answer_choices": [
             {
               "value": "strongly_disagree",
@@ -474,52 +474,52 @@
       "quests": [
         {
           "quest_id": 401,
-          "quest_title": "There is a bench to sit on at this bus stop.",
-          "quest_description": "This stop offers a place to sit while waiting for the bus.",
+          "quest_title": "There is no bench to sit on at this bus stop.",
+          "quest_description": "This stop does not offer a place to sit while waiting for the bus.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:bus_stop_bench",
+          "quest_tag": "ext:bus_stop_no_bench",
           "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
             {
               "value": "no",
               "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes"
             }
           ]
         },
         {
           "quest_id": 402,
-          "quest_title": "There is a shelter or awning at this bus stop to protect from the sun or rain.",
-          "quest_description": "There is overhead coverage at this stop to offer shade or protection from the weather.",
+          "quest_title": "There is no shelter or awning at this bus stop to protect from the sun or rain.",
+          "quest_description": "There is no overhead coverage at this stop to offer shade or protection from the weather.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:bus_stop_shelter_or_awning",
+          "quest_tag": "ext:bus_stop_no_shelter_or_awning",
           "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
             {
               "value": "no",
               "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes"
             }
           ]
         },
         {
           "quest_id": 403,
-          "quest_title": "There is adequate lighting at this bus stop.",
-          "quest_description": "This stop feels well-lit and visible, especially in the evening or early morning.",
+          "quest_title": "There isn't adequate lighting at this bus stop.",
+          "quest_description": "This stop does not feel well-lit and visible, especially in the evening or early morning.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:bus_stop_lighting",
+          "quest_tag": "ext:bus_stop_no_lighting",
           "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
             {
               "value": "no",
               "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes"
             }
           ]
         },
@@ -531,12 +531,12 @@
           "quest_tag": "ext:bus_stop_trash_present",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
               "value": "no",
               "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes"
             }
           ]
         },
