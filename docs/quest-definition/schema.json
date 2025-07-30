@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Long Form Quests Schema for GoInfoGame",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "type": "object",
   "properties": {
     "version": {
@@ -204,45 +204,117 @@
           }
         },
         "quest_answer_dependency": {
-          "description": "",
-          "type": "object",
-          "properties": {
-            "question_id": {
-              "description": "The Quest ID of the question that this questions visibility is dependent on.",
-              "type": "number",
-              "examples": [
-                1,
-                2,
-                3
+          "description": "Dependency conditions that must be met for this question to be visible. Can be a single condition object or an array of condition objects. When multiple conditions are provided, ALL conditions must be satisfied (AND logic).",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "question_id": {
+                  "description": "The Quest ID of the question that this questions visibility is dependent on.",
+                  "type": "number",
+                  "examples": [
+                    1,
+                    2,
+                    3
+                  ]
+                },
+                "required_value": {
+                  "description": "The value of the dependent question that will make this question visible.",
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ],
+                  "examples": [
+                    "yes",
+                    "0",
+                    [
+                      "1",
+                      "2"
+                    ],
+                    [
+                      "yes",
+                      "no"
+                    ]
+                  ]
+                }
+              },
+              "required": [
+                "question_id",
+                "required_value"
               ]
             },
-            "required_value": {
-              "description": "The value of the dependent question that will make this question visible.",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "question_id": {
+                    "description": "The Quest ID of the question that this questions visibility is dependent on.",
+                    "type": "number",
+                    "examples": [
+                      1,
+                      2,
+                      3
+                    ]
+                  },
+                  "required_value": {
+                    "description": "The value of the dependent question that will make this question visible.",
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ],
+                    "examples": [
+                      "yes",
+                      "0",
+                      [
+                        "1",
+                        "2"
+                      ],
+                      [
+                        "yes",
+                        "no"
+                      ]
+                    ]
                   }
-                }
-              ],
-              "examples": [
-                "yes",
-                "0",
-                [
-                  "1",
-                  "2"
-                ],
-                [
-                  "yes",
-                  "no"
+                },
+                "required": [
+                  "question_id",
+                  "required_value"
                 ]
-              ]
+              },
+              "minItems": 1
             }
-          }
+          ],
+          "examples": [
+            {
+              "question_id": 1,
+              "required_value": "yes"
+            },
+            [
+              {
+                "question_id": 1,
+                "required_value": "yes"
+              },
+              {
+                "question_id": 2,
+                "required_value": "no"
+              }
+            ]
+          ]
         }
       },
       "required": [
