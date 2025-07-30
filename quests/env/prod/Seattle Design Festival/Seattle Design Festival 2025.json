@@ -243,9 +243,9 @@
           "quest_type": "Numeric",
           "quest_tag": "ext:disruptions_count",
           "quest_answer_validation": {
-              "min_value": 0,
-              "max_value": 10
-            }
+            "min_value": 0,
+            "max_value": 10
+          }
         }
       ]
     },
