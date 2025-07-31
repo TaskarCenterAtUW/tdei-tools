@@ -3,7 +3,7 @@
   "elements": [
     {
       "element_type": "Intersections",
-      "element_type_icon": "blind_pedestrian_crossing",
+      "element_type_icon": "traffic_lights",
       "quest_query": "nodes with (ext:intersection=yes)",
       "quests": [
         {
@@ -94,8 +94,8 @@
       ]
     },
     {
-      "element_type": "Kerb",
-      "element_type_icon": "kerb",
+      "element_type": "Curbs",
+      "element_type_icon": "kerb_type",
       "quest_query": "nodes with (barrier=kerb)",
       "quests": [
         {
@@ -168,7 +168,7 @@
     },
     {
       "element_type": "Footways",
-      "element_type_icon": "sidewalk",
+      "element_type_icon": "footway_surface",
       "quest_query": "ways with (highway=footway and !footway)",
       "quests": [
         {
