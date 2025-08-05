@@ -1,2 +1,6 @@
 tdei-tools.code-workspace
+*.txt
+*.zip
+*.geojson
 *.osm
+*.osw
