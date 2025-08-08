@@ -137,7 +137,7 @@
             {
               "value": "no",
               "choice_text": "No",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/tactile_paving/no_square.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/tactile_paving/no_2_square.png"
             },
             {
               "value": "yes",
@@ -268,12 +268,12 @@
             {
               "value": "No",
               "choice_text": "No",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/obstruction/temporary/micromobility_vehicle_landscape.png"
             },
             {
               "value": "Yes",
               "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/obstruction/temporary/micromobility_vehicle_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
             }
           ]
         },
@@ -472,22 +472,22 @@
             {
               "value": "2",
               "choice_text": "Poor",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/poor_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/poor_landscape.png"
             },
             {
               "value": "3",
               "choice_text": "Fair",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/intermediate_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/intermediate_landscape.png"
             },
             {
               "value": "4",
               "choice_text": "Good",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/good_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/good_landscape.png"
             },
             {
               "value": "5",
               "choice_text": "Excellent",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/excellent_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/excellent_landscape.png"
             }
           ]
         },
