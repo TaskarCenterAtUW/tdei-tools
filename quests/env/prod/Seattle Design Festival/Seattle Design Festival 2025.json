@@ -15,12 +15,12 @@
           "quest_answer_choices": [
             {
               "value": "no",
-              "choice_text": "No, needs maintenance",
+              "choice_text": "No",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/obstruction/utility_landscape.png"
             },
             {
               "value": "yes",
-              "choice_text": "Yes, well-maintained",
+              "choice_text": "Yes",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
             }
           ]
@@ -34,23 +34,28 @@
           "quest_answer_choices": [
             {
               "value": "1",
-              "choice_text": "Very Poor"
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/visibility_poor_square.png"
             },
             {
               "value": "2",
-              "choice_text": "Poor"
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/colors/cividis-1-1-00224EFF_square.png"
             },
             {
               "value": "3",
-              "choice_text": "Fair"
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/colors/cividis-1-3-A1B26AFF_square.png"
             },
             {
               "value": "4",
-              "choice_text": "Good"
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/colors/cividis-1-5-FFD945FF_square.png"
             },
             {
               "value": "5",
-              "choice_text": "Excellent"
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/visibility_good_square.png"
             }
           ]
         },
@@ -81,13 +86,13 @@
           "quest_tag": "ext:intersection:picture",
           "quest_answer_choices": [
             {
+              "value": "no",
+              "choice_text": "No"
+            },
+            {
               "value": "yes",
               "choice_text": "Ok!",
               "choice_follow_up": "Please take a picture of or near this intersection, with a focus on issues of pedestrian visibility, infrastructure maintenance needs, accessibility, or safety."
-            },
-            {
-              "value": "no",
-              "choice_text": "No"
             }
           ]
         }
@@ -103,7 +108,7 @@
           "quest_title": "What type of curb is this?",
           "quest_description": "Identify the type of curb here.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:curb:type",
+          "quest_tag": "curb:type",
           "quest_answer_choices": [
             {
               "value": "flush",
@@ -127,17 +132,17 @@
           "quest_title": "Does this curb have tactile paving?",
           "quest_description": "Check if this curb ramp has tactile paving.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:curb:tactile",
+          "quest_tag": "tactile_paving",
           "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/tactile_paving/yes_square.png"
-            },
             {
               "value": "no",
               "choice_text": "No",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/tactile_paving/no_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/tactile_paving/yes_square.png"
             }
           ]
         },
@@ -153,14 +158,14 @@
           "quest_tag": "ext:ramp:alignment_with_crossing",
           "quest_answer_choices": [
             {
-              "value": "aligned",
-              "choice_text": "Aligned",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/aligned_square.png"
-            },
-            {
               "value": "misaligned",
               "choice_text": "Misaligned",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/misaligned_square.png"
+            },
+            {
+              "value": "aligned",
+              "choice_text": "Aligned",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/aligned_square.png"
             }
           ]
         }
@@ -176,7 +181,7 @@
           "quest_title": "What is the surface material of this footway?",
           "quest_description": "Select the material that best describes this footway's surface.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:footway:surface:material",
+          "quest_tag": "footway:surface",
           "quest_answer_choices": [
             {
               "value": "concrete",
@@ -196,7 +201,7 @@
             {
               "value": "other",
               "choice_text": "Other",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/other_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/pavers_landscape.png"
             }
           ]
         },
@@ -209,23 +214,28 @@
           "quest_answer_choices": [
             {
               "value": "1",
-              "choice_text": "Very Poor"
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/very_bad_landscape.png"
             },
             {
               "value": "2",
-              "choice_text": "Poor"
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/bad_landscape.png"
             },
             {
               "value": "3",
-              "choice_text": "Fair"
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/intermediate_landscape.png"
             },
             {
               "value": "4",
-              "choice_text": "Good"
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/good_landscape.png"
             },
             {
               "value": "5",
-              "choice_text": "Excellent"
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
             }
           ]
         },
@@ -237,7 +247,8 @@
           "quest_tag": "ext:footway:disruptions:count",
           "quest_answer_validation": {
             "min_value": 0,
-            "max_value": 50
+            "max_value": 50,
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png"
           }
         }
       ]
@@ -249,20 +260,20 @@
       "quests": [
         {
           "quest_id": 401,
-          "quest_title": "Are there any temporary obstructions on this sidewalk?",
+          "quest_title": "Is this sidewalk free from temporary obstructions?",
           "quest_description": "Indicate whether temporary barriers restrict travel on this sidewalk.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:sidewalk:obstruction",
           "quest_answer_choices": [
             {
-              "value": "Yes",
-              "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/obstruction/temporary/micromobility_vehicle_landscape.png"
-            },
-            {
               "value": "No",
               "choice_text": "No",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            },
+            {
+              "value": "Yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/obstruction/temporary/micromobility_vehicle_landscape.png"
             }
           ]
         },
@@ -271,7 +282,7 @@
           "quest_title": "What is the surface material of this sidewalk?",
           "quest_description": "Select the material that best describes this sidewalk's surface.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:sidewalk:surface:material",
+          "quest_tag": "sidewalk:surface",
           "quest_answer_choices": [
             {
               "value": "concrete",
@@ -291,7 +302,7 @@
             {
               "value": "other",
               "choice_text": "Other",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/other_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/pavers_landscape.png"
             }
           ]
         },
@@ -304,23 +315,28 @@
           "quest_answer_choices": [
             {
               "value": "1",
-              "choice_text": "Very Poor"
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/very_bad_landscape.png"
             },
             {
               "value": "2",
-              "choice_text": "Poor"
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/bad_landscape.png"
             },
             {
               "value": "3",
-              "choice_text": "Fair"
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/intermediate_landscape.png"
             },
             {
               "value": "4",
-              "choice_text": "Good"
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/good_landscape.png"
             },
             {
               "value": "5",
-              "choice_text": "Excellent"
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
             }
           ]
         },
@@ -332,7 +348,8 @@
           "quest_tag": "ext:sidewalk:disruptions:count",
           "quest_answer_validation": {
             "min_value": 0,
-            "max_value": 50
+            "max_value": 50,
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png"
           }
         }
       ]
@@ -347,7 +364,7 @@
           "quest_title": "What is the surface material of this crossing?",
           "quest_description": "Select the material that best describes this crosswalk's surface.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:crosswalk:surface:material",
+          "quest_tag": "crossing:surface",
           "quest_answer_choices": [
             {
               "value": "concrete",
@@ -367,7 +384,7 @@
             {
               "value": "other",
               "choice_text": "Other",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/other_landscape.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/pavers_landscape.png"
             }
           ]
         },
@@ -376,27 +393,32 @@
           "quest_title": "What is the condition of this crosswalk's surface?",
           "quest_description": "Indicate the condition of this crosswalk's surface.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:crosswalk:surface:condition",
+          "quest_tag": "ext:crossing:surface:condition",
           "quest_answer_choices": [
             {
               "value": "1",
-              "choice_text": "Very Poor"
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/very_bad_landscape.png"
             },
             {
               "value": "2",
-              "choice_text": "Poor"
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/bad_landscape.png"
             },
             {
               "value": "3",
-              "choice_text": "Fair"
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/intermediate_landscape.png"
             },
             {
               "value": "4",
-              "choice_text": "Good"
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/good_landscape.png"
             },
             {
               "value": "5",
-              "choice_text": "Excellent"
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
             }
           ]
         },
@@ -405,10 +427,11 @@
           "quest_title": "How many large surface disruptions are on this crosswalk?",
           "quest_description": "Indicate the number of disruptions over 2 inches that are present on this crosswalk.",
           "quest_type": "Numeric",
-          "quest_tag": "ext:crosswalk:disruptions:count",
+          "quest_tag": "ext:crossing:disruptions:count",
           "quest_answer_validation": {
             "min_value": 0,
-            "max_value": 50
+            "max_value": 50,
+            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png"
           }
         },
         {
@@ -416,17 +439,17 @@
           "quest_title": "Does this crossing have markings on the roadway?",
           "quest_description": "Indicate the presence of markings to indicate a crosswalk at this location.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:crosswalk:markings",
+          "quest_tag": "crossing:markings",
           "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/zebra_square.png"
-            },
             {
               "value": "no",
               "choice_text": "No",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/no_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/zebra_square.png"
             }
           ]
         },
@@ -439,27 +462,32 @@
             "required_value": "yes"
           },
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:crosswalk:markings:condition",
+          "quest_tag": "ext:crossing:markings:condition",
           "quest_answer_choices": [
             {
               "value": "1",
-              "choice_text": "Very Poor"
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/very_poor_landscape.png"
             },
             {
               "value": "2",
-              "choice_text": "Poor"
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/poor_landscape.png"
             },
             {
               "value": "3",
-              "choice_text": "Fair"
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/intermediate_landscape.png"
             },
             {
               "value": "4",
-              "choice_text": "Good"
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/good_landscape.png"
             },
             {
               "value": "5",
-              "choice_text": "Excellent"
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/excellent_landscape.png"
             }
           ]
         },
@@ -468,17 +496,17 @@
           "quest_title": "Does this crossing have signals for pedestrians?",
           "quest_description": "Indicate whether this crossing has pedestrian signals.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:crosswalk:signals",
+          "quest_tag": "ext:crossing:signals",
           "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
-            },
             {
               "value": "no",
               "choice_text": "No",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/no_2_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
             }
           ]
         },
@@ -494,12 +522,14 @@
           "quest_tag": "ext:crossing:signals:sound",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes"
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/sound/sound_no.png"
             },
             {
-              "value": "no",
-              "choice_text": "No"
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/sound/sound_yes.png"
             }
           ]
         },
@@ -515,12 +545,14 @@
           "quest_tag": "ext:crossing:signals:vibration",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes"
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/vibration/vibration_no.png"
             },
             {
-              "value": "no",
-              "choice_text": "No"
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/vibration/vibration_yes.png"
             }
           ]
         },
@@ -536,14 +568,14 @@
           "quest_tag": "ext:crossing:signals:arrow",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
-            },
-            {
               "value": "no",
               "choice_text": "No",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/no_2_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
             }
           ]
         },
@@ -559,14 +591,14 @@
           "quest_tag": "ext:crossing:signals:arrow:alignment",
           "quest_answer_choices": [
             {
-              "value": "aligned",
-              "choice_text": "Aligned",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/aligned_square.png"
-            },
-            {
               "value": "misaligned",
               "choice_text": "Misaligned",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/misaligned_square.png"
+            },
+            {
+              "value": "aligned",
+              "choice_text": "Aligned",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/aligned_square.png"
             }
           ]
         },
@@ -578,14 +610,14 @@
           "quest_tag": "ext:crossing:signals:button",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
-            },
-            {
               "value": "no",
               "choice_text": "No",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/no_2_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
             }
           ]
         },
@@ -601,12 +633,14 @@
           "quest_tag": "ext:crossing:signals:button:reachable",
           "quest_answer_choices": [
             {
-              "value": "yes",
-              "choice_text": "Yes"
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/button/accessible_no_square.png"
             },
             {
-              "value": "no",
-              "choice_text": "No"
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/button/accessible_yes_square.png"
             }
           ]
         }
