@@ -108,22 +108,22 @@
           "quest_title": "What type of curb is this?",
           "quest_description": "Identify the type of curb here.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "curb:type",
+          "quest_tag": "kerb",
           "quest_answer_choices": [
-            {
-              "value": "flush",
-              "choice_text": "Flush",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/flush_landscape.png"
-            },
-            {
-              "value": "ramp",
-              "choice_text": "Ramp",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/lowered_landscape.png"
-            },
             {
               "value": "raised",
               "choice_text": "Raised",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/raised_landscape.png"
+            },
+            {
+              "value": "lowered",
+              "choice_text": "Ramp",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/lowered_landscape.png"
+            },
+            {
+              "value": "flush",
+              "choice_text": "Flush",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/flush_landscape.png"
             }
           ]
         },
@@ -152,7 +152,7 @@
           "quest_description": "Check if this curb ramp lines up with the pedestrian crossing.",
           "quest_answer_dependency": {
             "question_id": 201,
-            "required_value": "ramp"
+            "required_value": "lowered"
           },
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:ramp:alignment_with_crossing",
@@ -181,7 +181,7 @@
           "quest_title": "What is the surface material of this footway?",
           "quest_description": "Select the material that best describes this footway's surface.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "footway:surface",
+          "quest_tag": "surface",
           "quest_answer_choices": [
             {
               "value": "concrete",
@@ -194,14 +194,9 @@
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/asphalt_landscape.png"
             },
             {
-              "value": "brick",
+              "value": "paving_stones",
               "choice_text": "Brick",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/brick_landscape.png"
-            },
-            {
-              "value": "other",
-              "choice_text": "Other",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/pavers_landscape.png"
             }
           ]
         },
@@ -282,7 +277,7 @@
           "quest_title": "What is the surface material of this sidewalk?",
           "quest_description": "Select the material that best describes this sidewalk's surface.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "sidewalk:surface",
+          "quest_tag": "surface",
           "quest_answer_choices": [
             {
               "value": "concrete",
@@ -295,14 +290,9 @@
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/asphalt_landscape.png"
             },
             {
-              "value": "brick",
+              "value": "paving_stones",
               "choice_text": "Brick",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/brick_landscape.png"
-            },
-            {
-              "value": "other",
-              "choice_text": "Other",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/pavers_landscape.png"
             }
           ]
         },
@@ -364,7 +354,7 @@
           "quest_title": "What is the surface material of this crossing?",
           "quest_description": "Select the material that best describes this crosswalk's surface.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "crossing:surface",
+          "quest_tag": "surface",
           "quest_answer_choices": [
             {
               "value": "concrete",
@@ -377,14 +367,9 @@
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/asphalt_landscape.png"
             },
             {
-              "value": "brick",
+              "value": "paving_stones",
               "choice_text": "Brick",
               "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/brick_landscape.png"
-            },
-            {
-              "value": "other",
-              "choice_text": "Other",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/pavers_landscape.png"
             }
           ]
         },
@@ -524,12 +509,12 @@
             {
               "value": "no",
               "choice_text": "No",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/sound/sound_no.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/sound/no_square.png"
             },
             {
               "value": "yes",
               "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/sound/sound_yes.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/sound/yes_square.png"
             }
           ]
         },
@@ -547,12 +532,12 @@
             {
               "value": "no",
               "choice_text": "No",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/vibration/vibration_no.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/vibration/no_square.png"
             },
             {
               "value": "yes",
               "choice_text": "Yes",
-              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/vibration/vibration_yes.png"
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/vibration/yes_square.png"
             }
           ]
         },
