@@ -1,0 +1,104 @@
+{
+  "version": "2.0.0",
+  "elements": [
+    {
+      "element_type": "Intersections",
+      "element_type_icon": "blind_pedestrian_crossing",
+      "quest_query": "nodes with (ext:intersection=yes)",
+      "quests": [
+        {
+          "quest_id": 1,
+          "quest_title": "Are the sidewalks at or near this intersection well-maintained and free of obstacles?",
+          "quest_description": "Determine whether sidewalks around this intersection are well-maintained or are in need of maintenance.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection_sidewalks_well_maintained",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No, needs maintenance",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/obstruction/utility_landscape.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes, well-maintained",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 2,
+          "quest_title": "How would you rate the visibility of pedestrians to drivers at this intersection?",
+          "quest_description": "Rate how visible pedestrians are to drivers at this intersection.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection_visibility_rating",
+          "quest_answer_choices": [
+            {
+              "value": "1",
+              "choice_text": "Very Poor"
+            },
+            {
+              "value": "2",
+              "choice_text": "Poor"
+            },
+            {
+              "value": "3",
+              "choice_text": "Fair"
+            },
+            {
+              "value": "4",
+              "choice_text": "Good"
+            },
+            {
+              "value": "5",
+              "choice_text": "Excellent"
+            }
+          ]
+        },
+        {
+          "quest_id": 3,
+          "quest_title": "Do you feel this intersection is accessible and safe for people with disabilities or mobility aids?",
+          "quest_description": "Determine whether this intersection is safe for people with disabilities or mobility aids.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection_safe_and_accessible",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No, unsafe or inaccessible",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/worn_landscape.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes, safe and accessible",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/good_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 4,
+          "quest_title": "In your own words, describe anything that makes this intersection feel safe or unsafe to you.",
+          "quest_description": "Describe what makes this intersection feel safe or unsafe.",
+          "quest_type": "Numeric",
+          "quest_tag": "ext:intersection_safety_description"
+        },
+        {
+          "quest_id": 5,
+          "quest_title": "Take a picture of the intersection.",
+          "quest_description": "Take a picture of or near the intersection, with a focus on issues of pedestrian visibility, infrastructure maintenance needs, accessibility, or safety.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection_picture",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Ok!",
+              "choice_follow_up": "Please take a picture of or near this intersection, with a focus on issues of pedestrian visibility, infrastructure maintenance needs, accessibility, or safety."
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

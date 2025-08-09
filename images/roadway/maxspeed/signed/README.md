@@ -2,5 +2,5 @@
 
 | Preview | Filename | Direct Link | License |
 |---------|----------|-------------|---------|
-| ![yes_squared.png](https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/roadway/maxspeed/signed/yes_squared.png) | yes_squared.png | [https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/roadway/maxspeed/signed/yes_squared.png](https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/roadway/maxspeed/signed/yes_squared.png) | CC0 Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/ |
+| ![yes_squared.png](https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/sdf/images/roadway/maxspeed/signed/yes_squared.png) | yes_squared.png | [https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/sdf/images/roadway/maxspeed/signed/yes_squared.png](https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/sdf/images/roadway/maxspeed/signed/yes_squared.png) | CC0 Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/ |
 
