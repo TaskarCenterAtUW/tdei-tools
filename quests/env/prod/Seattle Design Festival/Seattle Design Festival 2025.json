@@ -240,10 +240,10 @@
           "quest_description": "Indicate the number of disruptions over 2 inches that are present on this footway.",
           "quest_type": "Numeric",
           "quest_tag": "ext:footway:disruptions:count",
+          "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png",
           "quest_answer_validation": {
             "min": 0,
-            "max": 50,
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png"
+            "max": 50
           }
         }
       ]
@@ -336,10 +336,10 @@
           "quest_description": "Indicate the number of disruptions over 2 inches that are present on this sidewalk.",
           "quest_type": "Numeric",
           "quest_tag": "ext:sidewalk:disruptions:count",
+          "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png",
           "quest_answer_validation": {
             "min": 0,
-            "max": 50,
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png"
+            "max": 50
           }
         }
       ]
@@ -413,10 +413,10 @@
           "quest_description": "Indicate the number of disruptions over 2 inches that are present on this crosswalk.",
           "quest_type": "Numeric",
           "quest_tag": "ext:crossing:disruptions:count",
+          "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png",
           "quest_answer_validation": {
             "min": 0,
-            "max": 50,
-            "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png"
+            "max": 50
           }
         },
         {
