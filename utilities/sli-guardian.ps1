@@ -27,9 +27,6 @@ param(
     [string]$logo
 )
 
-# Initialize counter for processed images
-$processedCounter = 0
-
 # Function to check if a file is an image
 function Test-ImageFile {
     param([string]$Path)
@@ -139,7 +136,18 @@ foreach ($image in $inputImages) {
 Write-Host "`nProcessing images with logo overlay..." -ForegroundColor Yellow
 $outputImages = Get-ChildItem -Path $outputDir -File | Where-Object { Test-ImageFile $_.FullName }
 
-foreach ($image in $outputImages) {
+# Set up parallel processing
+$maxParallel = [int]$env:NUMBER_OF_PROCESSORS
+Write-Host "Processing up to $maxParallel images in parallel..." -ForegroundColor Yellow
+
+# Process images in parallel
+$results = $outputImages | ForEach-Object -ThrottleLimit $maxParallel -Parallel {
+    # Import variables from parent scope
+    $inputDir = $using:inputDir
+    $outputDir = $using:outputDir
+    $logo = $using:logo
+    
+    $image = $_
     Write-Host "`nProcessing: $($image.Name)" -ForegroundColor Cyan
     
     try {
@@ -162,7 +170,6 @@ foreach ($image in $outputImages) {
         }
         else {
             # Convert without format specifications
-            Write-Host "  Converting: $imagePath to $tempPng"
             $convertOutput = & magick "$imagePath" "$tempPng" 2>&1
             if ($LASTEXITCODE -ne 0) {
                 throw "Failed to convert to PNG: $convertOutput"
@@ -177,7 +184,14 @@ foreach ($image in $outputImages) {
         # Step 7b: Check dimensions and apply logo overlay
         # Get dimensions of both images
         $imageSize = & magick identify -format "%wx%h" "$tempPng" 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to get image dimensions: $imageSize"
+        }
+        
         $logoSize = & magick identify -format "%wx%h" "$logo" 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to get logo dimensions: $logoSize"
+        }
 
         if ($imageSize -ne $logoSize) {
             throw "Logo dimensions ($logoSize) do not match image dimensions ($imageSize). The logo must be exactly the same size as the target image."
@@ -185,16 +199,15 @@ foreach ($image in $outputImages) {
 
         Write-Host "  Applying logo overlay..." -ForegroundColor Gray
         # Composite logo directly over image with no positioning adjustments
-        & magick composite "$logo" "$tempPng" "$tempOverlay" 2>&1 | Out-Null
+        $compositeOutput = & magick composite "$logo" "$tempPng" "$tempOverlay" 2>&1
         if ($LASTEXITCODE -ne 0) {
-            throw "Failed to apply logo overlay"
+            throw "Failed to apply logo overlay: $compositeOutput"
         }
         
         # Step 7c: Convert back to original format if it was JPG
         if ($originalExtension.ToLower() -in @('.jpg', '.jpeg')) {
             Write-Host "  Converting back to JPEG..." -ForegroundColor Gray
             $finalOutput = Join-Path -Path $outputDir -ChildPath "$imageBaseName.jpg"
-            Write-Host "  Converting: $tempOverlay to $finalOutput"
             $convertOutput = & magick "$tempOverlay" "$finalOutput" 2>&1
             if ($LASTEXITCODE -ne 0) {
                 throw "Failed to convert back to JPEG: $convertOutput"
@@ -224,14 +237,15 @@ foreach ($image in $outputImages) {
         
         # Step 7d: Copy EXIF data from original to processed image
         Write-Host "  Copying EXIF data from original..." -ForegroundColor Gray
-        & exiftool -overwrite_original -TagsFromFile "$originalImage" "-all:all>all:all" "$finalOutput" 2>&1 | Out-Null
+        $exifOutput = & exiftool -overwrite_original -TagsFromFile "$originalImage" "-all:all>all:all" "$finalOutput" 2>&1
         if ($LASTEXITCODE -ne 0) {
-            Write-Host "  WARNING: Failed to copy some EXIF data, but image was processed" -ForegroundColor Yellow
+            Write-Host "  WARNING: Failed to copy EXIF data: $exifOutput" -ForegroundColor Yellow
+            Write-Host "  Image processing completed successfully despite EXIF warning" -ForegroundColor Yellow
         }
         
-        # Increment success counter
-        $processedCounter++
         Write-Host "  Successfully processed: $($image.Name)" -ForegroundColor Green
+        # Return success
+        $true
         
     }
     catch {
@@ -244,9 +258,13 @@ foreach ($image in $outputImages) {
         if (Test-Path $tempOverlay -ErrorAction SilentlyContinue) {
             Remove-Item -Path $tempOverlay -Force -ErrorAction SilentlyContinue
         }
-        continue
+        # Return failure
+        $false
     }
 }
+
+# Count successful results
+$processedCounter = ($results | Where-Object { $_ -eq $true }).Count
 
 # Step 8: Output summary
 Write-Host "`n========================================" -ForegroundColor Cyan
