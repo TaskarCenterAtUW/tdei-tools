@@ -1,8 +1,8 @@
 # Name: SLI Guardian
-# Version: 1.0
+# Version: 2.0
 # Description: This script applies an overlay to images, designed for use with pedestrian-perspective street-level imagery from a GoPro Max
 # Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-08-20
+# Date: 2025-08-26
 # License: CC-BY-ND 4.0 International
 #
 # This script is designed to be run in a PowerShell environment.
@@ -13,8 +13,8 @@
 #
 # Examples:
 #   .\sli-guardian.ps1
-#   .\sli-guardian.ps1 -inputDir ".\input" -outputDir ".\output" -logo ".\logo.png"
-#   .\sli-guardian.ps1 -inputDir "C:\TCAT GoPro\ingest\2025-07-25\100GOPRO" -outputDir "C:\TCAT GoPro\export\2025-07-25\100GOPRO" -logo "C:\TCAT GoPro\logo.png"
+#   .\sli-guardian.ps1 -inputDir ".\input" -outputDir ".\output" -logo ".\logo.png" -maxParallel 3 -batchSize 100
+#   .\sli-guardian.ps1 -inputDir "C:\TCAT GoPro\ingest\2025-07-25\101\1" -outputDir "C:\TCAT GoPro\export\2025-07-25\101\1" -logo "C:\TCAT GoPro\overlay\tcat-block-purple.png" -maxParallel 3 -batchSize 100
 
 param(
     [Parameter(Mandatory = $true)]
@@ -24,7 +24,16 @@ param(
     [string]$outputDir,
     
     [Parameter(Mandatory = $true)]
-    [string]$logo
+    [string]$logo,
+    
+    [Parameter(Mandatory = $false)]
+    [int]$maxParallel = [Math]::Max(1, [int]$env:NUMBER_OF_PROCESSORS - 1),
+    
+    [Parameter(Mandatory = $false)]
+    [int]$batchSize = 100,
+    
+    [Parameter(Mandatory = $false)]
+    [switch]$skipExif
 )
 
 # Function to check if a file is an image
@@ -35,259 +44,269 @@ function Test-ImageFile {
     return $imageExtensions -contains $extension
 }
 
-# Step 1: Check if input directory exists
-Write-Host "Checking input directory..." -ForegroundColor Yellow
-if (-not (Test-Path -Path $inputDir -PathType Container)) {
-    Write-Host "ERROR: Input directory '$inputDir' does not exist." -ForegroundColor Red
-    exit 1
-}
-Write-Host "Input directory verified: $inputDir" -ForegroundColor Green
-
-# Step 2: Check if output directory exists and handle accordingly
-Write-Host "Checking output directory..." -ForegroundColor Yellow
-if (Test-Path -Path $outputDir -PathType Container) {
-    # Output directory exists - check for existing images
-    $existingImages = Get-ChildItem -Path $outputDir -File | Where-Object { Test-ImageFile $_.FullName }
+# Batch copy function
+function Copy-ImagesOptimized {
+    param(
+        [string]$Source,
+        [string]$Destination,
+        [array]$InputImages
+    )
     
-    if ($existingImages.Count -gt 0) {
-        Write-Host "ERROR: Output directory '$outputDir' already contains $($existingImages.Count) image(s)." -ForegroundColor Red
-        Write-Host "Please specify an empty directory or a non-existent directory." -ForegroundColor Red
-        exit 1
-    }
-    Write-Host "Output directory exists and is empty of images." -ForegroundColor Green
-}
-else {
-    # Create output directory if it doesn't exist
+    Write-Host "Copying..." -ForegroundColor Yellow
+    
+    # Use robocopy with multiple threads for copying
+    $robocopyArgs = @(
+        $Source
+        $Destination
+        "*.jpg", "*.jpeg", "*.png", "*.gif", "*.bmp", "*.tiff", "*.tif"
+        "/MT:8"      # Multi-threaded (8 threads)
+        "/R:1"       # Retry once on failure
+        "/W:1"       # Wait 1 second between retries
+        "/NDL"       # No directory listing
+        "/NP"        # No progress indicator
+    )
+    
     try {
-        New-Item -Path $outputDir -ItemType Directory -Force | Out-Null
-        Write-Host "Output directory created: $outputDir" -ForegroundColor Green
+        $result = & robocopy @robocopyArgs 2>&1
+        # Robocopy returns 0-7 for various success states, >8 for errors
+        if ($LASTEXITCODE -gt 8) {
+            throw "Robocopy failed with exit code: $LASTEXITCODE"
+        }
+        return $true
     }
     catch {
-        Write-Host "ERROR: Failed to create output directory '$outputDir'. Error: $_" -ForegroundColor Red
+        Write-Host "Robocopy failed, falling back to PowerShell copy..." -ForegroundColor Yellow
+        return $false
+    }
+}
+
+Write-Host "SLI Guardian v2.0" -ForegroundColor Cyan
+Write-Host "Max Parallel Jobs: $maxParallel | Batch Size: $batchSize" -ForegroundColor Cyan
+
+# Step 1: Validation
+Write-Host "`nValidating inputs..." -ForegroundColor Yellow
+
+$validationErrors = @()
+
+if (-not (Test-Path -Path $inputDir -PathType Container)) {
+    $validationErrors += "Input directory '$inputDir' does not exist."
+}
+
+if (-not (Test-Path -Path $logo -PathType Leaf)) {
+    $validationErrors += "Logo file '$logo' does not exist."
+}
+elseif ([System.IO.Path]::GetExtension($logo).ToLower() -ne '.png') {
+    $validationErrors += "Logo file must be in PNG format."
+}
+
+# Check tools availability
+try { $null = Get-Command magick -ErrorAction Stop }
+catch { $validationErrors += "ImageMagick is not installed or not in PATH." }
+
+if (-not $skipExif) {
+    try { $null = Get-Command exiftool -ErrorAction Stop }
+    catch { $validationErrors += "ExifTool is not installed or not in PATH. Use -skipExif to bypass." }
+}
+
+if ($validationErrors.Count -gt 0) {
+    Write-Host "VALIDATION ERRORS:" -ForegroundColor Red
+    $validationErrors | ForEach-Object { Write-Host "  $_" -ForegroundColor Red }
+    exit 1
+}
+
+# Create output directory if needed
+if (-not (Test-Path -Path $outputDir)) {
+    New-Item -Path $outputDir -ItemType Directory -Force | Out-Null
+}
+else {
+    # Check for existing images
+    $existingCount = (Get-ChildItem -Path $outputDir -File -Include "*.jpg", "*.jpeg", "*.png", "*.gif", "*.bmp", "*.tiff", "*.tif" | Measure-Object).Count
+    if ($existingCount -gt 0) {
+        Write-Host "ERROR: Output directory contains $existingCount existing image(s)." -ForegroundColor Red
         exit 1
     }
 }
 
-# Step 3: Check if logo file exists and is PNG format
-Write-Host "Checking logo file..." -ForegroundColor Yellow
-if (-not (Test-Path -Path $logo -PathType Leaf)) {
-    Write-Host "ERROR: Logo file '$logo' does not exist." -ForegroundColor Red
-    exit 1
-}
+Write-Host "Validation complete." -ForegroundColor Green
 
-# Check if logo is a PNG file
-if ([System.IO.Path]::GetExtension($logo).ToLower() -ne '.png') {
-    Write-Host "ERROR: Logo file must be in PNG format. Provided file: '$logo'" -ForegroundColor Red
-    exit 1
-}
-Write-Host "Logo file verified: $logo" -ForegroundColor Green
-
-# Step 4: Check for required tools
-Write-Host "`nChecking for required tools..." -ForegroundColor Yellow
-
-# Check for ImageMagick
-try {
-    $null = Get-Command magick -ErrorAction Stop
-    Write-Host "ImageMagick found." -ForegroundColor Green
-}
-catch {
-    Write-Host "ERROR: ImageMagick is not installed or not in PATH." -ForegroundColor Red
-    Write-Host "Please install ImageMagick: winget install ImageMagick.Q16-HDRI" -ForegroundColor Yellow
-    exit 1
-}
-
-# Check for ExifTool
-try {
-    $null = Get-Command exiftool -ErrorAction Stop
-    Write-Host "ExifTool found." -ForegroundColor Green
-}
-catch {
-    Write-Host "ERROR: ExifTool is not installed or not in PATH." -ForegroundColor Red
-    Write-Host "Please install ExifTool from: https://exiftool.org/" -ForegroundColor Yellow
-    exit 1
-}
-
-# Step 5: Get all images from input directory
-Write-Host "`nScanning for images in input directory..." -ForegroundColor Yellow
+# Step 2: Get image inventory
+Write-Host "`nScanning for images..." -ForegroundColor Yellow
 $inputImages = Get-ChildItem -Path $inputDir -File | Where-Object { Test-ImageFile $_.FullName }
 
 if ($inputImages.Count -eq 0) {
-    Write-Host "WARNING: No image files found in input directory." -ForegroundColor Yellow
+    Write-Host "No images found in input directory." -ForegroundColor Yellow
     Write-Host "Supported formats: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .tif" -ForegroundColor Yellow
     exit 0
 }
 
-Write-Host "Found $($inputImages.Count) image(s) to process." -ForegroundColor Green
+Write-Host "Found $($inputImages.Count) images to process." -ForegroundColor Green
 
-# Step 6: Copy all images to output directory
+# Step 3: Copying
 Write-Host "`nCopying images to output directory..." -ForegroundColor Yellow
-foreach ($image in $inputImages) {
-    try {
+
+# Try robocopy first for better performance on large file sets
+$copySuccess = Copy-ImagesOptimized -Source $inputDir -Destination $outputDir -InputImages $inputImages
+
+if (-not $copySuccess) {
+    # Fallback to PowerShell copy with progress tracking
+    $counter = 0
+    foreach ($image in $inputImages) {
         Copy-Item -Path $image.FullName -Destination $outputDir -Force
-        Write-Host "  Copied: $($image.Name)" -ForegroundColor Gray
-    }
-    catch {
-        Write-Host "  ERROR copying $($image.Name): $_" -ForegroundColor Red
-        continue
+        $counter++
+        if ($counter % 100 -eq 0) {
+            Write-Host "  Copied: $counter / $($inputImages.Count)" -ForegroundColor Gray
+        }
     }
 }
 
-# Step 7: Process each image in output directory
-Write-Host "`nProcessing images with logo overlay..." -ForegroundColor Yellow
+Write-Host "File copying complete." -ForegroundColor Green
+
+# Step 4: Pre-validate logo dimensions against first image
+Write-Host "`nValidating logo compatibility..." -ForegroundColor Yellow
+$firstImage = Get-ChildItem -Path $outputDir -File | Where-Object { Test-ImageFile $_.FullName } | Select-Object -First 1
+if ($firstImage) {
+    $imageSize = & magick identify -format "%wx%h" $firstImage.FullName 2>&1
+    $logoSize = & magick identify -format "%wx%h" $logo 2>&1
+    
+    if ($imageSize -ne $logoSize) {
+        Write-Host "ERROR: Logo dimensions ($logoSize) don't match image dimensions ($imageSize)" -ForegroundColor Red
+        exit 1
+    }
+    Write-Host "Logo dimensions validated: $logoSize" -ForegroundColor Green
+}
+
+# Step 5: Process images in batches
+Write-Host "`nProcessing $($inputImages.Count) images with logo overlay..." -ForegroundColor Yellow
+Write-Host "Parallel jobs: $maxParallel | Batch size: $batchSize" -ForegroundColor Yellow
+
 $outputImages = Get-ChildItem -Path $outputDir -File | Where-Object { Test-ImageFile $_.FullName }
+$totalProcessed = 0
+$totalFailed = 0
+$startTime = Get-Date
 
-# Set up parallel processing
-$maxParallel = [int]$env:NUMBER_OF_PROCESSORS
-Write-Host "Processing up to $maxParallel images in parallel..." -ForegroundColor Yellow
-
-# Process images in parallel
-$results = $outputImages | ForEach-Object -ThrottleLimit $maxParallel -Parallel {
-    # Import variables from parent scope
-    $inputDir = $using:inputDir
-    $outputDir = $using:outputDir
-    $logo = $using:logo
+# Process in batches to manage memory and provide progress updates
+for ($i = 0; $i -lt $outputImages.Count; $i += $batchSize) {
+    $batch = $outputImages[$i..[Math]::Min($i + $batchSize - 1, $outputImages.Count - 1)]
+    $batchNum = [Math]::Floor($i / $batchSize) + 1
+    $totalBatches = [Math]::Ceiling($outputImages.Count / $batchSize)
     
-    $image = $_
-    Write-Host "`nProcessing: $($image.Name)" -ForegroundColor Cyan
+    Write-Host "`nProcessing batch $batchNum of $totalBatches ($($batch.Count) images)..." -ForegroundColor Cyan
     
-    try {
-        $imagePath = $image.FullName
-        $imageBaseName = [System.IO.Path]::GetFileNameWithoutExtension($image.Name)
-        $originalExtension = [System.IO.Path]::GetExtension($image.Name)
+    # Process current batch in parallel
+    $results = $batch | ForEach-Object -ThrottleLimit $maxParallel -Parallel {
+        $image = $_
+        $inputDir = $using:inputDir
+        $outputDir = $using:outputDir
+        $logo = $using:logo
+        $skipExif = $using:skipExif
         
-        # Find corresponding original image
-        $originalImage = Join-Path -Path $inputDir -ChildPath $image.Name
-        
-        # Temporary PNG file for processing
-        $tempPng = Join-Path -Path $outputDir -ChildPath "$imageBaseName-temp.png"
-        $tempOverlay = Join-Path -Path $outputDir -ChildPath "$imageBaseName-overlay.png"
-        
-        # Step 7a: Convert to PNG if not already
-        Write-Host "  Converting to PNG for processing..." -ForegroundColor Gray
-        if ($originalExtension.ToLower() -eq '.png') {
-            # Already PNG, just work with it directly
-            $tempPng = $imagePath
-        }
-        else {
-            # Convert without format specifications
-            $convertOutput = & magick "$imagePath" "$tempPng" 2>&1
-            if ($LASTEXITCODE -ne 0) {
-                throw "Failed to convert to PNG: $convertOutput"
+        try {
+            $imagePath = $image.FullName
+            $imageBaseName = [System.IO.Path]::GetFileNameWithoutExtension($image.Name)
+            $originalExtension = [System.IO.Path]::GetExtension($image.Name)
+            $originalImage = Join-Path -Path $inputDir -ChildPath $image.Name
+            
+            if ($originalExtension.ToLower() -in @('.jpg', '.jpeg')) {
+                # For JPEG: PNG temp -> overlay -> final JPEG
+                $tempPng = Join-Path -Path $outputDir -ChildPath "$imageBaseName-temp.png"
+                $finalOutput = Join-Path -Path $outputDir -ChildPath "$imageBaseName.jpg"
+                
+                # Convert to PNG
+                $null = & magick "$imagePath" "$tempPng" 2>&1
+                if ($LASTEXITCODE -ne 0) { throw "PNG conversion failed" }
+                
+                # Apply overlay directly to temp file
+                $null = & magick composite "$logo" "$tempPng" "$tempPng" 2>&1
+                if ($LASTEXITCODE -ne 0) { throw "Overlay application failed" }
+                
+                # Convert back to JPEG
+                $null = & magick "$tempPng" "$finalOutput" 2>&1
+                if ($LASTEXITCODE -ne 0) { throw "JPEG conversion failed" }
+                
+                # Cleanup temporary files only
+                Remove-Item -Path $tempPng -Force -ErrorAction SilentlyContinue
+                # Only remove original copied file if it's different from final output
+                if ($imagePath -ne $finalOutput) {
+                    Remove-Item -Path $imagePath -Force -ErrorAction SilentlyContinue
+                }
+                
+                $processedFile = $finalOutput
+            }
+            else {
+                # For PNG and others: direct overlay (in-place modification)
+                $null = & magick composite "$logo" "$imagePath" "$imagePath" 2>&1
+                if ($LASTEXITCODE -ne 0) { throw "Overlay application failed" }
+                
+                $processedFile = $imagePath
             }
             
-            # Verify the PNG was created
-            if (-not (Test-Path -Path $tempPng)) {
-                throw "PNG conversion failed - output file was not created"
-            }
-        }
-        
-        # Step 7b: Check dimensions and apply logo overlay
-        # Get dimensions of both images
-        $imageSize = & magick identify -format "%wx%h" "$tempPng" 2>&1
-        if ($LASTEXITCODE -ne 0) {
-            throw "Failed to get image dimensions: $imageSize"
-        }
-        
-        $logoSize = & magick identify -format "%wx%h" "$logo" 2>&1
-        if ($LASTEXITCODE -ne 0) {
-            throw "Failed to get logo dimensions: $logoSize"
-        }
-
-        if ($imageSize -ne $logoSize) {
-            throw "Logo dimensions ($logoSize) do not match image dimensions ($imageSize). The logo must be exactly the same size as the target image."
-        }
-
-        Write-Host "  Applying logo overlay..." -ForegroundColor Gray
-        # Composite logo directly over image with no positioning adjustments
-        $compositeOutput = & magick composite "$logo" "$tempPng" "$tempOverlay" 2>&1
-        if ($LASTEXITCODE -ne 0) {
-            throw "Failed to apply logo overlay: $compositeOutput"
-        }
-        
-        # Step 7c: Convert back to original format if it was JPG
-        if ($originalExtension.ToLower() -in @('.jpg', '.jpeg')) {
-            Write-Host "  Converting back to JPEG..." -ForegroundColor Gray
-            $finalOutput = Join-Path -Path $outputDir -ChildPath "$imageBaseName.jpg"
-            $convertOutput = & magick "$tempOverlay" "$finalOutput" 2>&1
-            if ($LASTEXITCODE -ne 0) {
-                throw "Failed to convert back to JPEG: $convertOutput"
+            # Copy EXIF data if not skipped
+            if (-not $skipExif) {
+                $null = & exiftool -overwrite_original -TagsFromFile "$originalImage" "-all:all>all:all" "$processedFile" 2>&1
+                # Don't fail on EXIF errors, just continue
             }
             
-            # Remove temporary files
-            if ($tempOverlay -ne $finalOutput) {
-                Remove-Item -Path $tempOverlay -Force -ErrorAction SilentlyContinue
-            }
-            if (($tempPng -ne $imagePath) -and (Test-Path $tempPng)) {
-                Remove-Item -Path $tempPng -Force -ErrorAction SilentlyContinue
-            }
-            if ($imagePath -ne $finalOutput) {
-                Remove-Item -Path $imagePath -Force -ErrorAction SilentlyContinue
-            }
+            return @{Success = $true; File = $image.Name }
         }
-        else {
-            # For PNG and other formats, use the overlay as final
-            $finalOutput = $imagePath
-            if ($tempOverlay -ne $finalOutput) {
-                Move-Item -Path $tempOverlay -Destination $finalOutput -Force
+        catch {
+            # Cleanup on error
+            $tempFiles = @(
+                (Join-Path -Path $outputDir -ChildPath "$imageBaseName-temp.png"),
+                (Join-Path -Path $outputDir -ChildPath "$imageBaseName-overlay.png")
+            )
+            $tempFiles | ForEach-Object { 
+                if (Test-Path $_) { Remove-Item -Path $_ -Force -ErrorAction SilentlyContinue }
             }
-            if (($tempPng -ne $imagePath) -and (Test-Path $tempPng)) {
-                Remove-Item -Path $tempPng -Force -ErrorAction SilentlyContinue
-            }
+            
+            return @{Success = $false; File = $image.Name; Error = $_.Exception.Message }
         }
-        
-        # Step 7d: Copy EXIF data from original to processed image
-        Write-Host "  Copying EXIF data from original..." -ForegroundColor Gray
-        $exifOutput = & exiftool -overwrite_original -TagsFromFile "$originalImage" "-all:all>all:all" "$finalOutput" 2>&1
-        if ($LASTEXITCODE -ne 0) {
-            Write-Host "  WARNING: Failed to copy EXIF data: $exifOutput" -ForegroundColor Yellow
-            Write-Host "  Image processing completed successfully despite EXIF warning" -ForegroundColor Yellow
-        }
-        
-        Write-Host "  Successfully processed: $($image.Name)" -ForegroundColor Green
-        # Return success
-        $true
-        
     }
-    catch {
-        Write-Host "  ERROR processing $($image.Name): $_" -ForegroundColor Red
-        
-        # Clean up temporary files on error
-        if ((Test-Path $tempPng -ErrorAction SilentlyContinue) -and ($tempPng -ne $imagePath)) {
-            Remove-Item -Path $tempPng -Force -ErrorAction SilentlyContinue
+    
+    # Process results
+    $batchSuccess = ($results | Where-Object { $_.Success }).Count
+    $batchFailed = ($results | Where-Object { -not $_.Success }).Count
+    
+    $totalProcessed += $batchSuccess
+    $totalFailed += $batchFailed
+    
+    # Show batch progress
+    $elapsed = ((Get-Date) - $startTime).TotalMinutes
+    $rate = if ($elapsed -gt 0) { [Math]::Round(($totalProcessed + $totalFailed) / $elapsed, 1) } else { 0 }
+    
+    Write-Host "Batch $batchNum complete: $batchSuccess succeeded, $batchFailed failed" -ForegroundColor $(if ($batchFailed -eq 0) { "Green" } else { "Yellow" })
+    Write-Host "Overall progress: $($totalProcessed + $totalFailed) / $($outputImages.Count) | Rate: $rate images/min" -ForegroundColor Gray
+    
+    # Show any errors from this batch
+    $errors = $results | Where-Object { -not $_.Success }
+    if ($errors.Count -gt 0 -and $errors.Count -le 5) {
+        $errors | ForEach-Object { 
+            Write-Host "  ERROR: $($_.File) - $($_.Error)" -ForegroundColor Red 
         }
-        if (Test-Path $tempOverlay -ErrorAction SilentlyContinue) {
-            Remove-Item -Path $tempOverlay -Force -ErrorAction SilentlyContinue
-        }
-        # Return failure
-        $false
+    }
+    elseif ($errors.Count -gt 5) {
+        Write-Host "  $($errors.Count) errors in this batch (suppressing details)" -ForegroundColor Red
     }
 }
 
-# Count successful results
-$processedCounter = ($results | Where-Object { $_ -eq $true }).Count
+# Final summary
+$totalTime = ((Get-Date) - $startTime).TotalMinutes
+$overallRate = if ($totalTime -gt 0) { [Math]::Round($inputImages.Count / $totalTime, 1) } else { 0 }
 
-# Step 8: Output summary
 Write-Host "`n========================================" -ForegroundColor Cyan
 Write-Host "PROCESSING COMPLETE" -ForegroundColor Green
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "Input Directory:  $inputDir" -ForegroundColor White
-Write-Host "Output Directory: $outputDir" -ForegroundColor White
-Write-Host "Logo File:        $logo" -ForegroundColor White
+Write-Host "Input Directory:        $inputDir" -ForegroundColor White
+Write-Host "Output Directory:       $outputDir" -ForegroundColor White
+Write-Host "Logo File:              $logo" -ForegroundColor White
 Write-Host "----------------------------------------" -ForegroundColor Cyan
-Write-Host "Total images found:      $($inputImages.Count)" -ForegroundColor White
-Write-Host "Successfully processed:  $processedCounter" -ForegroundColor Green
-if (($inputImages.Count - $processedCounter) -gt 0) {
-    Write-Host "Failed to process:       $($inputImages.Count - $processedCounter)" -ForegroundColor Red
-}
+Write-Host "Total images found:     $($inputImages.Count)" -ForegroundColor White
+Write-Host "Successfully processed: $totalProcessed" -ForegroundColor Green
+Write-Host "Failed to process:      $totalFailed" -ForegroundColor $(if ($totalFailed -eq 0) { "Green" } else { "Red" })
+Write-Host "Processing time:        $([Math]::Round($totalTime, 1)) minutes" -ForegroundColor White
+Write-Host "Processing rate:        $overallRate images/minute" -ForegroundColor White
 Write-Host "========================================" -ForegroundColor Cyan
 
-# Exit with appropriate code
-if ($processedCounter -eq 0) {
-    exit 1
-}
-elseif ($processedCounter -lt $inputImages.Count) {
-    exit 2  # Partial success
-}
-else {
-    exit 0  # Complete success
-}
+# Exit codes
+if ($totalProcessed -eq 0) { exit 1 }
+elseif ($totalFailed -gt 0) { exit 2 }
+else { exit 0 }
