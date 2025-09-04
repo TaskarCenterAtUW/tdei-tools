@@ -1,4 +1,5 @@
 tdei-tools.code-workspace
+settings.local.json
 *.txt
 *.zip
 *.geojson
