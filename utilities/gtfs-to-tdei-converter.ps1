@@ -215,6 +215,3 @@ finally {
 }
 
 Write-Host "Success! Created $zipPath - ready for upload to TDEI."  -ForegroundColor Blue
-
-# Prevent the PowerShell window from closing automatically
-Read-Host -Prompt "Press <Enter> to exit"
