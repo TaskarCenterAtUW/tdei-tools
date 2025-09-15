@@ -199,8 +199,17 @@
         "quest_title",
         "quest_description",
         "quest_type",
-        "quest_tag",
-        "quest_answer_choices"
+        "quest_tag"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": { "quest_type": { "const": "TextEntry" } }
+          },
+          "else": {
+            "required": ["quest_answer_choices"]
+          }
+        }
       ]
     }
   }

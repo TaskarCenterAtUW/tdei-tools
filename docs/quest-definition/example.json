@@ -231,9 +231,9 @@
           "quest_id": 11,
           "quest_title": "Are there any other notable features or issues with this sidewalk?",
           "quest_description": "Please describe any other notable features or issues with this sidewalk that were not covered in the previous questions.",
+          "quest_image_url": "http://some_url.com/image.jpg",
           "quest_type": "TextEntry",
-          "quest_tag": "sidewalk_notes",
-          "quest_answer_choices": []
+          "quest_tag": "sidewalk_notes"
         }
       ]
     },
