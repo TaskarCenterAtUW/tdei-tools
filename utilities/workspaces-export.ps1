@@ -1,14 +1,14 @@
 # Name: Workspaces Export Script
-# Version: 1.1
+# Version: 1.2
 # Description: This script directly exports a database using the Workspaces API and saves it to a file.
 # Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-05-21
+# Date: 2025-07-31
 # License: CC-BY-ND 4.0 International
 
 # This script is designed to be run in a PowerShell environment.
 
 # Ask for and validate inputs
-Write-Host "Workspaces Export Script v1.1"
+Write-Host "Workspaces Export Script v1.2"
 Write-Host "Step 1 - Enter the Environment of the dataset you wish to export, in the format 'dev', 'stage', or 'prod'"
 Write-Host "Example - If your Workspace URL is 'https://workspaces-stage.sidewalks.washington.edu/workspace/351/settings' enter 'stage'"
 $workspaceEnv = Read-Host
@@ -42,17 +42,17 @@ if (-not $outputFileName -or $outputFileName -notmatch '\.osm$') {
 
 # Convert the secure string API key to a regular string
 $apiKey = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto(
-    [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureApiKey)
+  [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureApiKey)
 )
 
 # Set the environment postfix based on the entered Workspace Environment
-if ($workspaceEnv -eq 'dev'){
+if ($workspaceEnv -eq 'dev') {
   $envPostfix = '-dev'
 }
-if ($workspaceEnv -eq 'stage'){
+if ($workspaceEnv -eq 'stage') {
   $envPostfix = '-stage'
 }
-if ($workspaceEnv -eq 'prod'){
+if ($workspaceEnv -eq 'prod') {
   $envPostfix = ''
 }
 
@@ -68,7 +68,8 @@ $bboxUrl = "https://osm.workspaces$envPostfix.sidewalks.washington.edu/api/0.6/w
 try {
   $response = Invoke-WebRequest -Uri $bboxUrl -ErrorAction Stop
   $bboxData = $response.Content | ConvertFrom-Json
-} catch {
+}
+catch {
   Write-Host "Error fetching BBOX data: $($_.Exception.Message)" -ForegroundColor Red
   exit
 }
@@ -87,15 +88,16 @@ $exportUrl = "https://osm.workspaces$envPostfix.sidewalks.washington.edu/api/0.6
 if (Test-Path $outputFileName) {
   $overwrite = Read-Host -Prompt "File '$outputFileName' already exists. Overwrite? (y/n)"
   if ($overwrite -ne 'y') {
-      Write-Host "Operation canceled." -ForegroundColor Yellow
-      exit
+    Write-Host "Operation canceled." -ForegroundColor Yellow
+    exit
   }
 }
 
 # Make the export request and save the response to the specified file
 try {
   Invoke-WebRequest -Uri $exportUrl -Headers $headers -OutFile $outputFileName -ErrorAction Stop
-} catch {
+}
+catch {
   Write-Host "Error exporting data: $($_.Exception.Message)" -ForegroundColor Red
   exit
 }

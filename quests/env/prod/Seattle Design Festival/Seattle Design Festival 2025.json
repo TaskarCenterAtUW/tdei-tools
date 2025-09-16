@@ -1,0 +1,635 @@
+{
+  "version": "2.0.0",
+  "elements": [
+    {
+      "element_type": "Intersections",
+      "element_type_icon": "traffic_lights",
+      "quest_query": "nodes with (ext:intersection=yes)",
+      "quests": [
+        {
+          "quest_id": 101,
+          "quest_title": "Is this intersection well-maintained and free of obstacles?",
+          "quest_description": "Determine whether this intersection is well-maintained or is in need of maintenance.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection:well_maintained",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/obstruction/utility_landscape.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 102,
+          "quest_title": "How would you rate the visibility of pedestrians to drivers at this intersection?",
+          "quest_description": "Rate how visible pedestrians are to drivers at this intersection.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection:visibility_rating",
+          "quest_answer_choices": [
+            {
+              "value": "1",
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/visibility_poor_square.png"
+            },
+            {
+              "value": "2",
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/colors/cividis-1-1-00224EFF_square.png"
+            },
+            {
+              "value": "3",
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/colors/cividis-1-3-A1B26AFF_square.png"
+            },
+            {
+              "value": "4",
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/colors/cividis-1-5-FFD945FF_square.png"
+            },
+            {
+              "value": "5",
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/visibility_good_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 103,
+          "quest_title": "Do you feel this intersection is accessible and safe for people with disabilities or mobility aids?",
+          "quest_description": "Determine whether this intersection is safe for people with disabilities or mobility aids.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection:safe_and_accessible",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No, unsafe or inaccessible",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/worn_landscape.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes, safe and accessible",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/good_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 104,
+          "quest_title": "Take a picture of the intersection.",
+          "quest_description": "Take a picture of or near the intersection, with a focus on issues of pedestrian visibility, infrastructure maintenance needs, accessibility, or safety.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:intersection:picture",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Ok!",
+              "choice_follow_up": "Please take a picture of or near this intersection, with a focus on issues of pedestrian visibility, infrastructure maintenance needs, accessibility, or safety."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "element_type": "Curbs",
+      "element_type_icon": "kerb_type",
+      "quest_query": "nodes with (barrier=kerb)",
+      "quests": [
+        {
+          "quest_id": 201,
+          "quest_title": "What type of curb is this?",
+          "quest_description": "Identify the type of curb here.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "kerb",
+          "quest_answer_choices": [
+            {
+              "value": "raised",
+              "choice_text": "Raised",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/raised_landscape.png"
+            },
+            {
+              "value": "lowered",
+              "choice_text": "Ramp",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/lowered_landscape.png"
+            },
+            {
+              "value": "flush",
+              "choice_text": "Flush",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/flush_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 202,
+          "quest_title": "Does this curb have tactile paving?",
+          "quest_description": "Check if this curb ramp has tactile paving.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "tactile_paving",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/tactile_paving/no_2_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/tactile_paving/yes_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 203,
+          "quest_title": "Is this curb ramp aligned with the direction of travel for the crossing?",
+          "quest_description": "Check if this curb ramp lines up with the pedestrian crossing.",
+          "quest_answer_dependency": {
+            "question_id": 201,
+            "required_value": "lowered"
+          },
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:ramp:alignment_with_crossing",
+          "quest_answer_choices": [
+            {
+              "value": "misaligned",
+              "choice_text": "Misaligned",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/misaligned_square.png"
+            },
+            {
+              "value": "aligned",
+              "choice_text": "Aligned",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/aligned_square.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "element_type": "Footways",
+      "element_type_icon": "footway_surface",
+      "quest_query": "ways with (highway=footway and !footway)",
+      "quests": [
+        {
+          "quest_id": 301,
+          "quest_title": "What is the surface material of this footway?",
+          "quest_description": "Select the material that best describes this footway's surface.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "surface",
+          "quest_answer_choices": [
+            {
+              "value": "concrete",
+              "choice_text": "Concrete",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            },
+            {
+              "value": "asphalt",
+              "choice_text": "Asphalt",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/asphalt_landscape.png"
+            },
+            {
+              "value": "paving_stones",
+              "choice_text": "Brick",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/brick_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 302,
+          "quest_title": "What is the condition of this footway's surface?",
+          "quest_description": "Indicate the condition of this footway's surface.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:footway:surface:condition",
+          "quest_answer_choices": [
+            {
+              "value": "1",
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/very_bad_landscape.png"
+            },
+            {
+              "value": "2",
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/bad_landscape.png"
+            },
+            {
+              "value": "3",
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/intermediate_landscape.png"
+            },
+            {
+              "value": "4",
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/good_landscape.png"
+            },
+            {
+              "value": "5",
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 303,
+          "quest_title": "How many large surface disruptions are on this footway?",
+          "quest_description": "Indicate the number of disruptions over 2 inches that are present on this footway.",
+          "quest_type": "Numeric",
+          "quest_tag": "ext:footway:disruptions:count",
+          "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png",
+          "quest_answer_validation": {
+            "min": 0,
+            "max": 50
+          }
+        }
+      ]
+    },
+    {
+      "element_type": "Sidewalks",
+      "element_type_icon": "sidewalk",
+      "quest_query": "ways with (footway=sidewalk)",
+      "quests": [
+        {
+          "quest_id": 401,
+          "quest_title": "Is this sidewalk free from temporary obstructions?",
+          "quest_description": "Indicate whether temporary barriers restrict travel on this sidewalk.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:sidewalk:obstruction",
+          "quest_answer_choices": [
+            {
+              "value": "No",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/obstruction/temporary/micromobility_vehicle_landscape.png"
+            },
+            {
+              "value": "Yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 402,
+          "quest_title": "What is the surface material of this sidewalk?",
+          "quest_description": "Select the material that best describes this sidewalk's surface.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "surface",
+          "quest_answer_choices": [
+            {
+              "value": "concrete",
+              "choice_text": "Concrete",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            },
+            {
+              "value": "asphalt",
+              "choice_text": "Asphalt",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/asphalt_landscape.png"
+            },
+            {
+              "value": "paving_stones",
+              "choice_text": "Brick",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/brick_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 403,
+          "quest_title": "What is the condition of this sidewalk's surface?",
+          "quest_description": "Indicate the condition of this sidewalk's surface.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:sidewalk:surface:condition",
+          "quest_answer_choices": [
+            {
+              "value": "1",
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/very_bad_landscape.png"
+            },
+            {
+              "value": "2",
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/bad_landscape.png"
+            },
+            {
+              "value": "3",
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/intermediate_landscape.png"
+            },
+            {
+              "value": "4",
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/good_landscape.png"
+            },
+            {
+              "value": "5",
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 404,
+          "quest_title": "How many large surface disruptions are on this sidewalk?",
+          "quest_description": "Indicate the number of disruptions over 2 inches that are present on this sidewalk.",
+          "quest_type": "Numeric",
+          "quest_tag": "ext:sidewalk:disruptions:count",
+          "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png",
+          "quest_answer_validation": {
+            "min": 0,
+            "max": 50
+          }
+        }
+      ]
+    },
+    {
+      "element_type": "Crossings",
+      "element_type_icon": "pedestrian_crossing",
+      "quest_query": "ways with (footway=crossing)",
+      "quests": [
+        {
+          "quest_id": 501,
+          "quest_title": "What is the surface material of this crossing?",
+          "quest_description": "Select the material that best describes this crosswalk's surface.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "surface",
+          "quest_answer_choices": [
+            {
+              "value": "concrete",
+              "choice_text": "Concrete",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            },
+            {
+              "value": "asphalt",
+              "choice_text": "Asphalt",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/asphalt_landscape.png"
+            },
+            {
+              "value": "paving_stones",
+              "choice_text": "Brick",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/brick_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 502,
+          "quest_title": "What is the condition of this crosswalk's surface?",
+          "quest_description": "Indicate the condition of this crosswalk's surface.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:surface:condition",
+          "quest_answer_choices": [
+            {
+              "value": "1",
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/very_bad_landscape.png"
+            },
+            {
+              "value": "2",
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/bad_landscape.png"
+            },
+            {
+              "value": "3",
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/intermediate_landscape.png"
+            },
+            {
+              "value": "4",
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/good_landscape.png"
+            },
+            {
+              "value": "5",
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/surface/concrete_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 503,
+          "quest_title": "How many large surface disruptions are on this crosswalk?",
+          "quest_description": "Indicate the number of disruptions over 2 inches that are present on this crosswalk.",
+          "quest_type": "Numeric",
+          "quest_tag": "ext:crossing:disruptions:count",
+          "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/sidewalk/condition/heaved_landscape.png",
+          "quest_answer_validation": {
+            "min": 0,
+            "max": 50
+          }
+        },
+        {
+          "quest_id": 504,
+          "quest_title": "Does this crossing have markings on the roadway?",
+          "quest_description": "Indicate the presence of markings to indicate a crosswalk at this location.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "crossing:markings",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/no_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/zebra_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 505,
+          "quest_title": "What is the condition of the markings at this crossing?",
+          "quest_description": "Select the best description of the crosswalk markings condition.",
+          "quest_answer_dependency": {
+            "question_id": 504,
+            "required_value": "yes"
+          },
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:markings:condition",
+          "quest_answer_choices": [
+            {
+              "value": "1",
+              "choice_text": "Very Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/very_poor_landscape.png"
+            },
+            {
+              "value": "2",
+              "choice_text": "Poor",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/poor_landscape.png"
+            },
+            {
+              "value": "3",
+              "choice_text": "Fair",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/intermediate_landscape.png"
+            },
+            {
+              "value": "4",
+              "choice_text": "Good",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/good_landscape.png"
+            },
+            {
+              "value": "5",
+              "choice_text": "Excellent",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/condition/excellent_landscape.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 506,
+          "quest_title": "Does this crossing have signals for pedestrians?",
+          "quest_description": "Indicate whether this crossing has pedestrian signals.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:signals",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/no_2_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 507,
+          "quest_title": "Do the pedestrian signals at this crossing have an audible indication for when it is safe to cross?",
+          "quest_description": "Indicate whether the crossing signals have audible indications for pedestrians.",
+          "quest_answer_dependency": {
+            "question_id": 506,
+            "required_value": "yes"
+          },
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:signals:sound",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/sound/no_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/sound/yes_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 508,
+          "quest_title": "Do the pedestrian signals at this crossing have a vibrating tactile indication for when it is safe to cross?",
+          "quest_description": "Indicate whether the crossing signals have vibration indications for pedestrians.",
+          "quest_answer_dependency": {
+            "question_id": 506,
+            "required_value": "yes"
+          },
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:signals:vibration",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/vibration/no_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/vibration/yes_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 509,
+          "quest_title": "Do the pedestrian signals at this crossing have a tactile arrow?",
+          "quest_description": "Indicate whether the crossing signals have a tactile arrow for pedestrians.",
+          "quest_answer_dependency": {
+            "question_id": 506,
+            "required_value": "yes"
+          },
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:signals:arrow",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/no_2_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 510,
+          "quest_title": "Is the tactile arrow aligned with the direction of travel for the crossing?",
+          "quest_description": "Indicate whether the tactile arrow lines up with the pedestrian crossing.",
+          "quest_answer_dependency": {
+            "question_id": 506,
+            "required_value": "yes"
+          },
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:signals:arrow:alignment",
+          "quest_answer_choices": [
+            {
+              "value": "misaligned",
+              "choice_text": "Misaligned",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/misaligned_square.png"
+            },
+            {
+              "value": "aligned",
+              "choice_text": "Aligned",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/kerb/ramp/alignment/aligned_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 511,
+          "quest_title": "Does this crossing have a button to press to request a walk signal?",
+          "quest_description": "Indicate whether the crossing has a pedestrian signal button.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:signals:button",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/markings/no_2_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/arrow/yes_square.png"
+            }
+          ]
+        },
+        {
+          "quest_id": 512,
+          "quest_title": "Is this pedestrian signal button within reach for people using mobility aids?",
+          "quest_description": "Indicate whether the button is reachable by people in wheelchairs.",
+          "quest_answer_dependency": {
+            "question_id": 511,
+            "required_value": "yes"
+          },
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:crossing:signals:button:reachable",
+          "quest_answer_choices": [
+            {
+              "value": "no",
+              "choice_text": "No",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/button/accessible_no_square.png"
+            },
+            {
+              "value": "yes",
+              "choice_text": "Yes",
+              "image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/crossing/signals/button/accessible_yes_square.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

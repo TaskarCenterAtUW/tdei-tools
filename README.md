@@ -32,6 +32,8 @@ Utilities related to the TDEI.
 
 - **[GoInfoGame Images Exif Data Update Script](utilities/update-exif.ps1)**
 - **[GoInfoGame Images Exif Data Update Script (Recursive)](utilities/update-exif-recursive.ps1)**
+- **[GTFS-to-TDEI Converter Script](utilities/gtfs-to-tdei-converter.ps1)**
 - **[Quest ID Update Script](utilities/update-quest-ids.ps1)**
+- **[SLI Guardian](utilities/sli-guardian.ps1)**
 - **[Workspaces Export Script](utilities/workspace-export.ps1)**
 - **[Workspaces JOSM Settings Script](utilities/workspace-josm.ps1)**

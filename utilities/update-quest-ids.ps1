@@ -1,11 +1,11 @@
 # Name: Quest ID Update Script
-# Version: 1.0
+# Version: 1.1
 # Description: This script updates the "quest_id" and "question_id" values in a GoInfoGame quest definition file.
 # Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-05-27
+# Date: 2025-07-31
 # License: CC-BY-ND 4.0 International
 
-Write-Host "Quest ID Update Script v1.0"
+Write-Host "Quest ID Update Script v1.1"
 Write-Host "CAUTION: This assumes that new quests have been added with very high temporary IDs, such as 999, and may not work as expected otherwise!"
 Write-Host "CAUTION: This directly updates the existing file - make sure you have backups!"
 Write-Host "Enter the full path to the quest definition file, without quotes:"
@@ -40,7 +40,8 @@ foreach ($section in $json) {
             $quest.quest_id = $newId
             $newId++
         }
-    } else {
+    }
+    else {
         Write-Host "Debug: No quests found in section."
     }
 }

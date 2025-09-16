@@ -1,13 +1,13 @@
 # Name: GoInfoGame Images Exif Data Update Script
-# Version: 1.0
+# Version: 1.1
 # Description: This script removes all metadata from PNG files in a specified directory and adds CC0 copyright tags to each image.
 # Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-04-11
+# Date: 2025-07-31
 # License: CC-BY-ND 4.0 International
 
 # This script is designed to be run in a PowerShell environment.
 
-Write-Host "GoInfoGame Images Exif Data Update Script" -ForegroundColor Blue
+Write-Host "GoInfoGame Images Exif Data Update Script v1.1" -ForegroundColor Blue
 Write-Host "This script removes all metadata from PNG files in a specified directory and adds CC0 copyright tags to each image." -ForegroundColor Cyan
 
 # Ask for directory choice input
