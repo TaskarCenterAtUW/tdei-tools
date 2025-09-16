@@ -2,5 +2,5 @@
 
 | Preview | Filename | Direct Link | License |
 |---------|----------|-------------|---------|
-| ![concrete (Square)](https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/steps/surface/concrete_square.png) | concrete (Square) | [https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/steps/surface/concrete_square.png](https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/main/images/steps/surface/concrete_square.png) | CC0 Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/ |
+| ![concrete (Square)](https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/quest-definition-schema-3.0.0/images/steps/surface/concrete_square.png) | concrete (Square) | [https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/quest-definition-schema-3.0.0/images/steps/surface/concrete_square.png](https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/quest-definition-schema-3.0.0/images/steps/surface/concrete_square.png) | CC0 Public Domain Dedication http://creativecommons.org/publicdomain/zero/1.0/ |
 
