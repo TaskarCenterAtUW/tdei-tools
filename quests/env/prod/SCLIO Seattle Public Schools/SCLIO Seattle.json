@@ -37,7 +37,7 @@
         "quest_description": "Measure the width of this pathway, in inches.",
         "quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/dimension/width_square.png",
         "quest_type": "Numeric",
-        "quest_tag": "ext:pathway_width",
+        "quest_tag": "width",
         "quest_answer_validation": {
           "min": 0,
           "max": 240
@@ -168,7 +168,7 @@
         "quest_title": "Are there markings on the roadway for this crossing?",
         "quest_description": "Determine whether there are high-visibility road markings present for this crossing.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:crossing_markings",
+        "quest_tag": "crossing:markings",
         "quest_answer_choices": [
           {
             "value": "yes",
@@ -187,7 +187,7 @@
         "quest_title": "Are there pedestrian traffic signals for this crossing?",
         "quest_description": "Determine whether there are pedestrian traffic signals present for this crossing.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:crossing_signals",
+        "quest_tag": "ext:crossing:signals",
         "quest_answer_choices": [
           {
             "value": "yes",
@@ -204,7 +204,7 @@
         "quest_title": "Do the pedestrian signals have auditory output?",
         "quest_description": "Determine whether the pedestrian traffic signals have auditory output for this crossing.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:crossing_signals_sound",
+        "quest_tag": "ext:traffic_signals:sound",
         "quest_answer_dependency": {
           "question_id": 10,
           "required_value": "yes"
@@ -225,7 +225,7 @@
         "quest_title": "Do the pedestrian signals have tactile arrows?",
         "quest_description": "Determine whether the pedestrian traffic signals have tactile arrows pointing in the direction of travel for this crossing.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:crossing_signals_arrow",
+        "quest_tag": "ext:traffic_signals:arrow",
         "quest_answer_dependency": {
           "question_id": 10,
           "required_value": "yes"
@@ -246,7 +246,7 @@
         "quest_title": "Is there a traffic island for this crossing?",
         "quest_description": "Determine whether there is a pedestrian refugee traffic island with physical barriers such as raised curbs present for this crossing.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:crossing_island",
+        "quest_tag": "ext:crossing:island",
         "quest_answer_choices": [
           {
             "value": "yes",
@@ -263,7 +263,7 @@
         "quest_title": "Is there adequate lighting for this crossing?",
         "quest_description": "Determine whether there is adequate lighting from streetlights for this crossing.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:crossing_lit",
+        "quest_tag": "ext:lit",
         "quest_answer_choices": [
           {
             "value": "yes",
@@ -286,7 +286,7 @@
         "quest_title": "What type of curb is this?",
         "quest_description": "Determine the type of this curb.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:curb_type",
+        "quest_tag": "kerb",
         "quest_answer_choices": [
           {
             "value": "lowered",
@@ -310,7 +310,7 @@
         "quest_title": "Is there tactile paving at this curb?",
         "quest_description": "Determine whether there is a truncated dome tactile warning surface at this curb.",
         "quest_type": "ExclusiveChoice",
-        "quest_tag": "ext:curb_tactile_paving",
+        "quest_tag": "tactile_paving",
         "quest_answer_choices": [
           {
             "value": "yes",
