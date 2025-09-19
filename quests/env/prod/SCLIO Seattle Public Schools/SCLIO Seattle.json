@@ -533,12 +533,12 @@
           "quest_tag": "ext:automatic_door",
           "quest_answer_choices": [
             {
-              "value": "motion",
-              "choice_text": "Yes, motion-activated"
-            },
-            {
               "value": "button",
               "choice_text": "Yes, button-activated"
+            },
+            {
+              "value": "motion",
+              "choice_text": "Yes, motion-activated"
             },
             {
               "value": "no",
