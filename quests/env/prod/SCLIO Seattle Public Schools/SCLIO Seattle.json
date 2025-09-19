@@ -506,7 +506,7 @@
           "quest_description": "Check if this door closer takes at least 5 seconds to close from 90 degrees to 12 degrees.",
           "quest_type": "ExclusiveChoice",
           "quest_answer_dependency": {
-            "question_id": 407,
+            "question_id": 408,
             "required_value": "yes"
           },
           "quest_tag": "ext:door:closer:compliant_speed",
@@ -688,7 +688,7 @@
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:ramp_or_lift",
           "quest_answer_dependency": {
-            "question_id": 403,
+            "question_id": 417,
             "required_value": "no"
           },
           "quest_answer_choices": [
