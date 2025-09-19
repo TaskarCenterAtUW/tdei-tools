@@ -608,7 +608,7 @@
         {
           "quest_id": 414,
           "quest_title": "Is this entrance tall enough (≥ 80 in) for accessible access?",
-          "quest_description": "Check if this entrance has at least 80 incles of clear height.",
+          "quest_description": "Check if this entrance has at least 80 inches of clear height.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:compliant_height",
           "quest_answer_choices": [
@@ -625,7 +625,7 @@
         {
           "quest_id": 415,
           "quest_title": "Is there adequate maneuvering clearance around this door?",
-          "quest_description": "Check if there is sufficient space to approach and operate the door. Requirements: if door swings toward user (60\" front, 18\" beside latch), if away (48\" front, 12\" side).",
+          "quest_description": "Check if there is sufficient space to approach and operate the door. Requirements: if door swings toward user: 60 in front, 18 in beside latch; if away: 48 in front, 12 in side",
           "quest_type": "ExclusiveChoice",
           "quest_answer_dependency": {
             "question_id": 403,
@@ -634,12 +634,12 @@
           "quest_tag": "ext:maneuvering_clearance",
           "quest_answer_choices": [
             {
-              "value": "adequate",
-              "choice_text": "Adequate clearance present"
+              "value": "yes",
+              "choice_text": "Yes"
             },
             {
-              "value": "insufficient",
-              "choice_text": "Insufficient clearance"
+              "value": "no",
+              "choice_text": "No"
             }
           ]
         },
@@ -726,7 +726,7 @@
         {
           "quest_id": 420,
           "quest_title": "After entering, is the path forward here accessible without traversing a steep incline?",
-          "quest_description": "Check if the inside path forward can be traversed without using a slope with an incline ≥ 1:12, a width ≤ 36 inches, landings at the top and bottom (< 60 inches), or wiithout handrails on both sides if the rise > 6 inches.",
+          "quest_description": "Check if the inside path forward can be traversed without using a slope with an incline ≥ 1:12, a width ≤ 36 inches, landings at the top and bottom (< 60 inches), or without handrails on both sides if the rise > 6 inches.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:no_interior_slope",
           "quest_answer_choices": [
