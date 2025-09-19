@@ -338,156 +338,8 @@
       "quests": [
         {
           "quest_id": 401,
-          "quest_title": "Is this entrance level with the ground?",
-          "quest_description": "Check if the entrance is level with the sidewalk without steps. Slope along the route can’t exceed 1:20. No abrupt level changes: Vertical rise ≤ 1/4 inch is okay; 1/4–1/2 inch must be beveled at 1:2 slope; > 1/2 inch requires a ramp.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:entrance:ground_level",
-          "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
-              "value": "no",
-              "choice_text": "No"
-            }
-          ]
-        },
-        {
-          "quest_id": 402,
-          "quest_title": "Is there a ramp or lift available?",
-          "quest_description": "Check if there is a ramp or mechanical lift present for step-free access.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:entrance:ramp_lift",
-          "quest_answer_dependency": {
-            "question_id": 401,
-            "required_value": "no"
-          },
-          "quest_answer_choices": [
-            {
-              "value": "ramp",
-              "choice_text": "Ramp available"
-            },
-            {
-              "value": "lift",
-              "choice_text": "Lift available"
-            },
-            {
-              "value": "none",
-              "choice_text": "Neither"
-            }
-          ]
-        },
-        {
-          "quest_id": 403,
-          "quest_title": "Is this doorway wide enough for wheelchair access?",
-          "quest_description": "Doorway should have at least 32 inches clear width.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:entrance:width",
-          "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
-              "value": "no",
-              "choice_text": "No"
-            }
-          ]
-        },
-        {
-          "quest_id": 404,
-          "quest_title": "What type of door hardware is used at this entrance?",
-          "quest_description": "Choose the door hardware type for accessibility.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:entrance:door_hardware",
-          "quest_answer_choices": [
-            {
-              "value": "lever",
-              "choice_text": "Lever handle"
-            },
-            {
-              "value": "automatic",
-              "choice_text": "Automatic door"
-            },
-            {
-              "value": "knob",
-              "choice_text": "Round knob"
-            }
-          ]
-        },
-        {
-          "quest_id": 405,
-          "quest_title": "Does the door close slowly or have a power assist?",
-          "quest_description": "Check if the door has a slow closer or power assist for accessibility.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:door_closing",
-          "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
-              "value": "no",
-              "choice_text": "No"
-            }
-          ]
-        },
-        {
-          "quest_id": 406,
-          "quest_title": "Is there clear level space outside the door?",
-          "quest_description": "Check if there is at least 60 inches of level landing space outside the door in the direction of travel × door width + space for maneuvering (up to 24 inches on latch side for forward approach). where the slope at the landing  does not exceed 1:48 (2%) in any direction, and the cross-slope at landing does not risk tipping.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:level_landing",
-          "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
-              "value": "no",
-              "choice_text": "No"
-            }
-          ]
-        },
-        {
-          "quest_id": 407,
-          "quest_title": "If there are two doors in a row (vestibule), is there enough space between them?",
-          "quest_description": "Minimum 48 inches + door width required between two sequential doors.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:vestibule_spacing",
-          "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
-              "value": "no",
-              "choice_text": "No"
-            }
-          ]
-        },
-        {
-          "quest_id": 408,
-          "quest_title": "Is the accessible entrance clearly signed?",
-          "quest_description": "Check if there is signage indicating this is the accessible entrance.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:ntrance_signage",
-          "quest_answer_choices": [
-            {
-              "value": "yes",
-              "choice_text": "Yes"
-            },
-            {
-              "value": "no",
-              "choice_text": "No"
-            }
-          ]
-        },
-        {
-          "quest_id": 409,
-          "quest_title": "Does the entrance have adequate lighting?",
-          "quest_description": "Check if the entrance area is well lit for safety and accessibility. At least one light source should be present within 10 feet of the entry on both sides of the doorway.",
+          "quest_title": "Does this entrance have adequate lighting?",
+          "quest_description": "Check if this entrance area is well-lit, with at least one light source present within 10 feet of both sides of this entrance.",
           "quest_type": "ExclusiveChoice",
           "quest_tag": "ext:lit",
           "quest_answer_choices": [
@@ -502,44 +354,283 @@
           ]
         },
         {
-          "quest_id": 410,
-          "quest_title": "Are there steps immediately after entering with no alternative route?",
-          "quest_description": "Check if there are steps inside without an elevator or ramp on the same level.",
+          "quest_id": 402,
+          "quest_title": "Is there signage clearly indicating that this is an accessible entrance?",
+          "quest_description": "Check if there is signage indicating this as an accessible entrance.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:steps_inside",
+          "quest_tag": "ext:accessibility:signed",
           "quest_answer_choices": [
             {
               "value": "yes",
-              "choice_text": "Yes, steps with no alternative"
+              "choice_text": "Yes"
             },
             {
               "value": "no",
-              "choice_text": "No, level or accessible alternative present"
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 403,
+          "quest_title": "Is there a door at this entrance?",
+          "quest_description": "Check if there is a door at this entrance.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:door",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes"
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 404,
+          "quest_title": "What type of door hardware is used at this entrance?",
+          "quest_description": "Choose the type of door hardware at this entrance.",
+          "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "yes"
+          },
+          "quest_tag": "ext:door:hardware:type",
+          "quest_answer_choices": [
+            {
+              "value": "knob",
+              "choice_text": "Round doorknob"
+            },
+            {
+              "value": "lever",
+              "choice_text": "Lever handle"
+            },
+            {
+              "value": "pull",
+              "choice_text": "U-shaped pull handle"
+            },
+            {
+              "value": "other",
+              "choice_text": "Other hardware type"
+            }
+          ]
+        },
+        {
+          "quest_id": 405,
+          "quest_title": "Is this door's hardware mounted between 34-48 inches above the floor?",
+          "quest_description": "Check if this door's hardware is mounted between 34-48 inches above the floor.",
+          "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "yes"
+          },
+          "quest_tag": "ext:door:hardware:compliant_height",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes"
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 406,
+          "quest_title": "Does this door have a smooth surface at the bottom of the push side?",
+          "quest_description": "Check if the push side of this door has a smooth surface, measured from the floor up to at least 10 inches, to allow wheelchair footrests to pass without obstruction.",
+          "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "yes"
+          },
+          "quest_tag": "ext:door:smooth_push_surface",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes"
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 407,
+          "quest_title": "Can this door be opened without requiring excessive force?",
+          "quest_description": "Check if this door requires the application of excessive force (> 5 lbs) to open.",
+          "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "yes"
+          },
+          "quest_tag": "ext:door:compliant_force",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes"
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 408,
+          "quest_title": "Does this door have a door closer?",
+          "quest_description": "Check if this door has a slow closer or power closing assist.",
+          "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "yes"
+          },
+          "quest_tag": "ext:door:closer",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes"
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 409,
+          "quest_title": "Does this door closer provide adequate closing time?",
+          "quest_description": "Check if this door closer takes at least 5 seconds to close from 90 degrees to 12 degrees.",
+          "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 407,
+            "required_value": "yes"
+          },
+          "quest_tag": "ext:door:closer:compliant_speed",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes (≥ 5 seconds)"
+            },
+            {
+              "value": "no",
+              "choice_text": "No (< 5 seconds)"
+            }
+          ]
+        },
+        {
+          "quest_id": 410,
+          "quest_title": "Is this an automatic door?",
+          "quest_description": "Check if this door has automatic operation available.",
+          "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "yes"
+          },
+          "quest_tag": "ext:automatic_door",
+          "quest_answer_choices": [
+            {
+              "value": "motion",
+              "choice_text": "Yes, motion-activated"
+            },
+            {
+              "value": "button",
+              "choice_text": "Yes, button-activated"
+            },
+            {
+              "value": "no",
+              "choice_text": "No, no automation"
             }
           ]
         },
         {
           "quest_id": 411,
-          "quest_title": "Is the door opening at least 32 inches wide when open?",
-          "quest_description": "Measure the clear opening width when the door is open 90 degrees. Must be at least 32 inches wide for accessibility compliance.",
+          "quest_title": "Does the door remain open long enough for safe passage?",
+          "quest_description": "Check if this power-operated door remains open long enough for safe wheelchair passage.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:width_compliant",
+          "quest_answer_dependency": {
+            "question_id": 410,
+            "required_value": "button"
+          },
+          "quest_tag": "ext:automatic_door:compliant_timing",
           "quest_answer_choices": [
             {
               "value": "yes",
-              "choice_text": "Yes, 32 inches or wider"
+              "choice_text": "Yes"
             },
             {
               "value": "no",
-              "choice_text": "No, less than 32 inches"
+              "choice_text": "No"
             }
           ]
         },
         {
           "quest_id": 412,
-          "quest_title": "Is there adequate maneuvering clearance around the door?",
+          "quest_title": "Is there sufficient clear floor space here for button activation?",
+          "quest_description": "Check if there is enough clear floor space adjacent to the button or push plate for wheelchair users to activate it.",
+          "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 410,
+            "required_value": "button"
+          },
+          "quest_tag": "ext:automatic_door:button:compliant_space",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes"
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 413,
+          "quest_title": "Is this entrance wide enough (≥ 32 in) for wheelchair access?",
+          "quest_description": "Check if this entrance has at least 32 inches of clear width.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:compliant_width",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes"
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 414,
+          "quest_title": "Is this entrance tall enough (≥ 80 in) for accessible access?",
+          "quest_description": "Check if this entrance has at least 80 incles of clear height.",
+          "quest_type": "ExclusiveChoice",
+          "quest_tag": "ext:compliant_height",
+          "quest_answer_choices": [
+            {
+              "value": "yes",
+              "choice_text": "Yes"
+            },
+            {
+              "value": "no",
+              "choice_text": "No"
+            }
+          ]
+        },
+        {
+          "quest_id": 415,
+          "quest_title": "Is there adequate maneuvering clearance around this door?",
           "quest_description": "Check if there is sufficient space to approach and operate the door. Requirements: if door swings toward user (60\" front, 18\" beside latch), if away (48\" front, 12\" side).",
           "quest_type": "ExclusiveChoice",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "yes"
+          },
           "quest_tag": "ext:maneuvering_clearance",
           "quest_answer_choices": [
             {
@@ -553,188 +644,99 @@
           ]
         },
         {
-          "quest_id": 413,
-          "quest_title": "Is the threshold height compliant?",
-          "quest_description": "Threshold should be 1/2 inch high or less. If between 1/4 and 1/2 inch, it must be beveled.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:threshold_compliant",
-          "quest_answer_choices": [
-            {
-              "value": "compliant",
-              "choice_text": "Compliant (≤1/2 inch, properly beveled if needed)"
-            },
-            {
-              "value": "non_compliant",
-              "choice_text": "Non-compliant (>1/2 inch or improper bevel)"
-            }
-          ]
-        },
-        {
-          "quest_id": 414,
-          "quest_title": "Is the door hardware accessible?",
-          "quest_description": "Hardware should be operable with one hand, no tight grasping/pinching/twisting. Lever handles, U-shaped pulls, push plates are acceptable.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:hardware_accessible",
-          "quest_answer_choices": [
-            {
-              "value": "accessible",
-              "choice_text": "Accessible hardware (lever, push plate, etc.)"
-            },
-            {
-              "value": "not_accessible",
-              "choice_text": "Not accessible (round knob, difficult to operate)"
-            }
-          ]
-        },
-        {
-          "quest_id": 415,
-          "quest_title": "Is the door hardware mounted at the correct height?",
-          "quest_description": "Door hardware should be mounted between 34-48 inches above the floor.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:hardware_height",
-          "quest_answer_choices": [
-            {
-              "value": "compliant",
-              "choice_text": "Between 34-48 inches height"
-            },
-            {
-              "value": "non_compliant",
-              "choice_text": "Outside the 34-48 inch range"
-            }
-          ]
-        },
-        {
           "quest_id": 416,
-          "quest_title": "Does the door require excessive force to open?",
-          "quest_description": "Interior doors should require 5 pounds or less force to open. Exterior doors should be as light as possible.",
+          "quest_title": "If there is a vestibule (two doors in a row) here, is there enough space between them?",
+          "quest_description": "Check if there is at least 48 inches plus the door width between two sequential doors.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:opening_force",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "yes"
+          },
+          "quest_tag": "ext:vestibule:compliant_spacing",
           "quest_answer_choices": [
             {
-              "value": "acceptable",
-              "choice_text": "Acceptable force required"
+              "value": "yes",
+              "choice_text": "Yes"
             },
             {
-              "value": "excessive",
-              "choice_text": "Excessive force required"
+              "value": "no",
+              "choice_text": "No"
             }
           ]
         },
         {
           "quest_id": 417,
-          "quest_title": "If there is a door closer, does it provide adequate closing time?",
-          "quest_description": "Door closers must take at least 5 seconds to close from 90 degrees to 12 degrees.",
+          "quest_title": "Is this entrance level with the ground?",
+          "quest_description": "Check if this entrance is level with the sidewalk and without steps. Slope along the route can’t exceed 1:20. No abrupt level changes: Vertical rise ≤ 1/4 inch is okay; 1/4–1/2 inch must be beveled at 1:2 slope; > 1/2 inch requires a ramp.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:closing_speed",
+          "quest_tag": "ext:level_with_ground",
           "quest_answer_choices": [
             {
-              "value": "adequate",
-              "choice_text": "Adequate closing time (≥5 seconds)"
+              "value": "yes",
+              "choice_text": "Yes"
             },
             {
-              "value": "too_fast",
-              "choice_text": "Closes too quickly (<5 seconds)"
-            },
-            {
-              "value": "no_closer",
-              "choice_text": "No door closer present"
+              "value": "no",
+              "choice_text": "No"
             }
           ]
         },
         {
           "quest_id": 418,
-          "quest_title": "If automatic, does the door remain open long enough for safe passage?",
-          "quest_description": "Power-operated doors must remain open long enough for safe wheelchair passage.",
+          "quest_title": "Is there a ramp or lift available here?",
+          "quest_description": "Check if there is a ramp or mechanical lift present for step-free access to this entrance.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:automatic_door_timing",
+          "quest_tag": "ext:ramp_or_lift",
+          "quest_answer_dependency": {
+            "question_id": 403,
+            "required_value": "no"
+          },
           "quest_answer_choices": [
             {
-              "value": "adequate",
-              "choice_text": "Adequate open time"
+              "value": "ramp",
+              "choice_text": "Ramp available"
             },
             {
-              "value": "insufficient",
-              "choice_text": "Insufficient open time"
+              "value": "lift",
+              "choice_text": "Lift available"
             },
             {
-              "value": "not_automatic",
-              "choice_text": "Not an automatic door"
+              "value": "no",
+              "choice_text": "Neither"
             }
           ]
         },
         {
           "quest_id": 419,
-          "quest_title": "If there are automatic door sensors or push plates, is there clear floor space for activation?",
-          "quest_description": "Check if there is clear floor space adjacent to sensors or push plates for wheelchair users to activate them.",
+          "quest_title": "After entering, is the path forward here accessible without using steps?",
+          "quest_description": "Check if the inside path forward can be traversed without using steps, if there is no elevator or ramp on the same level.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:sensor_clearance",
+          "quest_tag": "ext:no_interior_steps",
           "quest_answer_choices": [
             {
-              "value": "adequate",
-              "choice_text": "Adequate clear floor space"
+              "value": "yes",
+              "choice_text": "Yes"
             },
             {
-              "value": "insufficient",
-              "choice_text": "Insufficient clear floor space"
-            },
-            {
-              "value": "no_sensors",
-              "choice_text": "No sensors or push plates present"
+              "value": "no",
+              "choice_text": "No"
             }
           ]
         },
         {
           "quest_id": 420,
-          "quest_title": "Are there any interior ramps immediately inside, and are they compliant?",
-          "quest_description": "Interior ramps must have slope ≤1:12, width ≥36 inches, landings at top and bottom (60 inch min.), and handrails on both sides if rise >6 inches.",
+          "quest_title": "After entering, is the path forward here accessible without traversing a steep incline?",
+          "quest_description": "Check if the inside path forward can be traversed without using a slope with an incline ≥ 1:12, a width ≤ 36 inches, landings at the top and bottom (< 60 inches), or wiithout handrails on both sides if the rise > 6 inches.",
           "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:interior_ramp",
+          "quest_tag": "ext:no_interior_slope",
           "quest_answer_choices": [
             {
-              "value": "compliant",
-              "choice_text": "Compliant ramp present"
+              "value": "yes",
+              "choice_text": "Yes"
             },
             {
-              "value": "non_compliant",
-              "choice_text": "Non-compliant ramp present"
-            },
-            {
-              "value": "no_ramp",
-              "choice_text": "No interior ramp needed/present"
-            }
-          ]
-        },
-        {
-          "quest_id": 421,
-          "quest_title": "Are there any protruding objects at head height along the entrance route?",
-          "quest_description": "Check for protruding objects (signs, fixtures) at 80 inches height or below that could be hazardous.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:protruding_objects",
-          "quest_answer_choices": [
-            {
-              "value": "present",
-              "choice_text": "Yes, protruding objects present"
-            },
-            {
-              "value": "none",
-              "choice_text": "No protruding objects"
-            }
-          ]
-        },
-        {
-          "quest_id": 422,
-          "quest_title": "Does the door have a smooth surface on the push side?",
-          "quest_description": "The push side of the door should have a smooth surface up to at least 10 inches above the floor to allow wheelchair footrests to pass without obstruction.",
-          "quest_type": "ExclusiveChoice",
-          "quest_tag": "ext:door_surface",
-          "quest_answer_choices": [
-            {
-              "value": "smooth",
-              "choice_text": "Yes, smooth surface present"
-            },
-            {
-              "value": "obstructed",
-              "choice_text": "No, obstructions or rough surface present"
+              "value": "no",
+              "choice_text": "No"
             }
           ]
         }
