@@ -206,9 +206,13 @@
       "allOf": [
         {
           "if": {
-            "properties": { "quest_type": { "const": "TextEntry" } }
+            "properties": { 
+              "quest_type": { 
+                "enum": ["ExclusiveChoice", "MultipleChoice"] 
+              } 
+            }
           },
-          "else": {
+          "then": {
             "required": ["quest_answer_choices"]
           }
         }
