@@ -1,45 +1,35 @@
+#!/usr/bin/env pwsh
+# This script is designed to be run in a PowerShell environment.
+
 # Name: GTFS-to-TDEI Converter Script
-# Version: 3.0.0
-# Description: This script takes a GTFS archive, processes it to convert stops.txt to stops.geojson, and zips the result into an archive ready for upload to TDEI.
+# Version: 4.0.0
+# Date: 2025-09-23
 # Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-09-09
 # License: CC-BY-ND 4.0 International
 
 <#
 .SYNOPSIS
-    Converts GTFS stops.txt to TDEI-compatible GeoJSON format.
+    Converts GTFS stops.txt to TDEI-compatible GeoJSON format
 
 .DESCRIPTION
     This script takes a GTFS archive, extracts the stops.txt file, converts it to 
     OpenSidewalks-compatible GeoJSON format, and packages it as a ZIP file ready 
     for upload to the TDEI (Transportation Data Exchange Initiative).
 
-    The script validates the input GTFS data, ensures required fields are present,
-    and validates coordinate values before conversion.
-
 .PARAMETER InputZip
     Path to the GTFS ZIP archive containing stops.txt file.
-    This parameter is mandatory.
 
 .PARAMETER OutputDir
     Directory where the output stops.zip file will be created.
-    If not specified, uses the current working directory.
-    The directory will be created if it doesn't exist.
+    If not specified, uses the current working directory by default.
 
 .EXAMPLE
-    .\gtfs-to-tdei-converter.ps1 -InputZip "C:\data\gtfs.zip"
-    
+    .\gtfs-to-tdei-converter.ps1 -InputZip "C:\example\gtfs.zip"
     Converts the GTFS archive and saves stops.zip in the current directory.
 
 .EXAMPLE
-    .\gtfs-to-tdei-converter.ps1 -InputZip "C:\data\gtfs.zip" -OutputDir "C:\output"
-    
+    .\gtfs-to-tdei-converter.ps1 -InputZip "C:\example\ingest\gtfs.zip" -OutputDir "C:\example\export"
     Converts the GTFS archive and saves stops.zip in the specified output directory.
-
-.EXAMPLE
-    Get-Help .\gtfs-to-tdei-converter.ps1 -Detailed
-    
-    Shows detailed help including parameter descriptions and examples.
 
 .NOTES
     Required GTFS fields: stop_id, stop_lat, stop_lon
@@ -53,8 +43,6 @@
 .LINK
     https://github.com/TaskarCenterAtUW/tdei-tools
 #>
-
-# This script is designed to be run in a PowerShell environment.
 
 param(
     [Parameter(Mandatory = $true, HelpMessage = "Path to the GTFS zip archive")]
@@ -71,7 +59,7 @@ $OUTPUT_GEOJSON_FILENAME = 'stops.geojson'
 $OUTPUT_ZIP_FILENAME = 'stops.zip'
 $GTFS_STOPS_FILENAME = 'stops.txt'
 
-Write-Host "GTFS-to-TDEI Converter Script v3.0.0" -ForegroundColor DarkBlue
+Write-Host "GTFS-to-TDEI Converter Script v4.0.0" -ForegroundColor DarkBlue
 Write-Host ""
 
 # Check if input ZIP exists

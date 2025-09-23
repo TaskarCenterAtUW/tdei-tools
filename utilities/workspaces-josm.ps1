@@ -1,14 +1,63 @@
-# Name: Workspaces JOSM Settings Script
-# Version: 1.0
-# Description: This script uses the Workspaces API to retrieve JOSM configuration settings
-# Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-07-29
-# License: CC-BY-ND 4.0 International
-
+#!/usr/bin/env pwsh
 # This script is designed to be run in a PowerShell environment.
 
+# Name: Workspaces JOSM Settings Script
+# Version: 2.0.0
+# Date: 2025-09-23
+# License: CC-BY-ND 4.0 International
+# Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
+
+<#
+.SYNOPSIS
+    Retrieves JOSM configuration settings for editing data in Workspaces
+
+.DESCRIPTION
+    This script uses the Workspaces API to authenticate with TDEI and retrieve 
+    the necessary configuration settings for editing a Workspace using JOSM.
+
+.PARAMETER WorkspaceEnv
+    The environment of the Workspace ('dev', 'stage', or 'prod')
+
+.PARAMETER Username
+    Your TDEI username for authentication
+
+.PARAMETER Password
+    Your TDEI password for authentication
+
+.PARAMETER WorkspaceId
+    The numeric ID of the Workspace you want to edit
+
+.EXAMPLE
+    # Interactive usage with prompts:
+    .\workspaces-josm.ps1
+    # Environment: stage
+    # Username: your-username
+    # Password: [your-password]
+    # Workspace ID: 351
+    
+    Returns JOSM configuration for editing Workspace 351 in the stage environment
+
+.NOTES
+    Prerequisites:
+    - Valid TDEI account credentials
+    - Access to the specified Workspace
+    - JOSM editor installed for actual editing
+
+    The script will output:
+    - OSM Server URL for JOSM configuration
+    - Access token to use as the OSM username in JOSM
+
+    Environment URLs:
+    - dev: workspaces-dev.sidewalks.washington.edu
+    - stage: workspaces-stage.sidewalks.washington.edu  
+    - prod: workspaces.sidewalks.washington.edu
+
+.LINK
+    https://github.com/TaskarCenterAtUW/tdei-tools
+#>
+
 # Ask for and validate inputs
-Write-Host "Workspaces JOSM Settings Script v1.0" -ForegroundColor DarkBlue
+Write-Host "Workspaces JOSM Settings Script v2.0.0" -ForegroundColor DarkBlue
 Write-Host ""
 Write-Host "Step 1 - Enter the Environment of the Workspace you wish to edit, in the format 'dev', 'stage', or 'prod'" -ForegroundColor Green
 Write-Host "  Example - If your Workspace URL is 'https://workspaces-stage.sidewalks.washington.edu/workspace/351/settings' enter 'stage'" -ForegroundColor DarkGreen

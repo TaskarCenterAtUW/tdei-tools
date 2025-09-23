@@ -1,20 +1,88 @@
-# Name: SLI Guardian
-# Version: 5.0
-# Description: This script applies an overlay to images, designed for use with pedestrian-perspective street-level imagery from a GoPro Max
-# Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-09-03
-# License: CC-BY-ND 4.0 International
-#
+#!/usr/bin/env pwsh
 # This script is designed to be run in a PowerShell environment.
-# Prerequisites: ImageMagick and ExifTool must be installed and in PATH
-#
-# Usage:
-#   .\sli-guardian.ps1 -inputDir <input_directory> -outputDir <output_directory> -overlay <overlay_file> -maxParallel <n> -batchSize <n> -jpegQuality <n>
-#
-# Examples:
-#   .\sli-guardian.ps1
-#   .\sli-guardian.ps1 -inputDir ".\input" -outputDir ".\output" -overlay ".\overlay.png" -maxParallel 8 -batchSize 50 -jpegQuality 90
-#   .\sli-guardian.ps1 -inputDir "C:\TCAT GoPro\ingest\2025-07-25\101\1" -outputDir "C:\TCAT GoPro\export\2025-07-25\101\1" -overlay "C:\TCAT GoPro\overlay\tcat-purple.png" -jpegQuality 85
+
+# Name: SLI Guardian
+# Version: 6.0.0
+# Date: 2025-09-23
+# Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
+# License: CC-BY-ND 4.0 International
+
+<#
+.SYNOPSIS
+    Applies overlay images to street-level imagery
+
+.DESCRIPTION
+    This script applies an overlay to images, designed for use with pedestrian-perspective 
+    street-level imagery from devices like GoPro Max cameras. It processes images in 
+    parallel batches for optimal performance, copying input images to an output directory, 
+    applying the specified overlay, and preserving EXIF metadata from the original files.
+    
+    The script supports various image formats and includes validation for overlay 
+    compatibility, progress reporting, and comprehensive error handling.
+
+.PARAMETER InputDir
+    Path to the directory containing input images to process
+
+.PARAMETER OutputDir
+    Path to the directory where processed images will be saved
+
+.PARAMETER Overlay
+    Path to the PNG overlay file to apply to all images
+
+.PARAMETER MaxParallel
+    Maximum number of parallel processing jobs
+
+.PARAMETER BatchSize
+    Number of images to process in each batch
+    Default: 50
+
+.PARAMETER JpegQuality
+    JPEG compression quality (1-100) for JPEG output files
+    Default: 70
+
+.PARAMETER SkipExif
+    Skip copying EXIF metadata from original files
+
+.EXAMPLE
+    .\sli-guardian.ps1 -inputDir ".\input" -outputDir ".\output" -overlay ".\overlay.png"
+    
+    Processes images from .\input directory using default settings
+
+.EXAMPLE
+    .\sli-guardian.ps1 -inputDir "C:\TCAT GoPro\ingest\2025-07-25\101\1" -outputDir "C:\TCAT GoPro\export\2025-07-25\101\1" -overlay "C:\TCAT GoPro\overlay\tcat-purple.png" -jpegQuality 85
+    
+    Processes images with custom parallel processing and quality settings
+
+.NOTES
+    Prerequisites:
+    - ImageMagick must be installed and available in PATH
+    - ExifTool must be installed and available in PATH (unless -skipExif is used)
+    
+    Supported image formats:
+    - Input: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .tif
+    - Overlay: .png only
+    
+    The script performs these operations:
+    1. Validates all inputs and prerequisites
+    2. Copies input images to output directory
+    3. Validates overlay dimensions match image dimensions
+    4. Applies overlay to images in parallel batches
+    5. Preserves EXIF metadata from original files (unless -skipExif)
+    6. Provides detailed progress reporting and error handling
+    
+    JPEG handling:
+    - JPEG files are processed with quality settings
+    - Extensions are normalized to lowercase .jpg
+    - Non-JPEG files are processed without quality settings
+    
+    Exit codes:
+    - 0: All images processed successfully
+    - 1: No images processed (validation errors or no input images)
+    - 2: Some images failed processing (partial success)
+
+.LINK
+    https://github.com/TaskarCenterAtUW/tdei-tools
+#>
 
 param(
     [Parameter(Mandatory = $true)]
@@ -34,7 +102,7 @@ param(
     
     [Parameter(Mandatory = $false)]
     [ValidateRange(1, 100)]
-    [int]$jpegQuality = 70,
+    [int]$jpegQuality = 90,
     
     [Parameter(Mandatory = $false)]
     [switch]$skipExif
@@ -44,7 +112,7 @@ param(
 $script:ImageExtensions = @('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.tif')
 $script:JpegExtensions = @('.jpg', '.jpeg')
 
-Write-Host "SLI Guardian v5.0" -ForegroundColor Cyan
+Write-Host "SLI Guardian v6.0.0" -ForegroundColor Cyan
 Write-Host "Max Parallel Jobs: $maxParallel | Batch Size: $batchSize | JPEG Quality: $jpegQuality" -ForegroundColor Cyan
 
 # Step 1: Validation
