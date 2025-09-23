@@ -1,14 +1,67 @@
-# Name: Workspaces Export Script
-# Version: 1.2
-# Description: This script directly exports a database using the Workspaces API and saves it to a file.
-# Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
-# Date: 2025-07-31
-# License: CC-BY-ND 4.0 International
-
+#!/usr/bin/env pwsh
 # This script is designed to be run in a PowerShell environment.
 
+# Name: Workspaces Export Script
+# Version: 2.0.0
+# Date: 2025-09-23
+# License: CC-BY-ND 4.0 International
+# Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
+
+<#
+.SYNOPSIS
+    Exports data directly from a Workspaces database to an OSM file
+
+.DESCRIPTION
+    This script uses the Workspaces API to export a complete dataset from a 
+    specified Workspace environment. It retrieves the bounding box for the 
+    workspace and downloads all data, in .osm format.
+
+.PARAMETER WorkspaceEnv
+    The environment of the Workspace ('dev', 'stage', or 'prod')
+
+.PARAMETER ApiKey
+    Your API key from the corresponding TDEI Portal
+
+.PARAMETER WorkspaceId
+    The numeric ID of the Workspace to export
+
+.PARAMETER OutputFileName
+    The name of the output OSM file (must end with '.osm')
+
+.EXAMPLE
+    # Interactive usage with prompts:
+    .\workspaces-export.ps1
+    # Environment: stage
+    # API Key: [api-key]
+    # Workspace ID: 351
+    # Output file: export-stage-351-20250917-01.osm
+    
+    Exports all data from Workspace 351 in the stage environment to the specified file.
+
+.NOTES
+    Prerequisites:
+    - Valid TDEI Portal API key for the target environment
+    - Access permissions to the specified Workspace
+    - Sufficient disk space for the export file
+    
+    API Key locations:
+    - Dev: https://portal-dev.tdei.us/
+    - Stage: https://portal-stage.tdei.us/
+    - Prod: https://portal.tdei.us/
+    
+    The script will:
+    - Validate all input parameters
+    - Retrieve the Workspace's bounding box
+    - Download the complete dataset as OSM XML
+    
+    Recommended file naming convention: export-{env}-{workspace_id}-{date}-{counter}.osm
+
+.LINK
+    https://github.com/TaskarCenterAtUW/tdei-tools
+#>
+
 # Ask for and validate inputs
-Write-Host "Workspaces Export Script v1.2"
+Write-Host "Workspaces Export Script v2.0.0"
 Write-Host "Step 1 - Enter the Environment of the dataset you wish to export, in the format 'dev', 'stage', or 'prod'"
 Write-Host "Example - If your Workspace URL is 'https://workspaces-stage.sidewalks.washington.edu/workspace/351/settings' enter 'stage'"
 $workspaceEnv = Read-Host
