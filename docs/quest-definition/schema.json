@@ -112,7 +112,8 @@
           ],
           "examples": ["yes", "0", ["1", "2"], ["yes", "no"]]
         }
-      }
+      },
+      "required": ["question_id", "required_value"]
     },
     "Question": {
       "type": "object",
