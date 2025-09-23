@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Long Form Quests Schema for GoInfoGame",
+  "title": "Long Form Quests Schema for AVIV ScoutRoute",
   "version": "3.0.0",
   "type": "object",
   "additionalProperties": false,
@@ -41,7 +41,7 @@
           ]
         },
         "element_type_icon": {
-          "description": "Icon to be displayed for the element type. The icon name should be a string (not a URL) of the selected image from the given website. The icon will be fetched from the GoInfoGame icon set that is locally available.",
+          "description": "Icon to be displayed for the element type. The icon name should be a string (not a URL) of the selected image from the given website. The icon will be fetched from the AVIV ScoutRoute icon set that is locally available.",
           "type": "string",
           "examples": ["access_point", "baby", "barrier_on_road"]
         },
