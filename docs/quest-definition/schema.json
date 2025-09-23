@@ -94,7 +94,7 @@
         "question_id": {
           "description": "The Quest ID of the question that this questions visibility is dependent on.",
           "type": "number",
-          "examples": [1, 2, 3]
+          "examples": [101, 102, 103, 201, 202, 301, 302, 303, 304]
         },
         "required_value": {
           "description": "The value of the dependent question that will make this question visible.",
