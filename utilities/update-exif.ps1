@@ -78,7 +78,7 @@ param(
 
 # Display script header with version and mode
 $scriptMode = if ($Recursive) { "Recursive" } else { "Directory Only" }
-Write-Host "GoInfoGame Images Exif Data Update Script v3.0.0 ($scriptMode)" -ForegroundColor Blue
+Write-Host "TDEI Tools Images Exif Data Update Script v4.0.0 ($scriptMode)" -ForegroundColor Blue
 
 if ($Recursive) {
     Write-Host "This script removes all metadata from PNG files in a specified directory and all of its subdirectories and adds CC0 copyright tags to each image." -ForegroundColor Cyan
