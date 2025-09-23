@@ -158,7 +158,7 @@
           "examples": ["driveways", "surface", "crossing:markings"]
         },
         "quest_answer_choices": {
-          "description": "Answer choices for the question. Only applicable for ExclusiveChoice type questions.",
+          "description": "Answer choices for the question. Only applicable for ExclusiveChoice and MultipleChoice quest types.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/AnswerChoice"
