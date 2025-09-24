@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "3.0.0",
   "elements": [
     {
       "element_type": "Sidewalks",
@@ -187,6 +187,53 @@
               "choice_text": "No"
             }
           ]
+        },
+        {
+          "quest_id": 10,
+          "quest_title": "What amenities are available along this sidewalk?",
+          "quest_description": "Select all amenities that are present along this sidewalk",
+          "quest_type": "MultipleChoice",
+          "quest_tag": "amenity",
+          "quest_answer_choices": [
+            {
+              "value": "benches",
+              "choice_text": "Benches",
+              "image_url": "http://some_url.com/image.jpg"
+            },
+            {
+              "value": "trash_bins",
+              "choice_text": "Trash bins",
+              "image_url": "http://some_url.com/image.jpg"
+            },
+            {
+              "value": "water_fountains",
+              "choice_text": "Water fountains",
+              "image_url": "http://some_url.com/image.jpg"
+            },
+            {
+              "value": "bike_racks",
+              "choice_text": "Bike racks",
+              "image_url": "http://some_url.com/image.jpg"
+            },
+            {
+              "value": "shade_structures",
+              "choice_text": "Shade structures",
+              "image_url": "http://some_url.com/image.jpg"
+            },
+            {
+              "value": "public_art",
+              "choice_text": "Public art",
+              "image_url": "http://some_url.com/image.jpg"
+            }
+          ]
+        },
+        {
+          "quest_id": 11,
+          "quest_title": "Are there any other notable features or issues with this sidewalk?",
+          "quest_description": "Please describe any other notable features or issues with this sidewalk that were not covered in the previous questions.",
+          "quest_image_url": "http://some_url.com/image.jpg",
+          "quest_type": "TextEntry",
+          "quest_tag": "sidewalk_notes"
         }
       ]
     },
@@ -319,10 +366,7 @@
           ],
           "quest_answer_dependency": {
             "question_id": 4,
-            "required_value": [
-              "1",
-              "2"
-            ]
+            "required_value": ["1", "2"]
           }
         },
         {
@@ -491,10 +535,16 @@
               "image_url": "http://some_url.com/image.jpg"
             }
           ],
-          "quest_answer_dependency": {
-            "question_id": 4,
-            "required_value": "yes"
-          }
+          "quest_answer_dependency": [
+            {
+              "question_id": 4,
+              "required_value": "yes"
+            },
+            {
+              "question_id": 5,
+              "required_value": "yes"
+            }
+          ]
         },
         {
           "quest_id": 7,

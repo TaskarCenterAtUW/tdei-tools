@@ -1,18 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Long Form Quests Schema for GoInfoGame",
-  "version": "2.0.0",
+  "title": "Long Form Quests Schema for AVIV ScoutRoute",
+  "version": "3.0.0",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "version": {
       "description": "Version of the long form JSON data. If not present defaults to 1.0.0.",
       "default": "1.0.0",
       "type": "string",
       "pattern": "^\\d+\\.\\d+\\.\\d+$",
-      "examples": [
-        "1.0.0",
-        "2.1.3"
-      ]
+      "examples": ["1.0.0", "2.1.3"]
     },
     "elements": {
       "type": "array",
@@ -21,23 +19,17 @@
       }
     }
   },
-  "required": [
-    "version",
-    "elements"
-  ],
+  "required": ["version", "elements"],
   "definitions": {
     "Element": {
       "type": "object",
       "description": "Element type. The base element that describes the type of element and the quests that are associated with it.",
+      "additionalProperties": false,
       "properties": {
         "element_type": {
           "description": "Type of element that the quests are associated with.",
           "type": "string",
-          "examples": [
-            "Sidewalks",
-            "Kerb",
-            "Crossings"
-          ]
+          "examples": ["Sidewalks", "Kerb", "Crossings"]
         },
         "quest_query": {
           "description": "Query to get the quests for the element type.",
@@ -49,13 +41,9 @@
           ]
         },
         "element_type_icon": {
-          "description": "Icon to be displayed for the element type. The icon name should be a string (not a URL) of the selected image from the given website. The icon will be fetched from the GoInfoGame icon set that is locally available.",
+          "description": "Icon to be displayed for the element type. The icon name should be a string (not a URL) of the selected image from the given website. The icon will be fetched from the AVIV ScoutRoute icon set that is locally available.",
           "type": "string",
-          "examples": [
-            "access_point",
-            "baby",
-            "barrier_on_road"
-          ]
+          "examples": ["access_point", "baby", "barrier_on_road"]
         },
         "quests": {
           "description": "List of quests for the element type.",
@@ -65,41 +53,27 @@
           }
         }
       },
-      "required": [
-        "element_type",
-        "quest_query",
-        "quests",
-        "element_type_icon"
-      ]
+      "required": ["element_type", "quest_query", "quests", "element_type_icon"]
     },
     "AnswerChoice": {
       "type": "object",
       "description": "Answer choice for a single quest. There can be multiple answer choices",
+      "additionalProperties": false,
       "properties": {
         "value": {
           "description": "Value of the answer choice",
           "type": "string",
-          "examples": [
-            "yes",
-            "no",
-            "unknown"
-          ]
+          "examples": ["yes", "no", "unknown"]
         },
         "choice_text": {
           "description": "Text to display for the answer choice",
           "type": "string",
-          "examples": [
-            "Yes",
-            "No",
-            "Unknown"
-          ]
+          "examples": ["Yes", "No", "Unknown"]
         },
         "image_url": {
           "description": "URL of the image to display for the answer choice. If the image is not available or if there is an error in loading the image, it will not be displayed.",
           "type": "string",
-          "examples": [
-            "https://example.com/image.jpg"
-          ]
+          "examples": ["https://example.com/image.jpg"]
         },
         "choice_follow_up": {
           "description": "Used to define whether the user has to take a picture or not. If not provided, there will be no picture taken. If provided, this text will be shown to the user in the image taking screen.",
@@ -110,23 +84,46 @@
           ]
         }
       },
-      "required": [
-        "value",
-        "choice_text"
-      ]
+      "required": ["value", "choice_text"]
+    },
+    "dependency": {
+      "description": "Single dependency object to define the dependency of this question on another question. If the required_value of the dependent question is selected, then this question will be visible. Otherwise, it will be hidden.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "question_id": {
+          "description": "The Quest ID of the question that this questions visibility is dependent on.",
+          "type": "number",
+          "examples": [101, 102, 103, 201, 202, 301, 302, 303, 304]
+        },
+        "required_value": {
+          "description": "The value of the dependent question that will make this question visible.",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            }
+          ],
+          "examples": ["yes", "0", ["1", "2"], ["yes", "no"]]
+        }
+      },
+      "required": ["question_id", "required_value"]
     },
     "Question": {
       "type": "object",
       "description": "Question for a single quest. There can be multiple questions for an element.",
+      "additionalProperties": false,
       "properties": {
         "quest_id": {
           "description": "Unique identifier for the question",
           "type": "number",
-          "examples": [
-            1,
-            2,
-            3
-          ]
+          "examples": [1, 2, 3]
         },
         "quest_title": {
           "description": "Title of the question",
@@ -147,33 +144,21 @@
         "quest_image_url": {
           "description": "URL of the image to display for the question. If the image is not available or if there is an error in loading the image, it will not be displayed.",
           "type": "string",
-          "examples": [
-            "https://example.com/image.jpg"
-          ]
+          "examples": ["https://example.com/image.jpg"]
         },
         "quest_type": {
-          "description": "Type of the question. Only two types supported at the moment. ExclusiveChoice for single choice questions and Numeric for numeric input questions.",
+          "description": "Type of the question. ExclusiveChoice for single choice questions and Numeric for numeric input questions. MultipleChoice is similar to ExclusiveChoice, but allows multiple options to be selected and enters them as a semicolon-delimited string. TextEntry allows users to enter free-form text as an answer.",
           "type": "string",
-          "examples": [
-            "ExclusiveChoice",
-            "Numeric"
-          ],
-          "enum": [
-            "ExclusiveChoice",
-            "Numeric"
-          ]
+          "examples": ["ExclusiveChoice", "Numeric"],
+          "enum": ["ExclusiveChoice", "Numeric", "MultipleChoice", "TextEntry"]
         },
         "quest_tag": {
           "description": "Tag to be added to the quest. This tag is sent as payload when the user answers the question.",
           "type": "string",
-          "examples": [
-            "driveways",
-            "surface",
-            "crossing:markings"
-          ]
+          "examples": ["driveways", "surface", "crossing:markings"]
         },
         "quest_answer_choices": {
-          "description": "Answer choices for the question. Only applicable for ExclusiveChoice type questions.",
+          "description": "Answer choices for the question. Only applicable for ExclusiveChoice and MultipleChoice quest types.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/AnswerChoice"
@@ -182,67 +167,34 @@
         "quest_answer_validation": {
           "description": "Validation for the answer. Only applicable for Numeric type questions.",
           "type": "object",
+          "additionalProperties": false,
           "properties": {
             "min": {
               "description": "Minimum value for the answer",
               "type": "number",
-              "examples": [
-                0,
-                1,
-                2
-              ]
+              "examples": [0, 1, 2]
             },
             "max": {
               "description": "Maximum value for the answer",
               "type": "number",
-              "examples": [
-                0,
-                1,
-                2
-              ]
+              "examples": [0, 1, 2]
             }
           }
         },
         "quest_answer_dependency": {
-          "description": "",
-          "type": "object",
-          "properties": {
-            "question_id": {
-              "description": "The Quest ID of the question that this questions visibility is dependent on.",
-              "type": "number",
-              "examples": [
-                1,
-                2,
-                3
-              ]
+          "description": "Defines the dependency of this question on another question. If the required_value of the dependent question is selected, then this question will be visible. Otherwise, it will be hidden. It can be a single object or an array of objects to define multiple dependencies (AND logic).",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/dependency"
             },
-            "required_value": {
-              "description": "The value of the dependent question that will make this question visible.",
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              ],
-              "examples": [
-                "yes",
-                "0",
-                [
-                  "1",
-                  "2"
-                ],
-                [
-                  "yes",
-                  "no"
-                ]
-              ]
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/dependency"
+              },
+              "minItems": 1
             }
-          }
+          ]
         }
       },
       "required": [
@@ -250,8 +202,21 @@
         "quest_title",
         "quest_description",
         "quest_type",
-        "quest_tag",
-        "quest_answer_choices"
+        "quest_tag"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": { 
+              "quest_type": { 
+                "enum": ["ExclusiveChoice", "MultipleChoice"] 
+              } 
+            }
+          },
+          "then": {
+            "required": ["quest_answer_choices"]
+          }
+        }
       ]
     }
   }
