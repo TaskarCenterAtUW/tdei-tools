@@ -1,0 +1,746 @@
+{
+	"version": "2.0.0",
+	"elements": [
+		{
+			"element_type": "Sidewalks",
+			"element_type_icon": "sidewalk",
+			"quest_query": "ways with ((highway=footway and footway!=crossing) or highway=path)",
+			"quests": [
+				{
+					"quest_id": 101,
+					"quest_title": "What is the surface material of this pathway?",
+					"quest_description": "Determine the surface material of this pathway.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:pathway_surface",
+					"quest_answer_choices": [
+						{
+							"value": "asphalt",
+							"choice_text": "Asphalt",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/asphalt_landscape.png"
+						},
+						{
+							"value": "concrete",
+							"choice_text": "Concrete",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/concrete_landscape.png"
+						},
+						{
+							"value": "brick",
+							"choice_text": "Brick",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/surface/brick_landscape.png"
+						},
+						{
+							"value": "other",
+							"choice_text": "Other"
+						}
+					]
+				},
+				{
+					"quest_id": 102,
+					"quest_title": "What is the width of this pathway?",
+					"quest_description": "Measure the width of this pathway, in inches.",
+					"quest_image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/dimension/width_square.png",
+					"quest_type": "Numeric",
+					"quest_tag": "width",
+					"quest_answer_validation": {
+						"min": 0,
+						"max": 240
+					}
+				},
+				{
+					"quest_id": 103,
+					"quest_title": "Does this pathway narrow?",
+					"quest_description": "Determine whether there are any sections of this pathway that narrow in a way which impedes travel.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:pathway_narrows",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, part of this pathway narrows."
+						},
+						{
+							"value": "no",
+							"choice_text": "No, this pathway does not narrow."
+						}
+					]
+				},
+				{
+					"quest_id": 104,
+					"quest_title": "Are there small surface cracks, disruptions, or gaps on this pathway?",
+					"quest_description": "Determine whether there are cracks, disruptions, or gaps in the pathway surface that are smaller than 3 inches in any direction.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:pathway_count_disruptions_small",
+					"quest_answer_choices": [
+						{
+							"value": "1-5",
+							"choice_text": "Yes, there are 1-5 small cracks, disruptions, or gaps along this pathway."
+						},
+						{
+							"value": "6-10",
+							"choice_text": "Yes, there are 6-10 small cracks, disruptions, or gaps along this pathway."
+						},
+						{
+							"value": "11+",
+							"choice_text": "Yes, there are 11+ small cracks, disruptions, or gaps along this pathway."
+						},
+						{
+							"value": "0",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 105,
+					"quest_title": "Are there large surface cracks, disruptions, or gaps on this pathway?",
+					"quest_description": "Determine whether there are cracks, disruptions, or gaps in the pathway surface that are 3 inches or larger in any direction.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:pathway_count_disruptions_large",
+					"quest_answer_choices": [
+						{
+							"value": "1-5",
+							"choice_text": "Yes, there are 1-5 large cracks, disruptions, or gaps along this pathway."
+						},
+						{
+							"value": "6-10",
+							"choice_text": "Yes, there are 6-10 large cracks, disruptions, or gaps along this pathway."
+						},
+						{
+							"value": "11+",
+							"choice_text": "Yes, there are 11+ large cracks, disruptions, or gaps along this pathway."
+						},
+						{
+							"value": "0",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 106,
+					"quest_title": "Is there overgrown vegetation along this pathway?",
+					"quest_description": "Determine whether there is overgrown vegetation along this pathway which impedes travel.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:pathway_overgrown_vegetation",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, overgrown vegetation is present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/obstruction/temporary/overgrown_landscape.png"
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there is no overgrown vegetation present."
+						}
+					]
+				},
+				{
+					"quest_id": 107,
+					"quest_title": "Are there any other obstacles along this pathway?",
+					"quest_description": "Determine whether there are any other obstacles such as utility poles, fire hydrants, or bollards along this pathway which impede travel.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:pathway_obstacle",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, an obstacle is present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/sidewalk/obstruction/utility_landscape.png"
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there is no obstacle present."
+						}
+					]
+				},
+				{
+					"quest_id": 108,
+					"quest_title": "How many streetlights are present along this pathway?",
+					"quest_description": "Determine the number of streetlights that exist along this pathway.",
+					"quest_type": "Numeric",
+					"quest_tag": "ext:pathway_count_streetlights",
+					"quest_answer_validation": {
+						"min": 0,
+						"max": 50
+					}
+				}
+			]
+		},
+		{
+			"element_type": "Crossings",
+			"element_type_icon": "pedestrian_crossing",
+			"quest_query": "ways with (footway=crossing)",
+			"quests": [
+				{
+					"quest_id": 201,
+					"quest_title": "Are there markings on the roadway for this crossing?",
+					"quest_description": "Determine whether there are high-visibility road markings present for this crossing.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "crossing:markings",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, there are markings present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/zebra_paired_square.png"
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there are no markings present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/crossing/markings/no_square.png"
+						}
+					]
+				},
+				{
+					"quest_id": 202,
+					"quest_title": "Are there pedestrian traffic signals for this crossing?",
+					"quest_description": "Determine whether there are pedestrian traffic signals present for this crossing.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:crossing:signals",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, there are signals present."
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there are no signals present."
+						}
+					]
+				},
+				{
+					"quest_id": 203,
+					"quest_title": "Do the pedestrian signals have auditory output?",
+					"quest_description": "Determine whether the pedestrian traffic signals have auditory output for this crossing.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:traffic_signals:sound",
+					"quest_answer_dependency": {
+						"question_id": 202,
+						"required_value": "yes"
+					},
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, there are auditory signals present."
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there are no auditory signals present."
+						}
+					]
+				},
+				{
+					"quest_id": 204,
+					"quest_title": "Do the pedestrian signals have tactile arrows?",
+					"quest_description": "Determine whether the pedestrian traffic signals have tactile arrows pointing in the direction of travel for this crossing.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:traffic_signals:arrow",
+					"quest_answer_dependency": {
+						"question_id": 202,
+						"required_value": "yes"
+					},
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, there are tactile arrows present."
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there are no tactile arrows present."
+						}
+					]
+				},
+				{
+					"quest_id": 205,
+					"quest_title": "Is there a traffic island for this crossing?",
+					"quest_description": "Determine whether there is a pedestrian refugee traffic island with physical barriers such as raised curbs present for this crossing.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:crossing:island",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, there is a traffic island present."
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there is not a traffic island present."
+						}
+					]
+				},
+				{
+					"quest_id": 206,
+					"quest_title": "Is there adequate lighting for this crossing?",
+					"quest_description": "Determine whether there is adequate lighting from streetlights for this crossing.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:lit",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, there is adequate lighting."
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there is not adequate lighting."
+						}
+					]
+				}
+			]
+		},
+		{
+			"element_type": "Curbs",
+			"element_type_icon": "kerb_type",
+			"quest_query": "nodes with (barrier=kerb)",
+			"quests": [
+				{
+					"quest_id": 301,
+					"quest_title": "What type of curb is this?",
+					"quest_description": "Determine the type of this curb.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "kerb",
+					"quest_answer_choices": [
+						{
+							"value": "lowered",
+							"choice_text": "There is a lowered curb ramp present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/lowered_landscape.png"
+						},
+						{
+							"value": "flush",
+							"choice_text": "There is a flush curb present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/flush_landscape.png"
+						},
+						{
+							"value": "raised",
+							"choice_text": "There is a raised curb present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/raised_landscape.png"
+						}
+					]
+				},
+				{
+					"quest_id": 302,
+					"quest_title": "Is there tactile paving at this curb?",
+					"quest_description": "Determine whether there is a truncated dome tactile warning surface at this curb.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "tactile_paving",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes, there is tactile paving present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/tactile_paving/yes_square.png"
+						},
+						{
+							"value": "no",
+							"choice_text": "No, there is not tactile paving present.",
+							"image_url": "https://raw.githubusercontent.com/TaskarCenterAtUW/tdei-tools/refs/heads/main/images/kerb/tactile_paving/no_square.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"element_type": "Entrances",
+			"element_type_icon": "door",
+			"quest_query": "nodes with (entrance=yes)",
+			"quests": [
+				{
+					"quest_id": 401,
+					"quest_title": "Does this entrance have adequate lighting?",
+					"quest_description": "Check if this entrance area is well-lit, with at least one light source present within 10 feet of both sides of this entrance.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:lit",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 402,
+					"quest_title": "Is there signage clearly indicating that this is an accessible entrance?",
+					"quest_description": "Check if there is signage indicating this as an accessible entrance.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:accessibility:signed",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 403,
+					"quest_title": "Is there a door at this entrance?",
+					"quest_description": "Check if there is a door at this entrance.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:door",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 404,
+					"quest_title": "What type of door hardware is used at this entrance?",
+					"quest_description": "Choose the type of door hardware at this entrance.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 403,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:door:hardware:type",
+					"quest_answer_choices": [
+						{
+							"value": "knob",
+							"choice_text": "Round doorknob"
+						},
+						{
+							"value": "lever",
+							"choice_text": "Lever handle"
+						},
+						{
+							"value": "pull",
+							"choice_text": "U-shaped pull handle"
+						},
+						{
+							"value": "other",
+							"choice_text": "Other hardware type"
+						}
+					]
+				},
+				{
+					"quest_id": 405,
+					"quest_title": "Is this door's hardware mounted between 34-48 inches above the floor?",
+					"quest_description": "Check if this door's hardware is mounted between 34-48 inches above the floor.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 403,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:door:hardware:compliant_height",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 406,
+					"quest_title": "Does this door have a smooth surface at the bottom of the push side?",
+					"quest_description": "Check if the push side of this door has a smooth surface, measured from the floor up to at least 10 inches, to allow wheelchair footrests to pass without obstruction.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 403,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:door:smooth_push_surface",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 407,
+					"quest_title": "Can this door be opened without requiring excessive force?",
+					"quest_description": "Check if this door requires the application of excessive force (> 5 lbs) to open.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 403,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:door:compliant_force",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 408,
+					"quest_title": "Does this door have a door closer?",
+					"quest_description": "Check if this door has a slow closer or power closing assist.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 403,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:door:closer",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 409,
+					"quest_title": "Does this door closer provide adequate closing time?",
+					"quest_description": "Check if this door closer takes at least 5 seconds to close from 90 degrees to 12 degrees.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 408,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:door:closer:compliant_speed",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes (≥ 5 seconds)"
+						},
+						{
+							"value": "no",
+							"choice_text": "No (< 5 seconds)"
+						}
+					]
+				},
+				{
+					"quest_id": 410,
+					"quest_title": "Is this an automatic door?",
+					"quest_description": "Check if this door has automatic operation available.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 403,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:automatic_door",
+					"quest_answer_choices": [
+						{
+							"value": "button",
+							"choice_text": "Yes, button-activated"
+						},
+						{
+							"value": "motion",
+							"choice_text": "Yes, motion-activated"
+						},
+						{
+							"value": "no",
+							"choice_text": "No, no automation"
+						}
+					]
+				},
+				{
+					"quest_id": 411,
+					"quest_title": "Does the door remain open long enough for safe passage?",
+					"quest_description": "Check if this power-operated door remains open long enough for safe wheelchair passage.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 410,
+						"required_value": "button"
+					},
+					"quest_tag": "ext:automatic_door:compliant_timing",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 412,
+					"quest_title": "Is there sufficient clear floor space here for button activation?",
+					"quest_description": "Check if there is enough clear floor space adjacent to the button or push plate for wheelchair users to activate it.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 410,
+						"required_value": "button"
+					},
+					"quest_tag": "ext:automatic_door:button:compliant_space",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 413,
+					"quest_title": "Is this entrance wide enough (≥ 32 in) for wheelchair access?",
+					"quest_description": "Check if this entrance has at least 32 inches of clear width.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:compliant_width",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 414,
+					"quest_title": "Is this entrance tall enough (≥ 80 in) for accessible access?",
+					"quest_description": "Check if this entrance has at least 80 inches of clear height.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:compliant_height",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 415,
+					"quest_title": "Is there adequate maneuvering clearance around this door?",
+					"quest_description": "Check if there is sufficient space to approach and operate the door. Requirements: if door swings toward user: 60 in front, 18 in beside latch; if away: 48 in front, 12 in side",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 403,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:maneuvering_clearance",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 416,
+					"quest_title": "If there is a vestibule (two doors in a row) here, is there enough space between them?",
+					"quest_description": "Check if there is at least 48 inches plus the door width between two sequential doors.",
+					"quest_type": "ExclusiveChoice",
+					"quest_answer_dependency": {
+						"question_id": 403,
+						"required_value": "yes"
+					},
+					"quest_tag": "ext:vestibule:compliant_spacing",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 417,
+					"quest_title": "Is this entrance level with the ground?",
+					"quest_description": "Check if this entrance is level with the sidewalk and without steps. Slope along the route can’t exceed 1:20. No abrupt level changes: Vertical rise ≤ 1/4 inch is okay; 1/4–1/2 inch must be beveled at 1:2 slope; > 1/2 inch requires a ramp.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:level_with_ground",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 418,
+					"quest_title": "Is there a ramp or lift available here?",
+					"quest_description": "Check if there is a ramp or mechanical lift present for step-free access to this entrance.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:ramp_or_lift",
+					"quest_answer_dependency": {
+						"question_id": 417,
+						"required_value": "no"
+					},
+					"quest_answer_choices": [
+						{
+							"value": "ramp",
+							"choice_text": "Ramp available"
+						},
+						{
+							"value": "lift",
+							"choice_text": "Lift available"
+						},
+						{
+							"value": "no",
+							"choice_text": "Neither"
+						}
+					]
+				},
+				{
+					"quest_id": 419,
+					"quest_title": "After entering, is the path forward here accessible without using steps?",
+					"quest_description": "Check if the inside path forward can be traversed without using steps, if there is no elevator or ramp on the same level.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:no_interior_steps",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				},
+				{
+					"quest_id": 420,
+					"quest_title": "After entering, is the path forward here accessible without traversing a steep incline?",
+					"quest_description": "Check if the inside path forward can be traversed without using a slope with an incline ≥ 1:12, a width ≤ 36 inches, landings at the top and bottom (< 60 inches), or without handrails on both sides if the rise > 6 inches.",
+					"quest_type": "ExclusiveChoice",
+					"quest_tag": "ext:no_interior_slope",
+					"quest_answer_choices": [
+						{
+							"value": "yes",
+							"choice_text": "Yes"
+						},
+						{
+							"value": "no",
+							"choice_text": "No"
+						}
+					]
+				}
+			]
+		}
+	]
+}
