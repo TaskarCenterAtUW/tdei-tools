@@ -2,14 +2,6 @@
 
 Repository for tools and resources related to the Transportation Data Exchange Initiative (TDEI).
 
-## [Docs](docs)
-
-Documentation files, schema definitions, and examples.
-
-### [Imagery Layers](docs/imagery-layer)
-
-[Schema](docs/imagery-layer/schema.json) and [example](docs/imagery-layer/example.json) for imagery layers for use in AVIV ScoutRoute.
-
 ## [Images](images)
 
 Images of pedestrian infrastructure and related features, intended to be used in AVIV ScoutRoute long form quest definitions. Uncropped original non-annotated images are included, and all of the images in the `/images/` directory and all of its subdirectories are CC0-licensed and free to use by anyone for any purpose.
