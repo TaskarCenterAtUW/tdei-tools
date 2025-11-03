@@ -40,9 +40,6 @@
 	JPEG compression quality (1-100) for JPEG output files
 	Default: 70
 
-.PARAMETER SkipExif
-	Skip copying EXIF metadata from original files
-
 .EXAMPLE
 	.\sli-guardian.ps1 -inputDir ".\input" -outputDir ".\output" -overlay ".\overlay.png"
 	
@@ -56,7 +53,7 @@
 .NOTES
 	Prerequisites:
 	- ImageMagick must be installed and available in PATH
-	- ExifTool must be installed and available in PATH (unless -skipExif is used)
+	- ExifTool must be installed and available in PATH
 	
 	Supported image formats:
 	- Input: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .tif
@@ -67,7 +64,7 @@
 	2. Copies input images to output directory
 	3. Validates overlay dimensions match image dimensions
 	4. Applies overlay to images in parallel batches
-	5. Preserves EXIF metadata from original files (unless -skipExif)
+	5. Preserves EXIF metadata from original files
 	6. Provides detailed progress reporting and error handling
 	
 	JPEG handling:
@@ -102,10 +99,7 @@ param(
 	
 	[Parameter(Mandatory = $false)]
 	[ValidateRange(1, 100)]
-	[int]$jpegQuality = 90,
-	
-	[Parameter(Mandatory = $false)]
-	[switch]$skipExif
+	[int]$jpegQuality = 90
 )
 
 # Pre-defined image extensions for filtering
@@ -134,10 +128,8 @@ elseif ([System.IO.Path]::GetExtension($overlay).ToLower() -ne '.png') {
 try { $null = Get-Command magick -ErrorAction Stop }
 catch { $validationErrors += "ImageMagick is not installed or not in PATH." }
 
-if (-not $skipExif) {
-	try { $null = Get-Command exiftool -ErrorAction Stop }
-	catch { $validationErrors += "ExifTool is not installed or not in PATH. Use -skipExif to bypass." }
-}
+try { $null = Get-Command exiftool -ErrorAction Stop }
+catch { $validationErrors += "ExifTool is not installed or not in PATH." }
 
 if ($validationErrors.Count -gt 0) {
 	Write-Host "VALIDATION ERRORS:" -ForegroundColor Red
@@ -261,6 +253,14 @@ for ($i = 0; $i -lt $outputImages.Count; $i += $batchSize) {
 				$processedFile = $imagePath
 			}
 			
+			# Copy EXIF data immediately after processing this image (excluding thumbnails)
+			try {
+				$null = & exiftool -overwrite_original -TagsFromFile "$originalImage" "-all:all>all:all" "--Thumbnail" "$processedFile" 2>&1
+			}
+			catch {
+				# Continue processing even if EXIF copy fails for this image
+			}
+			
 			return @{Success = $true; File = $image.Name; ProcessedFile = $processedFile; OriginalFile = $originalImage }
 		}
 		catch {
@@ -272,41 +272,6 @@ for ($i = 0; $i -lt $outputImages.Count; $i += $batchSize) {
 	$successfulResults = $results | Where-Object { $_.Success }
 	$batchSuccess = $successfulResults.Count
 	$batchFailed = ($results | Where-Object { -not $_.Success }).Count
-	
-	# Copy EXIF data from original files to processed files
-	if (-not $skipExif -and $successfulResults.Count -gt 0) {
-		try {
-			# Create temporary batch file for exiftool
-			$batchFile = Join-Path -Path $outputDir -ChildPath "exif_batch_$batchNum.txt"
-			
-			# Build batch command file
-			$batchContent = @()
-			foreach ($result in $successfulResults) {
-				$batchContent += "-TagsFromFile"
-				$batchContent += $result.OriginalFile
-				$batchContent += "-all:all>all:all"
-				$batchContent += $result.ProcessedFile
-			}
-			$batchContent -join "`n" | Out-File -FilePath $batchFile -Encoding UTF8
-			
-			# Execute batch EXIF copy operation
-			$null = & exiftool -overwrite_original -@ "$batchFile" 2>&1
-			
-			# Clean up temporary file
-			Remove-Item -Path $batchFile -Force -ErrorAction SilentlyContinue
-		}
-		catch {
-			# Fall back to individual EXIF operations if batch fails
-			foreach ($result in $successfulResults) {
-				try {
-					$null = & exiftool -overwrite_original -TagsFromFile "$($result.OriginalFile)" "-all:all>all:all" "$($result.ProcessedFile)" 2>&1
-				}
-				catch {
-					# Continue processing even if EXIF copy fails
-				}
-			}
-		}
-	}
 	
 	# Update totals
 	$totalProcessed += $batchSuccess
