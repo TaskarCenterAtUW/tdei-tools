@@ -1,4 +1,3 @@
 .venv/
 local-storage/
 tdei-tools.code-workspace
-*.wip
