@@ -1,7 +1,4 @@
+.venv/
+local-storage/
+.DS_Store
 tdei-tools.code-workspace
-settings.local.json
-*.txt
-*.zip
-*.geojson
-*.osm
-*.osw
