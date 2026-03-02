@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # TDEI Tools
 
 Repository for tools and resources related to the Transportation Data Exchange Initiative (TDEI).
@@ -14,6 +16,7 @@ Utilities related to the TDEI.
 
 - **[TDEI Tools Images Exif Data Update Script](utilities/update-exif.ps1)**
 - **[GTFS-to-TDEI Converter Script](utilities/gtfs-to-tdei-converter.ps1)**
+- **[Set Line Endings Script](utilities/set-line-endings.ps1)**
 - **[SLI Guardian](utilities/sli-guardian.ps1)**
 - **[Workspaces Export Script](utilities/workspaces-export.ps1)**
 - **[Workspaces JOSM Settings Script](utilities/workspaces-josm.ps1)**

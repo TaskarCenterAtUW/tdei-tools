@@ -3,7 +3,7 @@
     Converts line endings in files to LF or CRLF.
 
 .DESCRIPTION
-    Updates the line endings in one or more files to use either LF (Unix-style) 
+    Updates the line endings in one or more files to use either LF (Unix-style)
     or CRLF (Windows-style) line endings.
 
 .PARAMETER Path
@@ -76,8 +76,7 @@ function Convert-LineEndings {
         # Apply the desired line ending
         if ($Ending -eq 'crlf') {
             $converted = $normalized -replace "`n", "`r`n"
-        }
-        else {
+        } else {
             $converted = $normalized
         }
 
@@ -86,12 +85,10 @@ function Convert-LineEndings {
             # Write without adding extra newline at end
             [System.IO.File]::WriteAllText($FilePath, $converted)
             Write-Host "Converted: $FilePath" -ForegroundColor Green
-        }
-        else {
+        } else {
             Write-Verbose "No change needed: $FilePath"
         }
-    }
-    catch {
+    } catch {
         Write-Warning "Failed to process $FilePath : $_"
     }
 }
@@ -103,8 +100,7 @@ if ($item.PSIsContainer) {
     # It's a directory
     $files = if ($Recurse) {
         Get-ChildItem -Path $Path -File -Recurse
-    }
-    else {
+    } else {
         Get-ChildItem -Path $Path -File
     }
 
@@ -118,8 +114,7 @@ if ($item.PSIsContainer) {
     foreach ($file in $files) {
         Convert-LineEndings -FilePath $file.FullName -Ending $EndingType
     }
-}
-else {
+} else {
     # It's a file
     Write-Host "Processing single file..." -ForegroundColor Cyan
     Convert-LineEndings -FilePath $item.FullName -Ending $EndingType
