@@ -1,3 +1,5 @@
+# @format
+
 name: Images READMEs Generator
 
 on:
@@ -25,8 +27,7 @@ jobs:
           ref: ${{ github.head_ref || github.ref }}
 
       - name: Install ExifTool
-        run:
-          |
+        run: |
           # Skip updating manpages/docs to save time
           sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc > /dev/null << 'EOF'
           path-exclude /usr/share/doc/*
@@ -39,8 +40,7 @@ jobs:
 
       - name: Generate README.md files
         shell: pwsh
-        run:
-          |
+        run: |
           $imagesRoot = "images"
           $deletedReadmes = 0
           $processedDirectories = 0
@@ -54,7 +54,7 @@ jobs:
               Remove-Item $_.FullName -Force
               $deletedReadmes++
           }
-              
+
           # Use GITHUB_HEAD_REF if available (for PRs), otherwise GITHUB_REF_NAME (for pushes to branches)
           $branchOrRefName = if ($env:GITHUB_HEAD_REF) { $env:GITHUB_HEAD_REF } else { $env:GITHUB_REF_NAME }
           $repoFullName = $env:GITHUB_REPOSITORY
@@ -75,7 +75,7 @@ jobs:
               $processedDirectories++
               $currentDirFullPath = $dirInfo.FullName
               $currentDirRelativePath = $currentDirFullPath.Replace($githubWorkspace, '').TrimStart('\/')
-              
+
               Write-Host "Processing directory: $currentDirRelativePath"
 
               # Only get images directly in this directory
@@ -114,10 +114,10 @@ jobs:
 
                   # Construct path relative to GITHUB_WORKSPACE for raw URL, ensuring Unix-style separators
                   $repoRelativeImagePath = ($imageFile.FullName.Replace($githubWorkspace, '')).TrimStart('\/').Replace('\', '/')
-                  
+
                   $baseRawUrl = "https://raw.githubusercontent.com/$repoFullName/$branchOrRefName"
                   $rawUrl = "$baseRawUrl/$repoRelativeImagePath"
-                  
+
                   # Attempt to get copyright information from EXIF data
                   $exifOutput = exiftool -s3 -PNG:Copyright $imageFile.FullName 2>&1
                   if ($LASTEXITCODE -ne 0) {

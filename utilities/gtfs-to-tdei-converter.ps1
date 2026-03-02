@@ -2,54 +2,54 @@
 # This script is designed to be run in a PowerShell environment.
 
 # Name: GTFS-to-TDEI Converter Script
-# Version: 4.0.1
-# Date: 2025-10-16
+# Version: 4.0.2
+# Date: 2026-03-02
 # Author: Amy Bordenave, Taskar Center for Accessible Technology, University of Washington
 # License: CC-BY-ND 4.0 International
 
 <#
 .SYNOPSIS
-	Converts GTFS stops.txt to TDEI-compatible GeoJSON format
+    Converts GTFS stops.txt to TDEI-compatible GeoJSON format
 
 .DESCRIPTION
-	This script takes a GTFS archive, extracts the stops.txt file, converts it to 
-	OpenSidewalks-compatible GeoJSON format, and packages it as a ZIP file ready 
-	for upload to the TDEI (Transportation Data Exchange Initiative).
+    This script takes a GTFS archive, extracts the stops.txt file, converts it to
+    OpenSidewalks-compatible GeoJSON format, and packages it as a ZIP file ready
+    for upload to the TDEI (Transportation Data Exchange Initiative).
 
 .PARAMETER InputZip
-	Path to the GTFS ZIP archive containing stops.txt file.
+    Path to the GTFS ZIP archive containing stops.txt file.
 
 .PARAMETER OutputDir
-	Directory where the output stops.zip file will be created.
-	If not specified, uses the current working directory by default.
+    Directory where the output stops.zip file will be created.
+    If not specified, uses the current working directory by default.
 
 .EXAMPLE
-	.\gtfs-to-tdei-converter.ps1 -InputZip "C:\example\gtfs.zip"
-	Converts the GTFS archive and saves stops.zip in the current directory.
+    .\gtfs-to-tdei-converter.ps1 -InputZip "C:\example\gtfs.zip"
+    Converts the GTFS archive and saves stops.zip in the current directory.
 
 .EXAMPLE
-	.\gtfs-to-tdei-converter.ps1 -InputZip "C:\example\ingest\gtfs.zip" -OutputDir "C:\example\export"
-	Converts the GTFS archive and saves stops.zip in the specified output directory.
+    .\gtfs-to-tdei-converter.ps1 -InputZip "C:\example\ingest\gtfs.zip" -OutputDir "C:\example\export"
+    Converts the GTFS archive and saves stops.zip in the specified output directory.
 
 .NOTES
-	Required GTFS fields: stop_id, stop_lat, stop_lon
-	Output format: OpenSidewalks 0.2 schema compatible GeoJSON
-	
-	The script will validate:
-	- Input ZIP file exists and contains stops.txt
-	- Required GTFS fields are present
-	- Latitude and longitude values are valid
+    Required GTFS fields: stop_id, stop_lat, stop_lon
+    Output format: OpenSidewalks 0.2 schema compatible GeoJSON
+
+    The script will validate:
+    - Input ZIP file exists and contains stops.txt
+    - Required GTFS fields are present
+    - Latitude and longitude values are valid
 
 .LINK
-	https://github.com/TaskarCenterAtUW/tdei-tools
+    https://github.com/TaskarCenterAtUW/tdei-tools
 #>
 
 param(
-	[Parameter(Mandatory = $true, HelpMessage = "Path to the GTFS zip archive")]
-	[string]$InputZip,
-	
-	[Parameter(Mandatory = $false, HelpMessage = "Output directory for the converted file")]
-	[string]$OutputDir = (Get-Location)
+    [Parameter(Mandatory = $true, HelpMessage = "Path to the GTFS zip archive")]
+    [string]$InputZip,
+
+    [Parameter(Mandatory = $false, HelpMessage = "Output directory for the converted file")]
+    [string]$OutputDir = (Get-Location)
 )
 
 # Constants
@@ -64,20 +64,19 @@ Write-Host ""
 
 # Check if input ZIP exists
 if (-not (Test-Path $InputZip)) {
-	Write-Error "Input ZIP file not found: $InputZip"
-	exit 1
+    Write-Error "Input ZIP file not found: $InputZip"
+    exit 1
 }
 
 # Validate and create output directory if needed
 if (-not (Test-Path $OutputDir)) {
-	try {
-		New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
-		Write-Host "Created output directory: $OutputDir" -ForegroundColor Yellow
-	}
-	catch {
-		Write-Error "Could not create output directory: $OutputDir"
-		exit 4
-	}
+    try {
+        New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
+        Write-Host "Created output directory: $OutputDir" -ForegroundColor Yellow
+    } catch {
+        Write-Error "Could not create output directory: $OutputDir"
+        exit 4
+    }
 }
 
 # Create temp directory
@@ -85,54 +84,53 @@ $tempDir = Join-Path ([System.IO.Path]::GetTempPath()) ([System.IO.Path]::GetRan
 $zip = $null
 
 try {
-	New-Item -ItemType Directory -Path $tempDir | Out-Null
+    New-Item -ItemType Directory -Path $tempDir | Out-Null
 
-	# Extract stops.txt from ZIP
-	$stopsPath = Join-Path $tempDir $GTFS_STOPS_FILENAME
-	Add-Type -AssemblyName System.IO.Compression.FileSystem
-	$zip = [System.IO.Compression.ZipFile]::OpenRead($InputZip)
-	$stopsEntry = $zip.Entries | Where-Object { $_.Name -eq $GTFS_STOPS_FILENAME }
+    # Extract stops.txt from ZIP
+    $stopsPath = Join-Path $tempDir $GTFS_STOPS_FILENAME
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $zip = [System.IO.Compression.ZipFile]::OpenRead($InputZip)
+    $stopsEntry = $zip.Entries | Where-Object { $_.Name -eq $GTFS_STOPS_FILENAME }
 
-	if (-not $stopsEntry) {
-		throw "$GTFS_STOPS_FILENAME not found in ZIP archive"
-	}
+    if (-not $stopsEntry) {
+        throw "$GTFS_STOPS_FILENAME not found in ZIP archive"
+    }
 
-	[System.IO.Compression.ZipFileExtensions]::ExtractToFile($stopsEntry, $stopsPath, $true)
-	$zip.Dispose()
-	$zip = $null
+    [System.IO.Compression.ZipFileExtensions]::ExtractToFile($stopsEntry, $stopsPath, $true)
+    $zip.Dispose()
+    $zip = $null
 
-	# Read the CSV file
-	$stops = Import-Csv $stopsPath
-	
-	# Validate required GTFS fields
-	if ($stops.Count -eq 0) {
-		throw "$GTFS_STOPS_FILENAME is empty or invalid"
-	}
-	
-	$firstStop = $stops[0]
-	$missingFields = $REQUIRED_GTFS_FIELDS | Where-Object { -not $firstStop.PSObject.Properties.Name.Contains($_) }
-	
-	if ($missingFields.Count -gt 0) {
-		throw "Missing required GTFS fields in ${GTFS_STOPS_FILENAME}: $($missingFields -join ', ')"
-	}
-}
-catch {
-	Write-Error "Error processing ZIP file: $($_.Exception.Message)"
-	if ($zip) { $zip.Dispose() }
-	if (Test-Path $tempDir) { Remove-Item -Path $tempDir -Recurse -Force }
-	exit 2
+    # Read the CSV file
+    $stops = Import-Csv $stopsPath
+
+    # Validate required GTFS fields
+    if ($stops.Count -eq 0) {
+        throw "$GTFS_STOPS_FILENAME is empty or invalid"
+    }
+
+    $firstStop = $stops[0]
+    $missingFields = $REQUIRED_GTFS_FIELDS | Where-Object { -not $firstStop.PSObject.Properties.Name.Contains($_) }
+
+    if ($missingFields.Count -gt 0) {
+        throw "Missing required GTFS fields in ${GTFS_STOPS_FILENAME}: $($missingFields -join ', ')"
+    }
+} catch {
+    Write-Error "Error processing ZIP file: $($_.Exception.Message)"
+    if ($zip) { $zip.Dispose() }
+    if (Test-Path $tempDir) { Remove-Item -Path $tempDir -Recurse -Force }
+    exit 2
 }
 
 # Create GeoJSON structure
 $geojson = @{
-	'$schema'       = $OPENSIDEWALKS_SCHEMA_URL
-	'type'          = 'FeatureCollection'
-	'features'      = @()
-	'dataTimestamp' = (Get-Date).ToString('o')  # ISO 8601 timestamp
-	'dataSource'    = @{
-		'name'      = "GTFS $GTFS_STOPS_FILENAME from " + [System.IO.Path]::GetFileName($InputZip)
-		'timestamp' = (Get-Item $InputZip).LastWriteTime.ToString('o')
-	}
+    '$schema'       = $OPENSIDEWALKS_SCHEMA_URL
+    'type'          = 'FeatureCollection'
+    'features'      = @()
+    'dataTimestamp' = (Get-Date).ToString('o')  # ISO 8601 timestamp
+    'dataSource'    = @{
+        'name'      = "GTFS $GTFS_STOPS_FILENAME from " + [System.IO.Path]::GetFileName($InputZip)
+        'timestamp' = (Get-Item $InputZip).LastWriteTime.ToString('o')
+    }
 }
 
 # Initialize counter for generating numeric IDs
@@ -144,62 +142,60 @@ $zipPath = Join-Path $OutputDir $OUTPUT_ZIP_FILENAME
 
 # Process each stop
 try {
-	foreach ($stop in $stops) {
-		# Validate coordinates
-		$lat = 0.0
-		$lon = 0.0
-		
-		if (-not [double]::TryParse($stop.stop_lat, [ref]$lat) -or $lat -lt -90 -or $lat -gt 90) {
-			throw "Invalid latitude for stop $($stop.stop_id): $($stop.stop_lat). Must be between -90 and 90."
-		}
-		
-		if (-not [double]::TryParse($stop.stop_lon, [ref]$lon) -or $lon -lt -180 -or $lon -gt 180) {
-			throw "Invalid longitude for stop $($stop.stop_id): $($stop.stop_lon). Must be between -180 and 180."
-		}
-		
-		# Create feature object following OpenSidewalks schema for CustomPoint
-		$feature = @{
-			type       = 'Feature'
-			geometry   = @{
-				type        = 'Point'
-				coordinates = @($lon, $lat)
-			}
-			properties = @{
-				# Add required _id field using sequential counter
-				'_id' = $idCounter++
-			}
-		}
+    foreach ($stop in $stops) {
+        # Validate coordinates
+        $lat = 0.0
+        $lon = 0.0
 
-		# Add all GTFS properties with ext: prefix
-		$stop.PSObject.Properties | ForEach-Object {
-			$feature.properties["ext:$($_.Name)"] = $_.Value
-		}
+        if (-not [double]::TryParse($stop.stop_lat, [ref]$lat) -or $lat -lt -90 -or $lat -gt 90) {
+            throw "Invalid latitude for stop $($stop.stop_id): $($stop.stop_lat). Must be between -90 and 90."
+        }
 
-		# Add feature to collection
-		$geojson.features += $feature
-	}
+        if (-not [double]::TryParse($stop.stop_lon, [ref]$lon) -or $lon -lt -180 -or $lon -gt 180) {
+            throw "Invalid longitude for stop $($stop.stop_id): $($stop.stop_lon). Must be between -180 and 180."
+        }
 
-	# Convert to JSON and save
-	$geojson | ConvertTo-Json -Depth 10 | Set-Content $geojsonPath
+        # Create feature object following OpenSidewalks schema for CustomPoint
+        $feature = @{
+            type       = 'Feature'
+            geometry   = @{
+                type        = 'Point'
+                coordinates = @($lon, $lat)
+            }
+            properties = @{
+                # Add required _id field using sequential counter
+                '_id' = $idCounter++
+            }
+        }
 
-	# Create ZIP archive
-	if (Test-Path $zipPath) {
-		Remove-Item $zipPath
-	}
-	Compress-Archive -Path $geojsonPath -DestinationPath $zipPath
-	Remove-Item $geojsonPath  # Clean up the temporary GeoJSON file
+        # Add all GTFS properties with ext: prefix
+        $stop.PSObject.Properties | ForEach-Object {
+            $feature.properties["ext:$($_.Name)"] = $_.Value
+        }
 
-}
-catch {
-	Write-Error "Error processing stops or creating output: $($_.Exception.Message)"
-	# Clean up any partial files
-	if (Test-Path $geojsonPath) { Remove-Item $geojsonPath -ErrorAction SilentlyContinue }
-	if (Test-Path $zipPath) { Remove-Item $zipPath -ErrorAction SilentlyContinue }
-	exit 3
-}
-finally {
-	# Always clean up temp directory
-	if (Test-Path $tempDir) { Remove-Item -Path $tempDir -Recurse -Force }
+        # Add feature to collection
+        $geojson.features += $feature
+    }
+
+    # Convert to JSON and save
+    $geojson | ConvertTo-Json -Depth 10 | Set-Content $geojsonPath
+
+    # Create ZIP archive
+    if (Test-Path $zipPath) {
+        Remove-Item $zipPath
+    }
+    Compress-Archive -Path $geojsonPath -DestinationPath $zipPath
+    Remove-Item $geojsonPath  # Clean up the temporary GeoJSON file
+
+} catch {
+    Write-Error "Error processing stops or creating output: $($_.Exception.Message)"
+    # Clean up any partial files
+    if (Test-Path $geojsonPath) { Remove-Item $geojsonPath -ErrorAction SilentlyContinue }
+    if (Test-Path $zipPath) { Remove-Item $zipPath -ErrorAction SilentlyContinue }
+    exit 3
+} finally {
+    # Always clean up temp directory
+    if (Test-Path $tempDir) { Remove-Item -Path $tempDir -Recurse -Force }
 }
 
-Write-Host "Success! Created $zipPath - ready for upload to TDEI."  -ForegroundColor Blue
+Write-Host "Success! Created $zipPath - ready for upload to TDEI." -ForegroundColor Blue
