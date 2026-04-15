@@ -14,9 +14,10 @@ Note that the intent of this resource is to facilitate the functioning of the AV
 
 Utilities related to the TDEI.
 
-- **[TDEI Tools Images Exif Data Update Script](utilities/update-exif.ps1)**
-- **[GTFS-to-TDEI Converter Script](utilities/gtfs-to-tdei-converter.ps1)**
-- **[Set Line Endings Script](utilities/set-line-endings.ps1)**
-- **[SLI Guardian](utilities/sli-guardian.ps1)**
-- **[Workspaces Export Script](utilities/workspaces-export.ps1)**
-- **[Workspaces JOSM Settings Script](utilities/workspaces-josm.ps1)**
+- **[GTFS-to-TDEI Converter Script](utilities/gtfs-to-tdei-converter.ps1)** — Converts a GTFS `stops.txt` file to OpenSidewalks-compatible GeoJSON format and packages it as a ZIP ready for upload to the TDEI.
+- **[List Members Script](utilities/list-members.py)** — Exports a CSV of member names and email addresses for a TDEI project group. Requires Point of Contact (poc) role authorization.
+- **[Set Line Endings Script](utilities/set-line-endings.ps1)** — Converts line endings in files to LF (Unix) or CRLF (Windows), with optional recursive directory processing.
+- **[SLI Guardian](utilities/sli-guardian.ps1)** — Applies overlay images to street-level imagery (e.g., from GoPro Max cameras), processing in parallel batches while preserving EXIF metadata.
+- **[TDEI Tools Images Exif Data Update Script](utilities/update-exif.ps1)** — Removes all existing EXIF metadata from PNG files and adds standardized CC0 Public Domain Dedication copyright tags.
+- **[Workspaces Export Script](utilities/workspaces-export.ps1)** — Exports a complete dataset from a TDEI Workspaces environment to an `.osm` file using the Workspaces API.
+- **[Workspaces JOSM Settings Script](utilities/workspaces-josm.ps1)** — Retrieves JOSM configuration settings for editing a TDEI Workspace by authenticating via the Workspaces API.
