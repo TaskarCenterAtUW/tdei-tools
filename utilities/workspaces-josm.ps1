@@ -90,7 +90,7 @@ if (-not $workspaceId -or $workspaceId -notmatch '^\d+$') {
 
 # Convert the secure string password to a regular string
 try {
-    $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto(
+    $password = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR(
         [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
     )
 } catch {
