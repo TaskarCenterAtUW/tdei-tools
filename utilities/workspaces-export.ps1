@@ -94,7 +94,7 @@ if (-not $outputFileName -or $outputFileName -notmatch '\.osm$') {
 }
 
 # Convert the secure string API key to a regular string
-$apiKey = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto(
+$apiKey = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR(
     [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureApiKey)
 )
 
