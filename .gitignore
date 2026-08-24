@@ -1,4 +1,12 @@
-.venv/
-local-storage/
-.DS_Store
+# Project
 tdei-tools.code-workspace
+local-storage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
