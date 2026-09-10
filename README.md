@@ -22,6 +22,12 @@ Run the converter from the repository root, with the path to the GTFS ZIP as the
 python utilities/gtfs_to_tdei_converter.py "C:/data/google_transit.zip" --o "C:/data/output"
 ```
 
+- **[Changelog Aggregator](utilities/github/changelog-aggregator/aggregate_changelogs.py)** — Collects release sections for a requested date from root-level `CHANGELOG.md` files on the default branch of public, non-archived, non-disabled repositories in the TaskarCenterAtUW, OpenSidewalks, and AccessMap organizations. It creates a dated file such as `utilities/github/changelog-aggregator/CHANGELOG-2026-09-09.md`. If no date is supplied, it defaults to yesterday in UTC. For example: `python utilities/github/changelog-aggregator/aggregate_changelogs.py --date 2026-09-08`.
+
+The GitHub Actions workflow runs at 13:00 UTC (06:00 PDT / 05:00 PST) and accepts an optional `report_date` input for manual runs. A `GITHUB_TOKEN` is optional for local use but recommended because it provides a higher GitHub API rate limit. Additional options include `--output` and `--organizations`; run the script with `--help` for details. Generated reports are stored in [`utilities/github/changelog-aggregator`](utilities/github/changelog-aggregator/).
+
+For local runs, set `$env:GITHUB_TOKEN = gh auth token` after `gh auth login` to reduce the chance of GitHub API rate limiting. Authentication is optional.
+
 - **[List Members Script](utilities/list-members.py)** — Exports a CSV of member names and email addresses for a TDEI project group. Requires Point of Contact (poc) role authorization.
 
 - **[Set Line Endings Script](utilities/set-line-endings.ps1)** — Converts line endings in files to LF (Unix) or CRLF (Windows), with optional recursive directory processing.
