@@ -29,7 +29,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 ### Fixed
 
 - Fixed changelog aggregator utility
-    - Updated utility to output daily runs to changelog-archive branch
+    - Moved utility to `utilities/aggregate_changelogs.py`
+    - Updated workflow to use the new utility path
 
 ## Utilities: 2026-09-10
 
