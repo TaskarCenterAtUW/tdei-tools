@@ -47,10 +47,10 @@ jobs:
         working-directory: source
         run: |
           if [[ -n "$REPORT_DATE" ]]; then
-            python utilities/github/changelog-aggregator/aggregate_changelogs.py \
+            python utilities/aggregate_changelogs.py \
               --date "$REPORT_DATE"
           else
-            python utilities/github/changelog-aggregator/aggregate_changelogs.py
+            python utilities/aggregate_changelogs.py
           fi
 
       - name: Commit updated aggregate
@@ -74,7 +74,7 @@ jobs:
           while IFS= read -r -d '' archive_file; do
             cp "$archive_file" "$staging_dir/$(basename "$archive_file")"
           done < <(
-            find "$source_dir/utilities/github/changelog-aggregator" \
+            find "$source_dir/utilities" \
               -maxdepth 1 -type f -name 'CHANGELOG-*.md' -print0
           )
 
