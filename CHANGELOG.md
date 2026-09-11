@@ -24,7 +24,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 -->
 
-## Utilities: 2026-09-03
+## Utilities: 2026-09-11
+
+### Fixed
+
+- Fixed changelog aggregator utility
+    - Updated utility to output daily runs to changelog-archive branch
+
+## Utilities: 2026-09-10
 
 ### Added
 

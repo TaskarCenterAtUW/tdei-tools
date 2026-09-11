@@ -16,6 +16,9 @@ on:
 permissions:
   contents: write
 
+env:
+  ARCHIVE_BRANCH: changelog-archive
+
 concurrency:
   group: changelog-aggregator
   cancel-in-progress: false
@@ -24,13 +27,24 @@ jobs:
   aggregate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout main for the aggregation script
         uses: actions/checkout@v7.0.1
+        with:
+          ref: main
+          path: source
+
+      - name: Checkout changelog archive branch
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ env.ARCHIVE_BRANCH }}
+          path: archive
+          clean: false
 
       - name: Aggregate public repository changelogs
         env:
           GITHUB_TOKEN: ${{ github.token }}
           REPORT_DATE: ${{ inputs.report_date }}
+        working-directory: source
         run: |
           if [[ -n "$REPORT_DATE" ]]; then
             python utilities/github/changelog-aggregator/aggregate_changelogs.py \
@@ -40,10 +54,42 @@ jobs:
           fi
 
       - name: Commit updated aggregate
-        uses: stefanzweifel/git-auto-commit-action@v7.2.0
-        with:
-          commit_message: "Add aggregated changelog"
-          file_pattern: "utilities/github/changelog-aggregator/CHANGELOG-*.md"
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive_dir="$GITHUB_WORKSPACE/archive"
+          source_dir="$GITHUB_WORKSPACE/source"
+          staging_dir="$(mktemp -d)"
+          trap 'rm -rf "$staging_dir"' EXIT
+
+          # Preserve any existing archives, regardless of their previous path.
+          while IFS= read -r -d '' archive_file; do
+            if [[ "$(basename "$archive_file")" == CHANGELOG-*.md ]]; then
+              cp "$archive_dir/$archive_file" \
+                "$staging_dir/$(basename "$archive_file")"
+            fi
+          done < <(git -C "$archive_dir" ls-files -z)
+
+          # The newly generated archive takes precedence for its date.
+          while IFS= read -r -d '' archive_file; do
+            cp "$archive_file" "$staging_dir/$(basename "$archive_file")"
+          done < <(
+            find "$source_dir/utilities/github/changelog-aggregator" \
+              -maxdepth 1 -type f -name 'CHANGELOG-*.md' -print0
+          )
+
+          # Rebuild the branch tree so it contains only archive files at its root.
+          git -C "$archive_dir" rm -r --ignore-unmatch .
+          cp "$staging_dir"/CHANGELOG-*.md "$archive_dir/"
+
+          git -C "$archive_dir" config user.name "github-actions[bot]"
+          git -C "$archive_dir" config user.email "github-actions[bot]@users.noreply.github.com"
+          git -C "$archive_dir" add --all
+
+          if git -C "$archive_dir" diff --cached --quiet; then
+            echo "No changelog changes to commit."
+            exit 0
+          fi
+
+          git -C "$archive_dir" commit -m "Add aggregated changelog"
+          git -C "$archive_dir" push origin "HEAD:refs/heads/$ARCHIVE_BRANCH"
