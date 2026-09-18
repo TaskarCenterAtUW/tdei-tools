@@ -24,6 +24,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 -->
 
+## Utilities: 2026-09-18
+
+### Fixed
+
+- Fixed workspaces-josm utility
+
 ## Utilities: 2026-09-11
 
 ### Fixed
