@@ -3,7 +3,7 @@
 // ==UserScript==
 // @name         Azure DevOps - Copy Work Item Link
 // @namespace    https://dev.azure.com/
-// @version      1.3.0
+// @version      1.3.1
 // @description  Copies the current Azure DevOps work item as a paste-able rich-text link.
 // @match        https://dev.azure.com/*
 // @grant        GM_setClipboard
@@ -54,7 +54,7 @@
     }
 
     /**
-     * Gets the work item ID from either:
+     * Gets the work item ID from the current URL, including:
      *
      * 1. A standard work-item URL:
      *    /_workitems/edit/4034
@@ -65,7 +65,7 @@
      * 3. A query editor URL:
      *    /_queries/edit/2644/?queryId=...
      */
-    function getWorkItemId() {
+    function getWorkItemIdFromUrl() {
         const workItemPathMatch = window.location.pathname.match(
             /\/_workitems\/edit\/(\d+)(?:\/|$)/i
         );
@@ -91,6 +91,173 @@
         }
 
         return null;
+    }
+
+    function isVisibleElement(element) {
+        const style = window.getComputedStyle(element);
+
+        return (
+            element.getClientRects().length > 0 &&
+            style.display !== "none" &&
+            style.visibility !== "hidden"
+        );
+    }
+
+    function getIdFromElement(element) {
+        const dataId =
+            element.getAttribute("data-work-item-id") ||
+            element.getAttribute("data-workitem-id");
+
+        if (dataId && /^\d+$/.test(dataId)) {
+            return dataId;
+        }
+
+        const values = [
+            element.value,
+            element.textContent,
+            element.getAttribute("aria-label"),
+        ];
+
+        for (const value of values) {
+            if (typeof value !== "string") {
+                continue;
+            }
+
+            const trimmedValue = value.trim();
+            const exactIdMatch = trimmedValue.match(/^#?(\d+)$/);
+            const leadingIdMatch = trimmedValue.match(/^#?(\d+)\b/);
+            const workItemTypeMatch = trimmedValue.match(
+                /^(?:work item|task|bug|story|user story|product backlog item|requirement|feature|epic|issue|test case)\s+#?(\d+)\b/i
+            );
+            const fieldIdMatch = trimmedValue.match(
+                /^(?:work item\s+)?id(?: field)?\s*[:#]?\s*(\d+)\b/i
+            );
+            const uppercaseTypeMatch = trimmedValue.match(
+                /^[A-Z][A-Z -]*\s+#?(\d+)\b/
+            );
+            const id =
+                exactIdMatch?.[1] ||
+                leadingIdMatch?.[1] ||
+                workItemTypeMatch?.[1] ||
+                fieldIdMatch?.[1] ||
+                uppercaseTypeMatch?.[1];
+
+            if (id) {
+                return id;
+            }
+        }
+
+        return null;
+    }
+
+    function getWorkItemIdFromContainer(container) {
+        const workItemIdElements = Array.from(
+            container.querySelectorAll(
+                [
+                    "[data-work-item-id]",
+                    "[data-workitem-id]",
+                    '[data-testid="work-item-id"]',
+                    '[data-test-id="work-item-id"]',
+                    '[aria-label*="ID Field" i]',
+                    '[aria-label*="Work Item ID" i]',
+                    '[class*="work-item-id" i]',
+                    '[class*="workitem-id" i]',
+                    '[class*="work-item-form-header-id" i]',
+                    '[class*="witform-id" i]',
+                ].join(", ")
+            )
+        ).reverse();
+
+        for (const element of workItemIdElements) {
+            if (!isVisibleElement(element)) {
+                continue;
+            }
+
+            const id = getIdFromElement(element);
+
+            if (id) {
+                return id;
+            }
+        }
+
+        const labelledWorkItemElements = Array.from(
+            container.querySelectorAll("[aria-label]")
+        ).reverse();
+
+        for (const element of labelledWorkItemElements) {
+            if (!isVisibleElement(element)) {
+                continue;
+            }
+
+            const label = element.getAttribute("aria-label");
+
+            if (
+                !/\b(?:work item|task|bug|story|feature|epic|issue)\b/i.test(
+                    label
+                )
+            ) {
+                continue;
+            }
+
+            const id = getIdFromElement(element);
+
+            if (id) {
+                return id;
+            }
+        }
+
+        const headings = Array.from(
+            container.querySelectorAll(
+                [
+                    "h1",
+                    "h2",
+                    "h3",
+                    "[role='heading']",
+                    '[class*="work-item-header" i]',
+                    '[class*="work-item-form-header" i]',
+                ].join(", ")
+            )
+        ).reverse();
+
+        for (const heading of headings) {
+            if (!isVisibleElement(heading)) {
+                continue;
+            }
+
+            const id = getIdFromElement(heading);
+
+            if (id) {
+                return id;
+            }
+        }
+
+        return null;
+    }
+
+    function getVisibleWorkItemId() {
+        const workItemContainers = Array.from(
+            document.querySelectorAll(
+                '[role="dialog"], [aria-modal="true"], [class*="work-item-form"]'
+            )
+        ).reverse();
+
+        for (const container of workItemContainers) {
+            if (!isVisibleElement(container)) {
+                continue;
+            }
+
+            const id = getWorkItemIdFromContainer(container);
+
+            if (id) {
+                return id;
+            }
+        }
+
+        return getWorkItemIdFromContainer(document);
+    }
+
+    function getWorkItemId() {
+        return getVisibleWorkItemId() || getWorkItemIdFromUrl();
     }
 
     /**
@@ -377,6 +544,16 @@
     function watchForAzureDevOpsNavigation() {
         window.addEventListener("popstate", updateButtonVisibility);
         window.addEventListener("hashchange", updateButtonVisibility);
+
+        const observer = new MutationObserver(() => {
+            window.queueMicrotask(updateButtonVisibility);
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            characterData: true,
+            subtree: true,
+        });
 
         for (const methodName of ["pushState", "replaceState"]) {
             const originalMethod = window.history[methodName];
