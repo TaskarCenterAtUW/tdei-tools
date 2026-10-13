@@ -24,6 +24,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 -->
 
+## Utilities: 2026-10-13
+
+### Fixed
+
+- Fixed the Azure DevOps work item link userscript using a stale URL ID instead of the currently visible work item
+
 ## Utilities: 2026-09-18
 
 ### Fixed
