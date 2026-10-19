@@ -3,7 +3,7 @@
 // ==UserScript==
 // @name         Azure DevOps - Copy Work Item Link
 // @namespace    https://dev.azure.com/
-// @version      1.3.1
+// @version      1.3.2
 // @description  Copies the current Azure DevOps work item as a paste-able rich-text link.
 // @match        https://dev.azure.com/*
 // @grant        GM_setClipboard
@@ -74,20 +74,20 @@
             return workItemPathMatch[1];
         }
 
-        const queryEditorPathMatch = window.location.pathname.match(
-            /\/_queries\/edit\/(\d+)(?:\/|$)/i
-        );
-
-        if (queryEditorPathMatch) {
-            return queryEditorPathMatch[1];
-        }
-
         const queryWorkItemId = new URLSearchParams(window.location.search).get(
             "workitem"
         );
 
         if (queryWorkItemId && /^\d+$/.test(queryWorkItemId)) {
             return queryWorkItemId;
+        }
+
+        const queryEditorPathMatch = window.location.pathname.match(
+            /\/_queries\/edit\/(\d+)(?:\/|$)/i
+        );
+
+        if (queryEditorPathMatch) {
+            return queryEditorPathMatch[1];
         }
 
         return null;
@@ -257,7 +257,16 @@
     }
 
     function getWorkItemId() {
-        return getVisibleWorkItemId() || getWorkItemIdFromUrl();
+        const urlWorkItemId = getWorkItemIdFromUrl();
+        const isQueryEditorRoute = /\/_queries\/edit\/\d+(?:\/|$)/i.test(
+            window.location.pathname
+        );
+
+        if (isQueryEditorRoute) {
+            return getVisibleWorkItemId() || urlWorkItemId;
+        }
+
+        return urlWorkItemId || getVisibleWorkItemId();
     }
 
     /**

@@ -24,6 +24,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 -->
 
+## Utilities: 2026-10-19
+
+### Fixed
+
+- Fixed the Azure DevOps work item link userscript copying smart-linked work items from descriptions or comments instead of the currently open item
+
 ## Utilities: 2026-10-13
 
 ### Fixed
