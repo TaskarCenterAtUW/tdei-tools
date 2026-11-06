@@ -14,6 +14,8 @@ Note that the intent of this resource is to facilitate the functioning of the AV
 
 Utilities related to the TDEI.
 
+- **[JOSM ↔ Rapid Preset Converter](utilities/preset-converter/README.md)** — Converts common JOSM XML tagging presets and Rapid (id-tagging-schema) JSON presets in either direction. See the utility README for examples, supported features, and limitations.
+
 - **[GTFS-to-TDEI Converter Script](utilities/gtfs_to_tdei_converter.py)** — Converts a GTFS `stops.txt` file to OpenSidewalks schema v0.3 GeoJSON and packages it as a dated ZIP ready for upload to the TDEI. The ZIP contains one file named `YYYY-MM-DD_GTFS_OSW.points.geojson`.
 
 Run the converter from the repository root, with the path to the GTFS ZIP as the required positional parameter, and optionally with the `--output-dir` (or `-o`) parameter:

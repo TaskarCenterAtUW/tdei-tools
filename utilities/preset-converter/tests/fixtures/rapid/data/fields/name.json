@@ -1,0 +1,6 @@
+{
+  "key": "name",
+  "type": "localized",
+  "label": "Name",
+  "default": "Coffee shop"
+}

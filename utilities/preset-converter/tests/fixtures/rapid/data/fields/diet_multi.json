@@ -1,0 +1,12 @@
+{
+  "key": "diet:",
+  "type": "multiCombo",
+  "label": "Dietary options",
+  "options": ["vegetarian", "vegan"],
+  "strings": {
+    "options": {
+      "vegetarian": "Vegetarian",
+      "vegan": "Vegan"
+    }
+  }
+}

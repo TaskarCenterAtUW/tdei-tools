@@ -1,0 +1,12 @@
+{
+  "key": "diet",
+  "type": "semiCombo",
+  "label": "Dietary preferences",
+  "options": ["vegetarian", "vegan"],
+  "strings": {
+    "options": {
+      "vegetarian": "Vegetarian",
+      "vegan": "Vegan"
+    }
+  }
+}

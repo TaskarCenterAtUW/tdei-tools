@@ -1,0 +1,11 @@
+{
+  "key": "cuisine",
+  "type": "combo",
+  "label": "Cuisine",
+  "strings": {
+    "options": {
+      "italian": "Italian",
+      "coffee_shop": "Coffee shop"
+    }
+  }
+}

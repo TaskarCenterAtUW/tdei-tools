@@ -6,23 +6,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/) and [Conventional Commits](https://www.conventionalcommits.org/).
 
-<!--
-
-## [Unreleased] - 2026-00-00
+## Utilities: 2026-11-05
 
 ### Added
 
--
-
-### Changed
-
--
-
-### Fixed
-
--
-
--->
+- Added JOSM ↔ Rapid preset converter utility
 
 ## Utilities: 2026-10-19
 
