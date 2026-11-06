@@ -1,0 +1,6 @@
+{
+  "name": "Preset with missing field",
+  "geometry": ["point"],
+  "tags": {"amenity": "unknown"},
+  "fields": ["not_here"]
+}

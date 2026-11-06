@@ -1,0 +1,9 @@
+{
+  "name": "Cafe",
+  "geometry": ["point", "area"],
+  "tags": {"amenity": "cafe"},
+  "fields": ["name", "cuisine", "diet_semi", "diet_multi", "outdoor_seating"],
+  "moreFields": ["phone"],
+  "icon": "cafe",
+  "terms": ["coffee", "Food and drink"]
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0">
+  <group name="Food and drink">
+    <item name="Cafe" type="node,closedway" icon="cafe.png">
+      <key key="amenity" value="cafe" />
+      <text key="name" text="Name" default="" />
+      <combo key="cuisine" text="Cuisine" values="italian;coffee_shop" delimiter=";" display_values="Italian;Coffee shop" />
+      <multiselect key="diet" text="Dietary options" values="vegetarian;vegan" display_values="Vegetarian;Vegan" />
+      <check key="outdoor_seating" text="Outdoor seating" disable_off="true" />
+      <optional>
+        <text key="phone" text="Phone" />
+      </optional>
+    </item>
+    <group name="Bakery">
+      <item name="Bakery" type="node,way">
+        <key key="shop" value="bakery" />
+        <combo key="shop" text="Shop" values="bakery,confectionery" />
+      </item>
+    </group>
+  </group>
+</presets>
