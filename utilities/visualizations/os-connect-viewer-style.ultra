@@ -1,0 +1,119 @@
+---
+type: postpass
+
+style:
+  extends: https://styles.trailsta.sh/positron.json
+  layers:
+    - id: pedestrian-lines
+      type: line
+      filter: ["==", ["geometry-type"], "LineString"]
+      line-color:
+        - match
+        - ["get", "category"]
+        - sidewalk
+        - "#88CCEE"
+        - crossing-marked
+        - "#DDCC77"
+        - crossing-unmarked
+        - "#44AA99"
+        - footway
+        - "#117733"
+        - traffic-island
+        - "#882255"
+        - "#777777"
+      line-width:
+        - interpolate
+        - [linear]
+        - [zoom]
+        - 14
+        - 1
+        - 17
+        - 4
+        - 20
+        - 8
+
+    - id: kerb-points
+      type: circle
+      filter: ["==", ["geometry-type"], "Point"]
+      circle-color:
+        - match
+        - ["get", "category"]
+        - kerb-lowered
+        - "#CC6677"
+        - kerb-flush
+        - "#332288"
+        - kerb-raised
+        - "#AA4499"
+        - "#777777"
+      circle-radius:
+        - interpolate
+        - [linear]
+        - [zoom]
+        - 14
+        - 1
+        - 17
+        - 4
+        - 20
+        - 8
+---
+SELECT
+  osm_id,
+  osm_type,
+  tags,
+  tags->>'highway' AS highway,
+  tags->>'footway' AS footway,
+  tags->>'crossing:markings' AS "crossing:markings",
+  CASE
+    WHEN tags->>'footway' = 'traffic_island'
+      THEN 'traffic-island'
+
+    WHEN tags->>'footway' = 'crossing'
+      AND tags->>'crossing:markings' = 'no'
+      THEN 'crossing-unmarked'
+
+    WHEN tags->>'footway' = 'crossing'
+      AND tags ? 'crossing:markings'
+      AND tags->>'crossing:markings' <> 'no'
+      THEN 'crossing-marked'
+
+    WHEN tags->>'footway' = 'sidewalk'
+      THEN 'sidewalk'
+
+    WHEN tags->>'highway' = 'footway'
+      THEN 'footway'
+
+    ELSE 'others'
+  END AS category,
+  geom
+FROM postpass_line
+WHERE (
+    tags->>'highway' = 'footway'
+    OR tags ? 'footway'
+  )
+  AND geom && ST_MakeEnvelope({{wsen}}, 4326)
+
+UNION ALL
+
+SELECT
+  osm_id,
+  osm_type,
+  tags,
+  NULL::text AS highway,
+  NULL::text AS footway,
+  NULL::text AS "crossing:markings",
+  CASE
+    WHEN tags->>'kerb' = 'lowered'
+      THEN 'kerb-lowered'
+
+    WHEN tags->>'kerb' = 'flush'
+      THEN 'kerb-flush'
+
+    WHEN tags->>'kerb' = 'raised'
+      THEN 'kerb-raised'
+
+    ELSE 'others'
+  END AS category,
+  geom
+FROM postpass_point
+WHERE tags ? 'kerb'
+  AND geom && ST_MakeEnvelope({{wsen}}, 4326)
